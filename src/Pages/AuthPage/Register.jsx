@@ -69,7 +69,7 @@ return (
         <ToastContainer/>
         </div>
 
-        <div className="bg-white w-full mt-[-10px] lg:mt-[100px]  md:w-[436px]  mb-10 opacity-50 rounded-lg hover:opacity-90 flex flex-col px-[20px] py-[30px]">
+        <div className= "bg-white translate-y-[20%] md:translate-y-[20%] md:w-[436px] w-full  h-[500px] opacity-50 rounded-lg hover:opacity-90 flex  flex-col md:px-[20px] py-[30px]">
           <h3 className="text-[30px] flex justify-center w-full text-blue-500 font-bold">Create an accout</h3>
           <form className="flex flex-col gap-3  md:px-[30px] mt-4">
               <label>Fullname:</label>
