@@ -1,3 +1,71 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: animate 50s ease-in-out infinite;
+}
+.outer{
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+}
+
+@keyframes animate {
+    0%,100%{
+        background-image: url(../src/assets/Images/bg_1.jpg);
+    }
+    15%{
+        background-image: url(../src/assets/Images/bg_2.jpg);
+    }
+    25%{
+        background-image: url(../src/assets/Images/bg_3.jpg);
+    }
+    40%{
+        background-image: url(../src/assets/Images/bg_4.jpg);
+
+    }
+    55%{
+        background-image: url(../src/assets/Images/bg_5.jpg);
+    }
+    60%{
+        background-image: url(../src/assets/Images/bg_6.jpg);
+    }
+    70%{
+        background-image: url(../src/assets/Images/bg_7.jpg);
+    }
+    80%{
+        background-image: url(../src/assets/Images/bg_8.jpg);
+    }
+    90%{
+        background-image: url(../src/assets/Images/bg_9.jpg);
+    }
+    100%{
+        background-image: url(../src/assets/Images/bgN.jpg);
+    }
+    
+}
+@media only screen and (max-width: 400px){
+    .container{
+        background-position-x:left;
+        background-size: cover;
+        background-position-y: center;
+
+    }
+}
