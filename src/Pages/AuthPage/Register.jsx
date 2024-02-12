@@ -62,12 +62,13 @@ const Register = () => {
   }
 }
 
-  return (
-    <div className=" max-w-[1452px]  bg-[#FAFAF9] mx-auto shadow-card overflow-x-hidden">
-      <div className="flex justify-center items-center">
-        <div className="container">
+return (
+  <div className=" max-w-[1300px]  bg-[#FAFAF9] mx-auto shadow-card overflow-x-hidden">
+      <div className=" container flex justify-center items-center">
+        <div className="outer">
         <ToastContainer/>
         </div>
+
         <div className="bg-white absolute mt-[100px]  md:w-[436px] w-[300px] mb-10 opacity-50 rounded-lg hover:opacity-90 flex flex-col px-[20px] py-[30px]">
           <h3 className="text-[30px] flex justify-center w-full text-blue-500 font-bold">Create an accout</h3>
           <form className="flex flex-col gap-3  md:px-[30px] mt-4">

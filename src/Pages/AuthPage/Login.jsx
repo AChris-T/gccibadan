@@ -77,15 +77,15 @@ const Login = () => {
   return (
     <div>
       {getEmail && getPassword ? <Attendance/> :
-      <div className=" max-w-[1452px]  bg-[#FAFAF9] mx-auto shadow-card overflow-x-hidden">
-      <div className="flex justify-center items-center">
-        <div className="container">
+      <div className=" max-w-[1300px] container  bg-[#FAFAF9] mx-auto shadow-card overflow-x-hidden">
+      <div className="  flex justify-center items-center w-full">
+        <div className="outer">
         <ToastContainer/>
 
         </div>
-        <div className="bg-white absolute mt-[100px]  md:w-[436px] w-[300px] h-[500px] opacity-50 rounded-lg hover:opacity-90 flex flex-col md:px-[20px] py-[30px]">
+        <div className=" bg-white mt-[150px]  md:w-[436px] w-[300px] h-[500px] opacity-50 rounded-lg hover:opacity-90 flex flex-col md:px-[20px] py-[30px]">
           <h3 className="text-[30px] flex justify-center w-full text-blue-500 font-bold">Login</h3>
-          <form className="flex flex-col gap-3 px-[30px] mt-4">
+          <form className="flex flex-col  gap-3 px-[30px] mt-4">
               <label>Email/PhoneNumber:</label>
               <input type="email" name='email' onChange={getdata} className="px-4 placeholder-blue-300 py-[16px] rounded-lg border-[1.8px] border-blue-400" />
               <label>Password:</label>
