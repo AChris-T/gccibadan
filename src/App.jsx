@@ -29,7 +29,7 @@ function App() {
         <Route path='Register' element={<Register/>}/>
       </Route>
     )}
-    {/* <Route
+    <Route
           path="*"
           element={
             <>
@@ -46,7 +46,7 @@ function App() {
               </div>
             </>
           }
-        /> */}
+        />
     </Routes>
    
     </div>
