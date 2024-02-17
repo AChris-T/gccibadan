@@ -16,7 +16,7 @@ const Sidebar = () => {
   });
   };
   return (
-    <div className='flex flex-col  h-[100vh] fixed'>
+    <div className='flex flex-col  h-full  '>
     <div>
       <div className='flex justify-between h-20 items-center px-4'>
       <img src={gccclogo} alt='gccclogo'/>
@@ -60,7 +60,7 @@ const Sidebar = () => {
       </div>
       
     </div>
-    <div className=" h-full flex flex-col items-center justify-center ml-[-50px]">
+    <div className=" h-full flex flex-col items-center justify-center mt-[100px] ">
             <img src={SignUp} alt="signup" className="w-20 ml-6 mb-4"/>
         <button onClick={handleClearLocalStorage} className="bg-blue-600 text-white px-7 py-2 rounded-lg">Sign Out</button>
       

@@ -26,22 +26,28 @@ const Dashboard = () => {
   }, [location.pathname]);
 
   return (
-    <div>
-      <div className="bg-[#F9FAFB] max-w-[1460px] mx-auto shadow-card overflow-x-hidden">
-        <div className="flex">
-          <div className="flex-none w-56 bg-white hidden md:flex ">
-            <Sidebar />
-          </div>
-          <div className="flex-auto w-full h-[100vh]">
+    <div className="max-w-[1440px] mx-auto shadow-card">
+    <div className="flex flex-col  lg:grid lg:grid-cols-5 xl:grid-cols-6  ">
+      <div className=" hidden pb-5   lg:block h-[100vh]  sticky  top-0 ">
+        <div className=" ">
+          <Sidebar />
+        </div>
+      </div>
+      <div className="navbar-content  lg:col-span-4 xl:col-span-5">
+            <div className="navbar  border z-20 sticky top-0">
+            <div className="navbar  border z-20 sticky top-0 bg-white">
             <Navbar title={titleApp} />
+            </div>
+            <div className="">
             <Outlet />
+            </div>
             <div className="hidden lg:block">
               {/* <Footer/> */}
             </div>
           </div>
         </div>
       </div>
-    </div>
+      </div>
   );
 };
 

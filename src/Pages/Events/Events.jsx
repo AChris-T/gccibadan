@@ -1,7 +1,7 @@
 
 const Events = () => {
   return (
-    <div>
+    <div className="h-[100vh]">
       Events
     </div>
   )
