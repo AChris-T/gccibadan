@@ -15,7 +15,7 @@ const Register = () => {
     phonenumber:"",
     password:"",
   })
-  const [data, setData ] = useState([]);
+  const [data ] = useState([]); //setData 
   console.log(inputValue)
 
   const getData = (e) =>{

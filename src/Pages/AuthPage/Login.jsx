@@ -2,18 +2,18 @@ import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Attendance from "../Attendance/Attendance";
+
 
 const Login = () => {
  const navigate = useNavigate();
- const getEmail=localStorage.getItem("email")
- const getPassword=localStorage.getItem("password")
+/*  const getEmail=localStorage.getItem("email")
+ const getPassword=localStorage.getItem("password") */
 
  const [inputValue, setInputValue] = useState({
   email:"",
   password:""
  })
- const [data, setData] = useState([]);
+// const [data, setData] = useState([]);
  console.log(inputValue)
 
  const getdata = (e) => {
@@ -55,7 +55,7 @@ const Login = () => {
 
             if (getUserDetails && getUserDetails.length) {
                 const userdata = JSON.parse(getUserDetails);
-                const userlogin = userdata.filter((el, k) => {
+                const userlogin = userdata.filter((el) => {  //k
                     return el.email === email && el.password === password
                 });
 
@@ -68,7 +68,7 @@ const Login = () => {
                   });
                     localStorage.setItem("email",JSON.stringify(userlogin))
                     localStorage.setItem("password",JSON.stringify(userlogin))
-                    navigate("/attendance")
+                    navigate("/dashboard/home")
                 }
             }
         }
@@ -76,7 +76,6 @@ const Login = () => {
     }
   return (
     <div>
-      {getEmail && getPassword ? <Attendance/> :
       <div className=" max-w-[1300px] container  bg-[#FAFAF9] mx-auto shadow-card overflow-x-hidden">
       <div className=" px-2 flex align-middle justify-center items-center w-full">
         <div className="outer">
@@ -107,7 +106,6 @@ const Login = () => {
       </div>
       </div>
       </div>
-    }
     </div>
   )
 }
