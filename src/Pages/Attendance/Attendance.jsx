@@ -59,12 +59,7 @@ const Attendance = () => {
 
 
     }
-  /*   useEffect (() => {
-      if (!showAttendanceButtton() && status === ""){
-        setStatus("Absent")
-      }
-    },[status])
- */
+
     useEffect(() => {
       const currentDay = dayjs().format('dddd');
       const currentTime = dayjs().format('HH:mm.');
@@ -77,9 +72,6 @@ const Attendance = () => {
       }
     }, []);
   
-   /*  const indexOfLastItem = currentPage * itemsPerPage;
-    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-    const currentItems = userTimes.slice(indexOfFirstItem, indexOfLastItem);*/
     
     const totalPages = Math.ceil(userTimes.length / entriesPerPage);
 
@@ -87,7 +79,6 @@ const Attendance = () => {
     const startPage = Math.max(1, currentPage - Math.floor(maxPaginationButtons / 2));
     const endPage = Math.min(totalPages, startPage + maxPaginationButtons - 1);
   
-   // const paginate = pageNumber => setCurrentPage(pageNumber);
 
     const handlePageChange = (page) => {
       setCurrentPage(page);
@@ -95,7 +86,7 @@ const Attendance = () => {
   
 
     return (
-     <div className="w-full px-2 mt-[50px] h-[100vh]">
+     <div className="w-full px-2 mt-[50px] h-[100vh] ">
    { showAttendanceButton() && <div className="w-[99%] md:w-full h-[80px] justify-between mb-10 flex items-center px-4 bg-blue-500 text-white rounded-lg">
       <h3 className='w-[245px] md:w-full flex  text-center'>Mark Attendance for {currentDay} Service {currentTime} </h3>
       <button onClick={handleButtonClick} className="border-2 px-5 py-2 rounded-lg">Mark</button>
@@ -146,14 +137,6 @@ const Attendance = () => {
       </Table>
   </TableContainer>
     
-   {/*  <ul className='flex flex-wrap justify-end px-2 gap-4 mt-4'>
-    {userTimes.length > itemsPerPage &&
-          Array.from({ length: Math.ceil(userTimes.length / itemsPerPage) }, (_, i) => (
-            <li key={i} className={i + 1 === currentPage ? 'active' : ''}>
-              <button className='bg-blue-400 py-2 text-white rounded-lg w-12' onClick={() => paginate(i+ 1)}>{i + 1}</button>
-            </li>
-          ))}
-    </ul> */}
     <div className=' flex flex-wrap justify-end px-2 gap-4 mt-4'>
         {startPage !== 1 && (
           <button  className='bg-blue-400 py-1 text-white rounded-lg px-3' onClick={() => handlePageChange(1)}>Start</button>
