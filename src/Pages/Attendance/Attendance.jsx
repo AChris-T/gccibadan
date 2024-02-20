@@ -97,7 +97,7 @@ const Attendance = () => {
     return (
      <div className="w-full px-2 mt-[50px] h-[100vh]">
    { showAttendanceButton() && <div className="w-[99%] md:w-full h-[80px] justify-between mb-10 flex items-center px-4 bg-blue-500 text-white rounded-lg">
-      <h3 className='w-[245px] md:w-full flex  text-center'>Mark Attendance for {currentDay} {currentTime}</h3>
+      <h3 className='w-[245px] md:w-full flex  text-center'>Mark Attendance for {currentDay} Service {currentTime} </h3>
       <button onClick={handleButtonClick} className="border-2 px-5 py-2 rounded-lg">Mark</button>
     </div>
    }
