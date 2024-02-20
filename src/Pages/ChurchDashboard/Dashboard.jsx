@@ -2,11 +2,15 @@
 import React, { useState, useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import Navbar from "../../Modals/Navbar";
+import { useDisclosure } from '@mantine/hooks';
 import Sidebar from "../../Modals/Sidebar";
+import { IoMenu } from "react-icons/io5";
+import { Drawer } from "@mantine/core";
 
 const Dashboard = () => {
   const [titleApp, setTitleApp] = useState("Home");
   const location = useLocation();
+  const [opened, { open, close }] = useDisclosure(false);
 
   useEffect(() => {
     switch (location.pathname) {
@@ -27,18 +31,19 @@ const Dashboard = () => {
 
   return (
     <div className="max-w-[1440px] mx-auto shadow-card">
-    <div className="flex flex-col  lg:grid lg:grid-cols-5 xl:grid-cols-6  ">
-      <div className=" hidden pb-5   lg:block h-[100vh]  sticky  top-0 ">
+   
+    <div className="flex flex-col  md:grid md:grid-cols-5 xl:grid-cols-6  ">
+      <div className=" hidden pb-5   md:block h-[100vh]  sticky  top-0 ">
         <div className=" ">
           <Sidebar />
         </div>
       </div>
-      <div className="navbar-content  lg:col-span-4 xl:col-span-5">
+      <div className="navbar-content  md:col-span-4 xl:col-span-5">
             <div className="navbar  border z-20 sticky top-0">
             <div className="navbar  border z-20 sticky top-0 bg-white">
             <Navbar title={titleApp} />
             </div>
-            <div className="">
+            <div className="">            
             <Outlet />
             </div>
             <div className="hidden lg:block">
@@ -46,6 +51,8 @@ const Dashboard = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div>
       </div>
       </div>
   );

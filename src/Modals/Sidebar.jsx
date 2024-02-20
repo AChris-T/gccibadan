@@ -11,8 +11,8 @@ const Sidebar = () => {
     localStorage.clear();
     // Optionally, you can perform additional actions after clearing localStorage
     navigate("/login");
-    toast.error('Sign Out',{
-      position: "top-center",
+    toast.error('Have a nice day',{
+      position: "top-right",
   });
   };
   return (

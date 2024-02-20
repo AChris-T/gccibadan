@@ -38,7 +38,7 @@ const Attendance = () => {
       setUserTimes(prevTimes => [...prevTimes, currentTime]);
       const currentDay = dayjs().format('dddd');
       const currentTimeClicked = dayjs().format("HH:mm")
-      if ((currentDay === "Saturday" && currentTimeClicked >= "07:00" && currentTimeClicked <='21:00') ||
+      if ((currentDay === "Tuesday" && currentTimeClicked >= "07:00" && currentTimeClicked <='21:00') ||
       (currentDay === "Friday" && currentTimeClicked >= "17:00" && currentTimeClicked <= "23:52") ||
       (currentDay === "Tuesday" && currentTimeClicked >="17:00" && currentTimeClicked <= "00:00")
       ){
@@ -51,7 +51,7 @@ const Attendance = () => {
       const currentDay =dayjs().format('dddd');
       const currentTime = dayjs().format("HH:mm")
 
-      return ((currentDay === "Saturday" && currentTime >= "07:00" && currentTime <='21:00') ||
+      return ((currentDay === "Tuesday" && currentTime >= "07:00" && currentTime <='21:00') ||
           (currentDay === "Friday" && currentTime >= "17:00" && currentTime <= "23:52") ||
           (currentDay === "Tuesday" && currentTime >="17:00" && currentTime <= "00:00")
           ) &&
@@ -68,7 +68,8 @@ const Attendance = () => {
     useEffect(() => {
       const currentDay = dayjs().format('dddd');
       const currentTime = dayjs().format('HH:mm.');
-      if (showAttendanceButton() && ((currentDay === "Saturday" && currentTime >= "07:00" && currentTime <='21:00') ||
+      if (showAttendanceButton() && 
+      ((currentDay === "Tuesday" && currentTime >= "07:00" && currentTime <='21:00') ||
       (currentDay === "Friday" && currentTime >= "17:00" && currentTime <= "23:52") ||
       (currentDay === "Tuesday" && currentTime >="17:00" && currentTime <= "00:00"))
        ) {

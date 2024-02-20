@@ -10,7 +10,7 @@ const Navbar = ({title}) => {
   return (
   <div className="flex justify-between h-20 items-center px-4">
       <img src={gccclogo} alt='gccclogo' className="md:hidden"/>
-      <h1 className="hidden capitalize lg:block text-2xl font-bold text-black-ercas">
+      <h1 className="hidden capitalize md:block text-2xl font-bold text-black-ercas">
         {title}
       </h1> 
       <Popover withArrow shadow="md">
