@@ -126,13 +126,14 @@ const Attendance = () => {
               {time.year}
             </TableCell>
             <TableCell align='center' component="th" scope="row">
+              {time.month}
+
+            </TableCell>
+            <TableCell align='center' component="th" scope="row">
               {time.day}
             </TableCell>
             <TableCell align='center' component="th" scope="row">
-              {time.time}
-            </TableCell>
-            <TableCell align='center' component="th" scope="row">
-              {time.month}
+            {time.time} 
             </TableCell>
             <TableCell align='right'  className='px-4 py-5 mt-4'  component="th" scope="row">
             <div className='text-white h-8 flex justify-center items-center rounded-lg' style={{ backgroundColor:status === 'Attend' ? 'blue' : 'red' }}>
