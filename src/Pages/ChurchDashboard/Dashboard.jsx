@@ -53,70 +53,44 @@ const Dashboard = () => {
             <div className="">            
             <Outlet />
             <div className="md:hidden justify-end sticky bg-slate-600">
-              <Box sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 ,height:"50px",display:"flex", alignItems:"center", justifyContent:"space-between", width:"100%",paddingTop:"2px"}} >
+              <Box sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 ,height:"50px",display:"flex", alignItems:"center", justifyContent:"space-between", width:"100%",paddingTop:"2px",paddingRight:"10px"}} >
               <NavLink to="/dashboard/home" className=" px-8 flex text-center items-center gap-1 text-sm flex-col"
-           style={({ isActive,}) => {
-            return {
-            fontWeight: isActive ? "bold" : "",
-            color: isActive? "blue":"", 
-            };
-            }}
-          > 
+                    style={({ isActive,}) => {
+                     return {
+                     fontWeight: isActive ? "bold" : "",
+                     color: isActive? "blue":"", 
+                     };
+                     }}
+                   > 
        
-          <FaUserCheck/>
-            Home
-        </NavLink>
-        <NavLink to="/dashboard/attendance" className=" px-8 flex text-center items-center gap-1 text-sm flex-col"
-           style={({ isActive,}) => {
-            return {
-            fontWeight: isActive ? "bold" : "",
-            color: isActive? "blue":"", 
-            };
-            }}
-          > 
-       
-       <BsCalendarDateFill/>
-            Attendance
-        </NavLink>
-        <NavLink to="/dashboard/events" className="px-8 flex text-center items-center gap-1 text-sm flex-col"
-          style={({ isActive,}) => {
-            return {
-            fontWeight: isActive ? "bold" : "",
-            color: isActive? "blue":"", 
-            };
-            }}
-        > 
-       <MdEventAvailable />
-            Events
-        </NavLink>               {/* <BottomNavigation
-              showLabels
-              value={value}
-              onChange={(event, newValue) => {
-              setValue(newValue);
-            }}
-            >
-           <BottomNavigationAction label="Home"
-             icon={<RestoreIcon />} 
-             component={Link} to="/dashboard/home"
-              value="/dashboard/home" 
-             
-              />
-             <BottomNavigationAction label="Attendance"
-              icon={<FavoriteIcon />}
-              component={Link} to="/dashboard/attendance"
-              value="/dashboard/attendance"
-               selected={value === '/dashboard/attendance'} />
-              
-              <BottomNavigationAction label="Events" 
-                icon={<LocationOnIcon />} 
-                component={Link} to="/dashboard/events"
-                 value="/dashboard/events" 
-                selected={value === '/dashboard/events'} /> 
-                <BottomNavigationAction label="Recents" icon={<RestoreIcon />} component={Link} to="/dashboard/home"/>
-        <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} component={Link} to="/dashboard/attendance" />
-        <BottomNavigationAction label="Nearby" icon={<LocationOnIcon />} component={Link} to="/dashboard/events"/>
-              </BottomNavigation>*/}
-            </Box>
+                   <FaUserCheck/>
+                     Home
+                  </NavLink>
+               <NavLink to="/dashboard/attendance" className=" px-8 flex text-center items-center gap-1 text-sm flex-col"
+                  style={({ isActive,}) => {
+                   return {
+                   fontWeight: isActive ? "bold" : "",
+                   color: isActive? "blue":"", 
+                   };
+                   }}
+                 > 
+
+                    <BsCalendarDateFill/>
+                   Attendance
+               </NavLink>
+               <NavLink to="/dashboard/events" className="px-8 flex text-center items-center gap-1 text-sm flex-col"
+                 style={({ isActive,}) => {
+                   return {
+                   fontWeight: isActive ? "bold" : "",
+                   color: isActive? "blue":"", 
+                   };
+                   }}
+               > 
+              <MdEventAvailable />
+                   Events
+               </NavLink>              
+                 
+               </Box>
               </div>
             </div>
           
