@@ -29,16 +29,18 @@ const Login = ({onLogin}) => {
                 placeholder="Enter your Email"
                   required 
                   onChange={(e)=>setusername(e.target.value)} 
-                  className="px-4 placeholder-blue-300 py-[13px] rounded-lg border-[1.8px] border-blue-400" 
+                  className="px-4 placeholder-blue-300 focus:outline-none py-[13px] rounded-lg border-[1.8px] border-blue-400" 
                   
                />
               <label>Password:</label>
               <input 
               type="password"
                id='password'
+               placeholder="Enter your Password"
+
                value={password}
                onChange={(e)=>setPassword(e.target.value)} 
-                className="px-4 focus:border-blue-500 placeholder-gray-600 py-[13px] rounded-lg border-[1.8px] border-blue-400" />
+                className="px-4 focus:border-blue-500  focus:outline-none placeholder-blue-300 py-[13px] rounded-lg border-[1.8px] border-blue-400" />
               <div className="flex justify-between mt-2">
                <div className="flex items-center gap-1">
                 <input type="checkbox" className=""/>

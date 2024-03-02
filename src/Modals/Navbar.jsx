@@ -38,7 +38,7 @@ const Navbar = ({title}) => {
         Edit Profile
         </a>
         </Text>
-        <Text className="px-4 hover:text-[#ffffffe7]">
+        <Text className="px-4 hover:text-[#ffffffe7] md:hidden">
 
         <a href="" onClick={handleClearLocalStorage}>
         Sign out
