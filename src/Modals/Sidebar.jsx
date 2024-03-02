@@ -1,6 +1,8 @@
 import gccclogo from "../assets/Images/gccc_logo2.png"
 import { NavLink, useNavigate } from 'react-router-dom'
 import { FaUserCheck } from "react-icons/fa";
+import { BsCalendarDateFill } from "react-icons/bs";
+import { MdEventAvailable } from "react-icons/md";
 import SignUp from "../assets/Images/sign_out.png"
 import { toast } from "react-toastify";
 
@@ -43,7 +45,7 @@ const Sidebar = () => {
             }}
           > 
        
-          <FaUserCheck/>
+       <BsCalendarDateFill/>
             Attendance
         </NavLink>
         <NavLink to="/dashboard/events" className="px-8 flex text-center items-center gap-1 text-sm"
@@ -54,7 +56,7 @@ const Sidebar = () => {
             };
             }}
         > 
-          <FaUserCheck/>
+       <MdEventAvailable />
             Events
         </NavLink>
       </div>

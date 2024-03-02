@@ -38,7 +38,7 @@ const Attendance = () => {
       setUserTimes(prevTimes => [...prevTimes, currentTime]);
       const currentDay = dayjs().format('dddd');
       const currentTimeClicked = dayjs().format("HH:mm")
-      if ((currentDay === "Tuesday" && currentTimeClicked >= "07:00" && currentTimeClicked <='21:00') ||
+      if ((currentDay === "Saturday" && currentTimeClicked >= "07:00" && currentTimeClicked <='21:00') ||
       (currentDay === "Friday" && currentTimeClicked >= "17:00" && currentTimeClicked <= "23:52") ||
       (currentDay === "Tuesday" && currentTimeClicked >="17:00" && currentTimeClicked <= "00:00")
       ){
@@ -51,7 +51,7 @@ const Attendance = () => {
       const currentDay =dayjs().format('dddd');
       const currentTime = dayjs().format("HH:mm")
 
-      return ((currentDay === "Tuesday" && currentTime >= "07:00" && currentTime <='21:00') ||
+      return ((currentDay === "Saturday" && currentTime >= "07:00" && currentTime <='21:00') ||
           (currentDay === "Friday" && currentTime >= "17:00" && currentTime <= "23:52") ||
           (currentDay === "Tuesday" && currentTime >="17:00" && currentTime <= "00:00")
           ) &&
@@ -64,7 +64,7 @@ const Attendance = () => {
       const currentDay = dayjs().format('dddd');
       const currentTime = dayjs().format('HH:mm.');
       if (showAttendanceButton() && 
-      ((currentDay === "Tuesday" && currentTime >= "07:00" && currentTime <='21:00') ||
+      ((currentDay === "Saturday" && currentTime >= "07:00" && currentTime <='21:00') ||
       (currentDay === "Friday" && currentTime >= "17:00" && currentTime <= "23:52") ||
       (currentDay === "Tuesday" && currentTime >="17:00" && currentTime <= "00:00"))
        ) {
@@ -88,7 +88,7 @@ const Attendance = () => {
     return (
      <div className="w-full px-2 mt-[50px] h-[100vh] ">
    { showAttendanceButton() && <div className="w-[99%] md:w-full h-[80px] justify-between mb-10 flex items-center px-4 bg-blue-500 text-white rounded-lg">
-      <h3 className='w-[245px] md:w-full flex  text-center'>Mark Attendance for {currentDay} Service {currentTime} </h3>
+      <h3 className='w-[245px] md:w-full flex  md:text-center text-[15px]'>Mark Attendance for {currentDay} Service {currentTime} </h3>
       <button onClick={handleButtonClick} className="border-2 px-5 py-2 rounded-lg">Mark</button>
     </div>
    }
