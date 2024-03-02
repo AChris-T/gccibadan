@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { createContext,useState } from "react";
+/* import { createContext,useState } from "react";
 
 const AuthContext = createContext({});
 
@@ -14,4 +14,4 @@ export const AuthProvider =({children}) =>{
 
 }
 
-export default AuthContext;
+export default AuthContext; */
