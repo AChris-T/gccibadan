@@ -34,7 +34,7 @@ const Login = ({ onLogin }) => {
                 <input
                   type="text"
                   value={username}
-                  placeholder="Enter your Username"
+                  placeholder="Email/Phone Number"
                   required
                   onChange={(e) => setusername(e.target.value)}
                   className="px-4 placeholder-blue-300 focus:outline-none py-[13px] rounded-lg border-[1.8px] border-blue-400"
@@ -43,7 +43,7 @@ const Login = ({ onLogin }) => {
                 <input
                   type="password"
                   id="password"
-                  placeholder="Enter your Password"
+                  placeholder="Phone number"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   className="px-4 focus:border-blue-500  focus:outline-none placeholder-blue-300 py-[13px] rounded-lg border-[1.8px] border-blue-400"
