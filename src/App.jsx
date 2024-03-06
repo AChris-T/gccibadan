@@ -18,6 +18,8 @@ function App() {
   const [loggedInUser, setLoggedInUser] = useState(null);
   const getDataUrl = import.meta.env.VITE_APP_GET_DATA;
 
+  console.log(getDataUrl)
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -27,12 +29,12 @@ function App() {
       navigate("/dashboard/attendance");
     }
   }, []);
-
   const handleLogin = async (username, password) => {
   
     try {
       const response = await fetch(getDataUrl);
       const users = await response.json();
+      
 
       const user = users.find(
         (user) =>

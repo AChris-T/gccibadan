@@ -8,10 +8,12 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { toast } from "react-toastify";
+import UserAbsent from "../UserAbsent/UserAbsent";
 
 const Attendance = () => {
   const postDataUrl = import.meta.env.VITE_APP_POST_DATA;
   const user = JSON.parse(localStorage.getItem("GCCC_ATTENDANCE"));
+  
 
   const [buttonClicked, setButtonClicked] = useState(false); // Track if the button has been clicked
   const [userTimes, setUserTimes] = useState([]);
@@ -28,6 +30,7 @@ const Attendance = () => {
   // Function to handle button click
   const handleButtonClick = async () => {
     setLoading(true);
+    localStorage.setItem('buttonClicked', 'true');
     const currentTime = {
       day: dayjs().format("dddd"),
       time: dayjs().format("h:mm A"),
@@ -41,12 +44,12 @@ const Attendance = () => {
       (currentDay === "Sunday" &&
         currentTimeClicked >= "03:00" &&
         currentTimeClicked <= "25:00") ||
-      (currentDay === "Friday" &&
-        currentTimeClicked >= "17:00" &&
-        currentTimeClicked <= "23:52") ||
-      (currentDay === "Tuesday" &&
-        currentTimeClicked >= "17:00" &&
-        currentTimeClicked <= "00:00")
+      (currentDay === "Wednesday" &&
+        currentTimeClicked >= "12:33" &&
+        currentTimeClicked <= "24:35") ||
+      (currentDay === "Wednesday" &&
+        currentTimeClicked >= "06:24" &&
+        currentTimeClicked <= "06:30")
     ) {
       try {
         // const ress = await fetch(postDataUrl);
@@ -86,12 +89,12 @@ const Attendance = () => {
       ((currentDay === "Sunday" &&
         currentTime >= "03:00" &&
         currentTime <= "25:00") ||
-        (currentDay === "Friday" &&
-          currentTime >= "17:00" &&
-          currentTime <= "23:52") ||
-        (currentDay === "Tuesday" &&
-          currentTime >= "17:00" &&
-          currentTime <= "00:00")) &&
+        (currentDay === "Wednesday" &&
+          currentTime >= "12:33" &&
+          currentTime <= "24:35") ||
+        (currentDay === "Wednesday" &&
+          currentTime >= "06:24" &&
+          currentTime <= "06:30")) &&
       !buttonClicked
     );
   };
@@ -104,16 +107,45 @@ const Attendance = () => {
       ((currentDay === "Sunday" &&
         currentTime >= "03:00" &&
         currentTime <= "25:00") ||
-        (currentDay === "Friday" &&
-          currentTime >= "17:00" &&
-          currentTime <= "23:52") ||
-        (currentDay === "Tuesday" &&
-          currentTime >= "17:00" &&
-          currentTime <= "00:00"))
+        (currentDay === "Wednesday" &&
+          currentTime >= "12:33" &&
+          currentTime <= "24:35") ||
+        (currentDay === "Wednesday" &&
+          currentTime >= "06:25" &&
+          currentTime <= "06:30"))
     ) {
       setStatus("");
     }
   }, []);
+  useEffect(() => {
+    // Retrieve button clicked status from local storage
+    const isButtonClicked = localStorage.getItem('buttonClicked');
+  
+    // Initialize button clicked status based on the value retrieved from local storage **
+    if (isButtonClicked === 'true') {
+      setButtonClicked(true);
+    }
+  }, []);
+
+  //clear locaal storage based on time
+  useEffect(() => {
+    const currentTimeString = dayjs().format('HH:mm');
+    const currentDay = dayjs().format("dddd");
+
+    if ((currentDay === "Sunday" &&
+        currentTimeString > "26:00") ||
+        (currentDay === "Wednesday" &&
+          currentTimeString === "24:40") ||
+        (currentDay === "Wednesday" &&
+          currentTimeString === "06:36"))
+    {
+      // Clear local storage if the specified time range has elapsed
+      localStorage.removeItem('buttonClicked');
+      // Reset button clicked status
+      setButtonClicked(false);
+    }
+  }, [userTimes]);
+  
 
   const totalPages = Math.ceil(userTimes.length / entriesPerPage);
 
@@ -131,13 +163,13 @@ const Attendance = () => {
   return (
     <div className="w-full px-2 mt-[50px] h-[100vh] ">
       {showAttendanceButton() && (
-        <div className="w-[99%] md:w-full h-[80px] justify-between mb-10 flex items-center px-4 bg-blue-500 text-white rounded-lg">
+        <div className="w-[99%] md:w-full h-[80px] justify-between mb-10 flex items-center px-4 text-black rounded-lg">
           <h3 className="w-[245px] md:w-full flex  md:text-center text-[15px]">
             Mark Attendance for {currentDay} Service | Time: {currentTime}
           </h3>
           <button
             onClick={handleButtonClick}
-            className="border-2 px-5 py-2 rounded-lg"
+            className="border-2 border-[blue] px-5 py-2 rounded-lg bg-[blue] text-[white]"
           >
             {loading && <span>Loading...</span>}
             {!loading && <span> Mark Attendance</span>}
@@ -279,6 +311,7 @@ const Attendance = () => {
           </button>
         )}
       </div>
+          <UserAbsent/>
     </div>
   );
 };
