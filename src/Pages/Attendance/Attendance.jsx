@@ -163,13 +163,13 @@ const Attendance = () => {
   return (
     <div className="w-full px-2 mt-[50px] h-[100vh] ">
       {showAttendanceButton() && (
-        <div className="w-[99%] md:w-full h-[80px] justify-between mb-10 flex items-center px-4 text-black rounded-lg">
+        <div className="w-[99%] md:w-full h-[80px] justify-between mb-10 flex items-center md:px-4 px-2 text-black rounded-lg">
           <h3 className="w-[245px] md:w-full flex  md:text-center text-[15px]">
             Mark Attendance for {currentDay} Service | Time: {currentTime}
           </h3>
           <button
             onClick={handleButtonClick}
-            className="border-2 border-[blue] px-5 py-2 rounded-lg bg-[blue] text-[white]"
+            className="border-2 border-[blue] px-5 py-2 rounded-lg bg-[blue] md:text-[20px] font-bold text-[white]"
           >
             {loading && <span>Loading...</span>}
             {!loading && <span> Mark Attendance</span>}
