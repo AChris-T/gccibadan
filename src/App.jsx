@@ -3,13 +3,11 @@
 import "./App.css";
 import { useState, useEffect } from "react";
 import Login from "../src/Pages/AuthPage/Login";
-//import Register from "../src/Pages/AuthPage/Register"
 import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
 import Attendance from "./Pages/Attendance/Attendance";
 import Dashboard from "./Pages/ChurchDashboard/Dashboard";
 import Events from "./Pages/Events/Events";
 import Home from "./Pages/Home/Home";
-import user from "../src/Utils/Users.json";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -34,11 +32,12 @@ function App() {
     try {
       const response = await fetch(getDataUrl);
       const users = await response.json();
-      
+      const lowercaseUsername = username.toLowerCase();
+
 
       const user = users.find(
         (user) =>
-          (user.Email === username && user.Phone === password) ||
+          (user.Email.toLowerCase() === lowercaseUsername && user.Phone === password) ||
           (user.Phone === username && user.Phone === password)
       );
      

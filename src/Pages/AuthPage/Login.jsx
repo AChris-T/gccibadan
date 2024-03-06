@@ -30,11 +30,11 @@ const Login = ({ onLogin }) => {
                 Login
               </h3>
               <form className="flex flex-col  gap-3 md:px-[30px] mt-4">
-                <label>Email/PhoneNumber:</label>
+                <label>Username:</label>
                 <input
                   type="text"
                   value={username}
-                  placeholder="Enter your Email/Phone"
+                  placeholder="Enter your Username"
                   required
                   onChange={(e) => setusername(e.target.value)}
                   className="px-4 placeholder-blue-300 focus:outline-none py-[13px] rounded-lg border-[1.8px] border-blue-400"
