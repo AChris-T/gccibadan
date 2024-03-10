@@ -12,11 +12,8 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {
- 
   const [loggedInUser, setLoggedInUser] = useState(null);
   const getDataUrl = import.meta.env.VITE_APP_GET_DATA;
-
-  console.log(getDataUrl)
 
   const navigate = useNavigate();
 
@@ -28,19 +25,18 @@ function App() {
     }
   }, []);
   const handleLogin = async (username, password) => {
-  
     try {
       const response = await fetch(getDataUrl);
       const users = await response.json();
       const lowercaseUsername = username.toLowerCase();
 
-
       const user = users.find(
         (user) =>
-          (user.Email.toLowerCase() === lowercaseUsername && user.Phone === password) ||
+          (user.Email.toLowerCase() === lowercaseUsername &&
+            user.Phone === password) ||
           (user.Phone === username && user.Phone === password)
       );
-     
+
       if (user) {
         setLoggedInUser(user);
         localStorage.setItem("GCCC_ATTENDANCE", JSON.stringify(user));
@@ -53,7 +49,6 @@ function App() {
           position: "top-right",
         });
       }
-   
     } catch (error) {
       toast.error(error, {
         position: "top-right",
@@ -67,6 +62,7 @@ function App() {
     <>
       <Routes>
         <Route path="/login" element={<Login onLogin={handleLogin} />} />
+        
 
         <Route
           path="/dashboard"
