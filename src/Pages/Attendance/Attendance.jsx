@@ -44,48 +44,34 @@ const Attendance = () => {
       month: dayjs().format("MMM"),
       year: dayjs().format("YYYY"),
     };
-    // setUserTimes((prevTimes) => [...prevTimes, currentTime]);
     const currentDay = dayjs().format("dddd");
     const currentTimeClicked = dayjs().format("HH:mm");
-    if (
-      (currentDay === "Sunday" &&
-        currentTimeClicked >= "01:00" &&
-        currentTimeClicked <= "25:00") ||
-      (currentDay === "Wednesday" &&
-        currentTimeClicked >= "12:33" &&
-        currentTimeClicked <= "24:35") ||
-      (currentDay === "Wednesday" &&
-        currentTimeClicked >= "06:24" &&
-        currentTimeClicked <= "06:30")
-    ) {
-      try {
-        const formData = new FormData();
-        formData.append("Name", `${user["First Name"]} ${user["Last Name"]}`);
-        formData.append("Phone", user.Phone);
-        formData.append("Email", user.Email);
-        formData.append("Service", currentDay);
-        formData.append("Date", dayjs().format("LL"));
-        formData.append("Time", currentTimeClicked);
-        formData.append(
-          "Key",
-          `${currentTime.day}-${currentTime.date}-${currentTime.month}-${currentTime.year}`
-        );
-        const res = await fetch(postDataUrl, {
-          method: "POST",
-          body: formData,
-        });
-        const data = await res.json();
-        console.log(data);
-        toast.success("Your attendance has been recorded");
-        userAttendance();
-        setButtonClicked(true);
-        setLoading(false);
-      } catch (error) {
-        toast.error("Error, Please try again");
-        setLoading(false);
-      }
-    } else {
+    try {
+      const formData = new FormData();
+      formData.append("Name", `${user["First Name"]} ${user["Last Name"]}`);
+      formData.append("Phone", user.Phone);
+      formData.append("Email", user.Email);
+      formData.append("Service", currentDay);
+      formData.append("Date", dayjs().format("LL"));
+      formData.append("Time", currentTimeClicked);
+      formData.append(
+        "Key",
+        `${currentTime.day}-${currentTime.date}-${currentTime.month}-${currentTime.year}`
+      );
+      const res = await fetch(postDataUrl, {
+        method: "POST",
+        body: formData,
+      });
+      const data = await res.json();
+      console.log(data);
+      toast.success("Your attendance has been recorded");
+      userAttendance();
+      setButtonClicked(true);
+      setLoading(false);
+    } catch (error) {
+      console.log({ error });
       toast.error("Error, Please try again");
+      setLoading(false);
     }
   };
   const showAttendanceButton = () => {
@@ -169,6 +155,14 @@ const Attendance = () => {
 
   return (
     <div className="w-full px-2 mt-[50px] h-[100vh] ">
+      <button
+        onClick={handleButtonClick}
+        className="border-2 hover:bg-blue-600 border-[blue] px-5 py-2 rounded-lg bg-[blue] md:text-[16px] font-bold text-[white]"
+      >
+        {loading && <span>Loading...</span>}
+        {!loading && <span> Mark Attendance</span>}
+      </button>
+
       <div className="mb-3">
         <h1 className="mb-2 text-blue-700 text-2xl font-semibold">Beloved, </h1>
         <p className="text-lg">
