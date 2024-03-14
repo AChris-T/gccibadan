@@ -54,13 +54,14 @@ const UserAbsent = () => {
         const currentTime = {
           day: dayjs().format("dddd"),
           time: dayjs().format("h:mm A"),
+          date: dayjs().format("DD"),
           month: dayjs().format("MMM"),
           year: dayjs().format("YYYY"),
         };
         AttendUsers = AttendUsers.filter(
           (user) =>
             user.Key ==
-            `${currentTime.day}-${currentTime.month}-${currentTime.year}`
+            `${currentTime.day}-${currentTime.date}-${currentTime.month}-${currentTime.year}`
         );
 
         const presentUsersEmail = new Set(

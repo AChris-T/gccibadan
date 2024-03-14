@@ -67,15 +67,16 @@ const Login = ({ onLogin }) => {
                     {!loading && <span>Sign in</span>}
                   </button>
                 </div>
-                {/* <p className="flex w-full text-[14px]  justify-center  items-center">
+                <p className="flex w-full text-[14px]  justify-center  items-center">
                   Dont have an account?
-                  <NavLink
-                    to="/register"
+                  <a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLScZ48ojbVzUIjByfLBxO7aSG9GUiyNFKXwD7XiJqTFVNtjdrw/viewform?usp=sf_link"
+                    target="_blank"
                     className="text-[12px]  text-blue-500 ml-1 cursor-pointer underline"
                   >
-                    Sign up?
-                  </NavLink>
-                </p> */}
+                   Register
+                  </a>
+                </p>
               </form>
             </div>
           </div>

@@ -40,6 +40,7 @@ const Attendance = () => {
     const currentTime = {
       day: dayjs().format("dddd"),
       time: dayjs().format("h:mm A"),
+      date: dayjs().format("DD"),
       month: dayjs().format("MMM"),
       year: dayjs().format("YYYY"),
     };
@@ -67,7 +68,7 @@ const Attendance = () => {
         formData.append("Time", currentTimeClicked);
         formData.append(
           "Key",
-          `${currentTime.day}-${currentTime.month}-${currentTime.year}`
+          `${currentTime.day}-${currentTime.date}-${currentTime.month}-${currentTime.year}`
         );
         const res = await fetch(postDataUrl, {
           method: "POST",
@@ -168,6 +169,23 @@ const Attendance = () => {
 
   return (
     <div className="w-full px-2 mt-[50px] h-[100vh] ">
+      <div className="mb-3">
+        <h1 className="mb-2 text-blue-700 text-2xl font-semibold">Beloved, </h1>
+        <p className="text-lg">
+          We welcome you to our church attendance website.{" "}
+        </p>
+        <p className="text-lg">
+          At Glory Centre Community Church Ibadan, we believe in fellowship and
+          the importance of staying connected. Therefore, this platform is
+          designed with you in mind, making it easier than ever to keep track of
+          our church family.
+        </p>
+        <p className="text-lg">
+          As you record your attendance today, remember that your presence in
+          person or virtually is a valued and essential part of our church
+          community.
+        </p>
+      </div>
       {showAttendanceButton() && (
         <div className="mb-3 inline-flex flex-col text-black rounded-lg">
           <h3 className="text-[16px] mb-2">
