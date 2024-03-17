@@ -32,9 +32,9 @@ function App() {
 
       const user = users.find(
         (user) =>
-          (user.Email.toLowerCase() === lowercaseUsername &&
-            user.Phone === password) ||
-          (user.Phone === username && user.Phone === password)
+          (user.Email.toLowerCase() == lowercaseUsername &&
+            user.Phone == password) ||
+          (user.Phone == username && user.Phone == password)
       );
 
       if (user) {
@@ -62,7 +62,6 @@ function App() {
     <>
       <Routes>
         <Route path="/login" element={<Login onLogin={handleLogin} />} />
-        
 
         <Route
           path="/dashboard"

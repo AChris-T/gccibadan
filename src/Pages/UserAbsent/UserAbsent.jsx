@@ -65,12 +65,16 @@ const UserAbsent = () => {
         );
 
         const presentUsersEmail = new Set(
-          AttendUsers.map((user) => user.Email || user.Phone)
+          AttendUsers.map((user) => user.Email || `0${user.Phone}`)
         );
+        console.log({ presentUsersEmail });
 
         const absentUsers = AllUsers.filter(
-          (user) => !presentUsersEmail.has(user.Email || user.Phone)
+          (user) =>
+            !presentUsersEmail.has(user.Email) &&
+            !presentUsersEmail.has(user.Phone)
         );
+        console.log({ absentUsers });
 
         const filename = `absent-members-${new Date().toString()}`;
         downloadCSV(absentUsers, filename);
@@ -82,7 +86,6 @@ const UserAbsent = () => {
       setLoader(false);
     } catch (error) {
       setLoader(false);
-      console.error("Error fetching data:", error);
       toast.error(error);
     }
   };
