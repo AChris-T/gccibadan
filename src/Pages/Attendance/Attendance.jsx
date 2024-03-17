@@ -134,7 +134,7 @@ const Attendance = () => {
     return (
       (!isMarked &&
         current.day === "Sunday" &&
-        current.time >= "00:00" &&
+        current.time >= "7:30" &&
         current.time <= "11:00") ||
       (current.day === "Tuesday" &&
         current.time >= "17:30" &&
