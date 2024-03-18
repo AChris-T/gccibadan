@@ -16,7 +16,6 @@ import "react-loading-skeleton/dist/skeleton.css";
 const Attendance = () => {
   const postDataUrl = import.meta.env.VITE_APP_POST_DATA;
   const authUser = JSON.parse(localStorage.getItem("GCCC_ATTENDANCE"));
-
   const [userTimes, setUserTimes] = useState([]);
   const [currentPage, setCurrentPage] = useState(1); // Current page of pagination
   const [loading, setLoading] = useState(false);
@@ -131,20 +130,21 @@ const Attendance = () => {
   // };
 
   const showAttendanceButton = () => {
-    return (
-      (!isMarked &&
-        current.day === "Sunday" &&
-        current.time >= "07:30" &&
-        current.time <= "12:30") ||
-      (!isMarked &&
-        current.day === "Tuesday" &&
-        current.time >= "17:30" &&
-        current.time <= "20:30") ||
-      (!isMarked &&
-        current.day === "Friday" &&
-        current.time >= "17:30" &&
-        current.time <= "20:30")
-    );
+    return !isMarked;
+    //  (
+    //   (!isMarked &&
+    //     current.day === "Sunday" &&
+    //     current.time >= "07:30" &&
+    //     current.time <= "12:30") ||
+    //   (!isMarked &&
+    //     current.day === "Tuesday" &&
+    //     current.time >= "17:30" &&
+    //     current.time <= "20:30") ||
+    //   (!isMarked &&
+    //     current.day === "Friday" &&
+    //     current.time >= "17:30" &&
+    //     current.time <= "20:30")
+    // );
   };
 
   const userAttendance = async () => {
