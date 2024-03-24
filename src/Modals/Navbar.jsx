@@ -1,10 +1,10 @@
 
 /* eslint-disable react/prop-types */
 //import React from 'react'
-import profile from "../../src/assets/Images/bg_1.jpg"
+import profile from "../../src/assets/Images/user.png"
 import { IoMdArrowDropdown } from "react-icons/io";
 import { Popover, Text, Button } from '@mantine/core';
-import gccclogo from "../assets/Images/gccc_logo2.png"
+import gccclogo from "../assets/Images/gccc_ibadan.jpg"
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 

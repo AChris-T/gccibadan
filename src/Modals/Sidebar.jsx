@@ -1,4 +1,4 @@
-import gccclogo from "../assets/Images/gccc_logo2.png";
+import gccclogo from "../assets/Images/gccc_ibadan.jpg";
 import { NavLink, useNavigate } from "react-router-dom";
 import { FaUserCheck } from "react-icons/fa";
 import { BsCalendarDateFill } from "react-icons/bs";
