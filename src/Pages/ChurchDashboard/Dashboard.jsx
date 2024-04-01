@@ -50,7 +50,7 @@ const Dashboard = () => {
             </div>
             <div className="">
               <Outlet />
-              <div className="md:hidden justify-end sticky bg-slate-600">
+              <div className="hidden justify-end sticky bg-slate-600">
                 <Box
                   sx={{
                     position: "fixed",
