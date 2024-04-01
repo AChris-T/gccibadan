@@ -254,7 +254,7 @@ const Attendance = () => {
       </div>
 
       
-      <div className="flex justify-between items-center mb-10 px-5">
+      <div className="flex justify-between items-center mb-4 px-5">
         <div>
               <h3 className="md:text-[20px] text-[16px] text-[#0b2243] font-semibold md:font-medium leading-4">Attendance History</h3>
         </div>

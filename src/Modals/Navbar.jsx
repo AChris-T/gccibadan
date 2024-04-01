@@ -27,7 +27,7 @@ const Navbar = () => {
       <h1 className="hidden capitalize md:block text-[24px] ml-2 leading-8 font-bold text-[#1B566F]">
       Hello,{authUser["First Name"]}
         </h1>
-        <button className="md:hidden"><img src={menu} alt="menu"/></button> 
+        <button className="md:hidden ml-2"><img src={menu} alt="menu"/></button> 
       <Popover withArrow shadow="md">
       <Popover.Target>
         <Button className="flex">
