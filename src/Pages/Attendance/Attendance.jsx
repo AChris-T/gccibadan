@@ -202,7 +202,7 @@ const Attendance = () => {
   return (
     <div className="w-full px-2 mt-[30px] h-[100vh]">
     <div className="flex gap-6 flex-col mb-[70px]">
-      <div className="mx-4  flex justify-between md:flex-row flex-col-reverse gap-10 md:gap-0">
+      <div className="mx-4  flex justify-between md:flex-row flex-col-reverse gap-4 md:gap-0">
         {/* <h1 className="mb-2 text-blue-700 text-2xl font-bold">Beloved</h1>
         <p className="">We welcome you to our church attendance website.</p>
         <p className="">
@@ -228,7 +228,7 @@ const Attendance = () => {
         {loadingUserAttendance ? (
             <Skeleton height={"2rem"} count={2} />
           ) : (
-        <div className="mx-4  flex justify-between items-center md:flex-row flex-col gap-10">
+        <div className="mx-4  flex justify-between items-center md:flex-row flex-col gap-4">
         <div className="flex items-center gap-2">
           <h3 className="font-light  text-[16px] leading-8">You can mark your attendance by clicking on the button <span className="md:hidden">below</span></h3>
           <img src={arrow} alt="arrow" width={'24px'} height={'24px'} className="hidden md:flex"/>
@@ -256,7 +256,7 @@ const Attendance = () => {
       
       <div className="flex justify-between items-center mb-10 px-5">
         <div>
-              <h3 className="md:text-[20px] text-[12px] text-[#0b2243] font-semibold md:font-medium leading-4">Attendance History</h3>
+              <h3 className="md:text-[20px] text-[16px] text-[#0b2243] font-semibold md:font-medium leading-4">Attendance History</h3>
         </div>
         <div>
           <p className="font-semibold text-[9px] cursor-pointer md:text-[14px] leading-6 text-[#1D4ED8]">View More</p>
