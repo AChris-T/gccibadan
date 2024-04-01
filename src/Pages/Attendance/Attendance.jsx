@@ -1,4 +1,5 @@
 import dayjs from "dayjs";
+import customParseFormat from 'dayjs/plugin/customParseFormat';
 import { useEffect, useState } from "react";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -6,9 +7,12 @@ import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
+//import Paper from "@mui/material/Paper";
 import { toast } from "react-toastify";
 import UserAbsent from "../UserAbsent/UserAbsent";
+import star from "../../assets/Images/star.png"
+import arrow from "../../assets/Images/arrow.png"
+import check from "../../assets/Images/check2.png"
 import moment from "moment";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
@@ -24,6 +28,8 @@ const Attendance = () => {
 
   const entriesPerPage = 4; // Number of entries per page
   const maxPaginationButtons = 3;
+  
+  dayjs.extend(customParseFormat);
 
   const current = {
     time: dayjs().format("HH:mm A"),
@@ -32,6 +38,9 @@ const Attendance = () => {
     month: dayjs().format("MMM"),
     year: dayjs().format("YYYY"),
   };
+  const formattedDateTime = dayjs().format('dddd [,] MMMM DD YYYY');
+
+
 
   const uniqueKey = `${current.day}-${current.date}-${current.month}-${current.year}`;
 
@@ -189,10 +198,12 @@ const Attendance = () => {
     setCurrentPage(page);
   };
 
+  
   return (
-    <div className="w-full px-2 mt-[50px] h-[100vh]">
-      <div className="mb-3">
-        <h1 className="mb-2 text-blue-700 text-2xl font-bold">Beloved</h1>
+    <div className="w-full px-2 mt-[30px] h-[100vh]">
+    <div className="flex gap-6 flex-col mb-[70px]">
+      <div className="mx-4  flex justify-between md:flex-row flex-col-reverse gap-10 md:gap-0">
+        {/* <h1 className="mb-2 text-blue-700 text-2xl font-bold">Beloved</h1>
         <p className="">We welcome you to our church attendance website.</p>
         <p className="">
           At Glory Centre Community Church Ibadan, we believe in fellowship and
@@ -204,79 +215,93 @@ const Attendance = () => {
           As you record your attendance today, remember that your presence in
           person or virtually is a valued and essential part of our church
           community.
-        </p>
-      </div>
-      <hr />
+        </p> */}
+        <div>
+          <h3 className="font-semibold text-[24px] leading-8">Welcome to Church</h3>
+        </div>
+        <div className="flex items-center gap-2">
+          <p className="text-[14px] text-[#6e7173] leading-6 font-normal">{formattedDateTime } | </p>
+          <img src={star} alt="djs" width={'20px'} height={'20px'}/>
 
-      <div className="my-7">
-        <>
-          <h3 className="text-[16px] mb-2">
-            Mark Attendance for <strong>{current.day}</strong> Service | Time:{" "}
-            {""}
-            <strong>{current.time}</strong>
-          </h3>
-
-          {loadingUserAttendance ? (
+        </div>
+        </div>
+        {loadingUserAttendance ? (
             <Skeleton height={"2rem"} count={2} />
           ) : (
-            <div className="flex justify-between flex-wrap">
-              {showAttendanceButton() && (
-                <button
+        <div className="mx-4  flex justify-between items-center md:flex-row flex-col gap-10">
+        <div className="flex items-center gap-2">
+          <h3 className="font-light  text-[16px] leading-8">You can mark your attendance by clicking on the button <span className="md:hidden">below</span></h3>
+          <img src={arrow} alt="arrow" width={'24px'} height={'24px'} className="hidden md:flex"/>
+        </div>
+        <div className="flex items-center gap-2">
+        <div className="flex justify-between gap-3 flex-wrap">
+             {showAttendanceButton() && (
+               <button
                   onClick={handleButtonClick}
-                  className="border-2 my-2 hover:bg-blue-600 border-[#6565ef] px-5 py-2 rounded-lg bg-[blue] md:text-[16px] font-bold text-[white]"
-                >
+                  className=" px-2 py-4  rounded-[2px] bg-[#0094D3] leading-6 text-[16px] font-medium text-[white]"
+                  >
                   {loading && <span>Loading...</span>}
-                  {!loading && <span> Mark Attendance</span>}
-                </button>
-              )}
-              <UserAbsent />
+                  {!loading && <div className="flex gap-2 items-center"><img src={check} alt="gccclogo" width={"24px"} height={"24px"} />
+                   Mark Attendance</div>}
+                  </button>
+               )}
+               <UserAbsent />
             </div>
-          )}
-        </>
+
+        </div>
+      </div>
+      )}
       </div>
 
-      <hr />
-
+      
+      <div className="flex justify-between items-center mb-10 px-5">
+        <div>
+              <h3 className="md:text-[20px] text-[12px] text-[#0b2243] font-semibold md:font-medium leading-4">Attendance History</h3>
+        </div>
+        <div>
+          <p className="font-semibold text-[9px] cursor-pointer md:text-[14px] leading-6 text-[#1D4ED8]">View More</p>
+        </div>
+      </div>
       {loadingUserAttendance ? (
         <Skeleton height={"2rem"} count={10} />
       ) : (
-        <TableContainer component={Paper} className="w-[98%] md:w-full">
-          <Table sx={{ minWidth: 200 }} aria-label="a dense table">
-            <TableHead className="h-[50px]">
+        <TableContainer  className="w-[98%] md:w-full ">
+          <Table sx={{ minWidth: 100 }} aria-label="a dense table">
+            <TableHead className="h-[56px] bg-[#F2F9FF]">
               <TableRow>
                 <TableCell
-                  align="center"
-                  style={{ fontSize: "15px", fontWeight: "bold" }}
+                  align="left"
+                  style={{ fontSize: "14px", fontWeight: "bold",color:"#6D7A98" }}
                 >
                   Index
                 </TableCell>
                 <TableCell
-                  align="center"
-                  style={{ fontSize: "15px", fontWeight: "bold" }}
+                  align="left"
+                  style={{ fontSize: "14px", fontWeight: "bold", color:"#6D7A98" }}
                 >
                   Name
                 </TableCell>
                 <TableCell
-                  align="center"
-                  style={{ fontSize: "15px", fontWeight: "bold" }}
+                  align="left"
+                  style={{ fontSize: "14px", fontWeight: "bold",color:"#6D7A98" }}
                 >
                   Phone
                 </TableCell>
                 <TableCell
-                  align="center"
-                  style={{ fontSize: "15px", fontWeight: "bold" }}
+                  align="left"
+                  style={{ fontSize: "14px", fontWeight: "bold",color:"#6D7A98" }}
                 >
                   Email
                 </TableCell>
                 <TableCell
-                  align="center"
-                  style={{ fontSize: "15px", fontWeight: "bold" }}
+                  align="left"
+                  style={{ fontSize: "14px", fontWeight: "bold",color:"#6D7A98" }}
                 >
                   Date
                 </TableCell>
                 <TableCell
-                  align="center"
-                  style={{ fontSize: "15px", fontWeight: "bold" }}
+                  align="left"
+                  style={{ fontSize: "14px", fontWeight: "bold",color:"#6D7A98" }}
                 >
                   Key
                 </TableCell>
@@ -292,23 +317,39 @@ const Attendance = () => {
                   <TableRow
                     key={index}
                     sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+                    
                   >
-                    <TableCell align="center" component="th" scope="row">
+                    <TableCell align="left" component="th" scope="row"
+                      style={{ fontSize: "14px", fontWeight: "400",color:"#0B2253" }}
+
+                    >
                       {index + 1}
                     </TableCell>
-                    <TableCell align="center" component="th" scope="row">
+                    <TableCell align="left" component="th" scope="row"
+                    style={{ fontSize: "14px", fontWeight: "400",color:"#0B2253" }}
+
+                    >
                       {time.Name}
                     </TableCell>
-                    <TableCell align="center" component="th" scope="row">
+                    <TableCell align="left" component="th" scope="row"
+                      style={{ fontSize: "14px", fontWeight: "400",color:"#0B2253" }}
+
+                    >
                       {time.Phone}
                     </TableCell>
-                    <TableCell align="center" component="th" scope="row">
+                    <TableCell align="left" component="th" scope="row"
+                    style={{ fontSize: "14px", fontWeight: "400",color:"#0B2253" }}
+                    >
                       {time.Email}
                     </TableCell>
-                    <TableCell align="center" component="th" scope="row">
+                    <TableCell align="left" component="th" scope="row"
+                      style={{ fontSize: "14px", fontWeight: "400",color:"#0B2253" }}
+                    >
                       {formatTime(time.Date)}
                     </TableCell>
-                    <TableCell align="center" component="th" scope="row">
+                    <TableCell align="left" component="th" scope="row"
+                      style={{ fontSize: "14px", fontWeight: "400",color:"#0B2253" }}
+                    >
                       {time.Key}
                     </TableCell>
                   </TableRow>

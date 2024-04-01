@@ -1,9 +1,12 @@
-import gccclogo from "../assets/Images/gccc_ibadan.jpg";
+import gccclogo from "../assets/Images/logo.png";
+import check from "../assets/Images/check.png";
+import settings from "../assets/Images/settings.png";
+import logout from "../assets/Images/logout.png";
 import { NavLink, useNavigate } from "react-router-dom";
-import { FaUserCheck } from "react-icons/fa";
-import { BsCalendarDateFill } from "react-icons/bs";
-import { MdEventAvailable } from "react-icons/md";
-import SignUp from "../assets/Images/sign_out.png";
+//import { FaUserCheck } from "react-icons/fa";
+//import { BsCalendarDateFill } from "react-icons/bs";
+//import { MdEventAvailable } from "react-icons/md";
+//import SignUp from "../assets/Images/sign_out.png";
 import { toast } from "react-toastify";
 
 const Sidebar = () => {
@@ -18,15 +21,18 @@ const Sidebar = () => {
     });
   };
   return (
-    <div className="flex flex-col  h-full  ">
+    <div className="flex flex-col h-[100vh] bg-[#F9FDFFB2]">
       <div>
-        <div className="flex justify-between h-20 items-center px-4">
-          <img src={gccclogo} alt="gccclogo" />
+        <div className="flex items-center justify-between  px-2 py-6">
+          <img src={gccclogo} alt="gccclogo" width={"230px"} height={"65px"} />
         </div>
-        <div className=" mt-14 gap-7 flex flex-col">
-          <NavLink
+        </div>
+
+        <div className="flex flex-col justify-between h-full mt-9  gap-7 px-6">
+        <div>
+          {/* <NavLink
             to="/dashboard/home"
-            className=" px-8 flex text-center items-center gap-1 text-sm"
+            className="flex items-center gap-1 px-8 text-sm text-center "
             style={({ isActive }) => {
               return {
                 fontWeight: isActive ? "bold" : "",
@@ -36,23 +42,25 @@ const Sidebar = () => {
           >
             <FaUserCheck />
             Home
-          </NavLink>
+          </NavLink> */}
+        
           <NavLink
             to="/dashboard/attendance"
-            className=" px-8 flex text-center items-center gap-1 text-sm"
+            className="flex items-center text-[#0094D3] justify-center rounded gap-[8px] h-[48px] px-2 text-[14px] font-medium text-center bg-[#D1F1FF] "
             style={({ isActive }) => {
               return {
-                fontWeight: isActive ? "bold" : "",
-                color: isActive ? "blue" : "",
+                fontWeight: isActive ? "#0094D3" : "",
+                color: isActive ? "#0094D3" : "",
               };
             }}
           >
-            <BsCalendarDateFill />
-            Attendance
+          <img src={check} alt="gccclogo" width={"24px"} height={"24px"} />
+            Attendance Log
           </NavLink>
-          <NavLink
+          </div>
+          {/* <NavLink
             to="/dashboard/events"
-            className="px-8 flex text-center items-center gap-1 text-sm"
+            className="flex items-center gap-1 px-8 text-sm text-center"
             style={({ isActive }) => {
               return {
                 fontWeight: isActive ? "bold" : "",
@@ -62,18 +70,32 @@ const Sidebar = () => {
           >
             <MdEventAvailable />
             Events
+          </NavLink> */}
+          <div className="flex flex-col gap-3 justify-start mb-3">
+          <NavLink
+            to="/dashboard/attendance"
+            className="flex items-center text-[#0094D3]  rounded gap-[18px] h-[48px] px-2 text-base leading-6 font-normal text-center hover:bg-[#D1F1FF] "
+          >
+          <img src={settings} alt="gccclogo" width={"20px"} height={"20px"} />
+            Settings
           </NavLink>
-          <div className="px-8 flex text-center items-center gap-1 text-sm">
+          <NavLink
+            to="/login"
+            onClick={handleClearLocalStorage}
+            className="flex items-center text-[#0094D3]  rounded gap-[18px] h-[48px] px-2 leading-6 text-base font-normal text-center hover:bg-[#D1F1FF] "
+          >
+          <img src={logout} alt="gccclogo" width={"20px"} height={"20px"} />
+            logout        
+           </NavLink>
            
-            <button
+          {/*   <button
               onClick={handleClearLocalStorage}
-              className="bg-red-500 flex gap-2 text-white px-3 py-2 rounded-lg"
+              className="flex items-center justify-center rounded gap-[px2rem(8)] h-[px2rem(48)] px-2 text-sm font-medium text-center  "
             >
              <img src={SignUp} alt="signup" className="w-5" />  Sign Out
-            </button>
+            </button> */}
           </div>
         </div>
-      </div>
     </div>
   );
 };

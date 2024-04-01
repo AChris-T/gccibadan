@@ -95,7 +95,7 @@ const UserAbsent = () => {
       {showDownloadButton ? (
         <button
           onClick={handleShowAbscentList}
-          className="border-2 my-2 hover:bg-blue-600 border-[#6565ef] px-5 py-2 rounded-lg bg-[blue] md:text-[16px] font-bold text-[white]"
+          className="px-5 py-4  rounded-[2px] bg-[#0094D3] leading-6 text-[16px] font-medium text-[white]"
         >
           {loader && <span>Loading...</span>}
           {!loader && <span> Download Absent Members List</span>}
