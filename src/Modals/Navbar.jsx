@@ -5,12 +5,29 @@ import profile from "../../src/assets/Images/user.png"
 import menu from "../../src/assets/Images/menu.png"
 
 import { Popover, Text, Button } from '@mantine/core';
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+//import Sidebar from "./Sidebar";
+import gccclogo from "../assets/Images/logo.png";
+import check from "../assets/Images/check.png";
+import settings from "../assets/Images/settings.png";
+import logout from "../assets/Images/logout.png";
+import { Paper } from "@mui/material";
+import Drawer from "@mui/material/Drawer";
+import { useState } from "react";
+
+
+
 
 const Navbar = () => {
   const navigate = useNavigate();
   const authUser = JSON.parse(localStorage.getItem("GCCC_ATTENDANCE"));
+
+  const [open, setOpen] =useState(false)
+
+  const toggelDrawer = (newOpen) =>()=>{
+    setOpen(newOpen);
+  }
 
 
 
@@ -27,33 +44,70 @@ const Navbar = () => {
       <h1 className="hidden capitalize md:block text-[24px] ml-2 leading-8 font-bold text-[#1B566F]">
       Hello,{authUser["First Name"]}
         </h1>
-        <button className="md:hidden ml-2"><img src={menu} alt="menu"/></button> 
-      <Popover withArrow shadow="md">
-      <Popover.Target>
+     
+        <button onClick={toggelDrawer(true)} className="md:hidden ml-2"><img src={menu} alt="menu"/></button> 
+    
+      
         <Button className="flex">
         <div className="flex gap-4 items-center">
         <div className="flex  flex-col justify-start items-start">
           <p2 className=" text-[#120F14] leading-5 text-[8px] md:text-[14px] font-medium">{authUser["Last Name"]} {authUser["First Name"]}</p2>
           <p2 className=' text-[#42394A] mt-[-5px] md:mt-[0px] leading-4 text-[7.59px] md:text-[12px] font-normal'>Music team</p2>
         </div>
-        <img src={profile} alt="Userpicture" className="w-[18px] h-[18px] object-cover rounded-full"/>        </div>
-        <Popover.Dropdown className="flex justify-end flex-col absolute gap-1 py-3  w-[40px] px-2 bg-blue-700 text-[white] rounded-sm border-blue-700 border-[1px]">
-        <Text size="xs" className="px-4 hover:text-[#ffffffe7]">
-        <a href="">
-        Edit Profile
-        </a>
-        </Text>
-        <Text className="px-4 hover:text-[#ffffffe7] md:hidden">
-
-        <a href="" onClick={handleClearLocalStorage}>
-        Sign out
-        </a>
-        </Text>
-      </Popover.Dropdown>
+        </div>
       </Button>
-      </Popover.Target>
-   
-    </Popover>
+      <Drawer open={open} sx={{paddingTop:"200px"}} onClose={toggelDrawer(false)} className="flex   bg-white  shadow-black justify-end   flex-col absolute   mt-9   w-[40px]   text-[white] rounded-sm">
+        
+        <div className="" >
+        <div className="flex items-center justify-between  px-2 py-6">
+          <img src={gccclogo} alt="gccclogo" width={"230px"} height={"65px"} />
+        </div>
+        </div>
+
+        <div className="flex flex-col justify-between h-full mt-9  gap-7 px-6">
+        <div className="flex gap-3 flex-col">
+     
+        
+          <NavLink
+            to="/dashboard/attendance"
+            className="flex items-center text-[#0094D3]  rounded gap-[8px] h-[48px] px-2 text-[14px] font-medium text-center bg-[#D1F1FF] "
+            style={({ isActive }) => {
+              return {
+                fontWeight: isActive ? "#0094D3" : "",
+                color: isActive ? "#0094D3" : "",
+              };
+            }}
+          >
+          <img src={check} alt="gccclogo" width={"24px"} height={"24px"} />
+            Attendance Log
+          </NavLink>
+          <NavLink
+            to="/dashboard/attendance"
+            className="flex items-center text-[#0094D3]  rounded gap-[8px] h-[48px] px-2 text-base leading-6 font-normal text-center hover:bg-[#D1F1FF] "
+          >
+          <img src={settings} alt="gccclogo" width={"20px"} height={"20px"} />
+            Settings
+          </NavLink>
+          </div>
+          <div className="flex flex-col gap-3 justify-start mb-3">      
+          <NavLink
+            to="/login"
+            onClick={handleClearLocalStorage}
+            className="flex items-center text-[#0094D3]  rounded gap-[18px] h-[48px] px-2 leading-6 text-base font-normal text-center hover:bg-[#D1F1FF] "
+          >
+          <img src={logout} alt="gccclogo" width={"20px"} height={"20px"} />
+            logout        
+           </NavLink>
+           
+          {/*   <button
+              onClick={handleClearLocalStorage}
+              className="flex items-center justify-center rounded gap-[px2rem(8)] h-[px2rem(48)] px-2 text-sm font-medium text-center  "
+            >
+             <img src={SignUp} alt="signup" className="w-5" />  Sign Out
+            </button> */}
+          </div>
+        </div>
+      </Drawer>
 
     </div>
   )
