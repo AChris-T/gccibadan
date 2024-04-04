@@ -54,9 +54,10 @@ const Navbar = () => {
           <p2 className=" text-[#120F14] leading-5 text-[8px] md:text-[14px] font-medium">{authUser["Last Name"]} {authUser["First Name"]}</p2>
           <p2 className=' text-[#42394A] mt-[-5px] md:mt-[0px] leading-4 text-[7.59px] md:text-[12px] font-normal'>Music team</p2>
         </div>
+        <img src={profile} alt={profile} width={'25px'} height={'25px'}/>
         </div>
       </Button>
-      <Drawer open={open} sx={{paddingTop:"200px"}} onClose={toggelDrawer(false)} className="flex   bg-white  shadow-black justify-end   flex-col absolute   mt-9   w-[40px]   text-[white] rounded-sm">
+      <Drawer open={open} sx={{paddingyTop:"200px"}} onClose={toggelDrawer(false)} className="flex   bg-white  shadow-black justify-end   flex-col absolute   mt-9   w-[40px]   text-[white] rounded-sm">
         
         <div className="" >
         <div className="flex items-center justify-between  px-2 py-6">
