@@ -28,7 +28,7 @@ const Sidebar = () => {
         </div>
         </div>
 
-        <div className="flex flex-col justify-between h-full mt-9  gap-7 px-6">
+        <div className="flex flex-col justify-between h-full mt-12  gap-7 px-6">
         <div>
           {/* <NavLink
             to="/dashboard/home"

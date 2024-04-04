@@ -230,7 +230,7 @@ const Attendance = () => {
           ) : (
         <div className="mx-4  flex justify-between items-center md:flex-row flex-col gap-4">
         <div className="flex items-center gap-2">
-          <h3 className="font-light  text-[16px] leading-8">You can mark your attendance by clicking on the button <span className="md:hidden">below</span></h3>
+          <h3 className="font-light  text-[16px] leading-8">You can register your presence by clicking on the button below <span className="md:hidden">below</span></h3>
           <img src={arrow} alt="arrow" width={'24px'} height={'24px'} className="hidden md:flex"/>
         </div>
         <div className="flex items-center gap-2">
