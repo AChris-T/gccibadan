@@ -202,8 +202,8 @@ const Attendance = () => {
   return (
     <div className="w-full px-2 mt-[30px] h-[100vh]">
     <div className="flex gap-6 flex-col mb-[70px]">
-      <div className="mx-4  flex justify-between md:flex-row flex-col-reverse gap-4 md:gap-0">
-        {/* <h1 className="mb-2 text-blue-700 text-2xl font-bold">Beloved</h1>
+      <div className="flex flex-col-reverse justify-between gap-4 mx-4 md:flex-row md:gap-0">
+        {/* <h1 className="mb-2 text-2xl font-bold text-blue-700">Beloved</h1>
         <p className="">We welcome you to our church attendance website.</p>
         <p className="">
           At Glory Centre Community Church Ibadan, we believe in fellowship and
@@ -228,20 +228,20 @@ const Attendance = () => {
         {loadingUserAttendance ? (
             <Skeleton height={"2rem"} count={2} />
           ) : (
-        <div className="mx-4  flex justify-between items-center md:flex-row flex-col gap-4">
+        <div className="flex flex-col items-center justify-between gap-4 mx-4 md:flex-row">
         <div className="flex items-center gap-2">
-          <h3 className="font-light  text-[16px] leading-8">You can register your presence by clicking on the button below <span className="md:hidden">below</span></h3>
+          <h3 className="font-light  text-[16px] leading-8">You can register your presence by clicking on the button <span className="md:hidden">below</span></h3>
           <img src={arrow} alt="arrow" width={'24px'} height={'24px'} className="hidden md:flex"/>
         </div>
         <div className="flex items-center gap-2">
-        <div className="flex justify-between gap-3 flex-wrap">
+        <div className="flex flex-wrap justify-between gap-3">
              {showAttendanceButton() && (
                <button
                   onClick={handleButtonClick}
                   className=" px-2 py-4  rounded-[2px] bg-[#0094D3] leading-6 text-[16px] font-medium text-[white]"
                   >
                   {loading && <span>Loading...</span>}
-                  {!loading && <div className="flex gap-2 items-center"><img src={check} alt="gccclogo" width={"24px"} height={"24px"} />
+                  {!loading && <div className="flex items-center gap-2"><img src={check} alt="gccclogo" width={"24px"} height={"24px"} />
                    Mark Attendance</div>}
                   </button>
                )}
@@ -254,7 +254,7 @@ const Attendance = () => {
       </div>
 
       
-      <div className="flex justify-between items-center mb-4 px-5">
+      <div className="flex items-center justify-between px-5 mb-4">
         <div>
               <h3 className="md:text-[20px] text-[16px] text-[#0b2243] font-semibold md:font-medium leading-4">Attendance History</h3>
         </div>
@@ -359,10 +359,10 @@ const Attendance = () => {
         </TableContainer>
       )}
 
-      <div className=" flex flex-wrap justify-end px-2 gap-4 mt-4">
+      <div className="flex flex-wrap justify-end gap-4 px-2 mt-4 ">
         {startPage !== 1 && (
           <button
-            className="bg-blue-400 py-1 text-white rounded-lg px-3"
+            className="px-3 py-1 text-white bg-blue-400 rounded-lg"
             onClick={() => handlePageChange(1)}
           >
             Start
@@ -370,7 +370,7 @@ const Attendance = () => {
         )}
         {startPage > 1 && (
           <button
-            className="bg-blue-400 py-1 text-white rounded-lg px-3"
+            className="px-3 py-1 text-white bg-blue-400 rounded-lg"
             onClick={() => handlePageChange(startPage - 1)}
           >
             Previous
@@ -381,7 +381,7 @@ const Attendance = () => {
           (_, i) => i + startPage
         ).map((page) => (
           <button
-            className="bg-blue-400 py-1 text-white rounded-lg w-8"
+            className="w-8 py-1 text-white bg-blue-400 rounded-lg"
             key={page}
             onClick={() => handlePageChange(page)}
           >
@@ -390,7 +390,7 @@ const Attendance = () => {
         ))}
         {endPage < totalPages && (
           <button
-            className="bg-blue-400 py-1 text-white rounded-lg px-3"
+            className="px-3 py-1 text-white bg-blue-400 rounded-lg"
             onClick={() => handlePageChange(endPage + 1)}
           >
             Next
@@ -398,7 +398,7 @@ const Attendance = () => {
         )}
         {endPage !== totalPages && (
           <button
-            className="bg-blue-400 py-1 text-white rounded-lg px-3"
+            className="px-3 py-1 text-white bg-blue-400 rounded-lg"
             onClick={() => handlePageChange(totalPages)}
           >
             Last
