@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import dayjs from "dayjs";
 import customParseFormat from 'dayjs/plugin/customParseFormat';
 import { useEffect, useState } from "react";
@@ -238,11 +239,11 @@ const Attendance = () => {
              {showAttendanceButton() && (
                <button
                   onClick={handleButtonClick}
-                  className=" px-2 py-4  rounded-[2px] bg-[#0094D3] leading-6 text-[16px] font-medium text-[white]"
+                  className=" px-6 py-4  rounded-[2px] bg-[#0094D3] leading-6 text-[16px] font-medium text-[white]"
                   >
                   {loading && <span>Loading...</span>}
                   {!loading && <div className="flex items-center gap-2"><img src={check} alt="gccclogo" width={"24px"} height={"24px"} />
-                   Mark Attendance</div>}
+                   Present</div>}
                   </button>
                )}
                <UserAbsent />
@@ -255,53 +256,53 @@ const Attendance = () => {
 
       
       <div className="flex items-center justify-between px-5 mb-4">
-        <div>
-              <h3 className="md:text-[20px] text-[16px] text-[#0b2243] font-semibold md:font-medium leading-4">Attendance History</h3>
+       {/*  <div>
+              <h3 className="md:text-[px2rem(20)] text-[px2rem(16)] text-[#0b2243] font-semibold md:font-medium leading-4">Attendance History</h3>
         </div>
         <div>
-          <p className="font-semibold text-[9px] cursor-pointer md:text-[14px] leading-6 text-[#1D4ED8]">View More</p>
-        </div>
+          <p className="font-semibold text-[px2rem(9)] cursor-pointer md:text-[px2rem(14)] leading-6 text-[#1D4ED8]">View More</p>
+        </div> */}
       </div>
-      {loadingUserAttendance ? (
+     {/*  {loadingUserAttendance ? (
         <Skeleton height={"2rem"} count={10} />
       ) : (
         <TableContainer  className="w-[98%] md:w-full ">
           <Table sx={{ minWidth: 100 }} aria-label="a dense table">
-            <TableHead className="h-[56px] bg-[#F2F9FF]">
+            <TableHead className="h-[px2rem(56)] bg-[#F2F9FF]">
               <TableRow>
                 <TableCell
                   align="left"
-                  style={{ fontSize: "14px", fontWeight: "bold",color:"#6D7A98" }}
+                  style={{ fontSize: "px2rem(14)", fontWeight: "bold",color:"#6D7A98" }}
                 >
                   Index
                 </TableCell>
                 <TableCell
                   align="left"
-                  style={{ fontSize: "14px", fontWeight: "bold", color:"#6D7A98" }}
+                  style={{ fontSize: "px2rem(14)", fontWeight: "bold", color:"#6D7A98" }}
                 >
                   Name
                 </TableCell>
                 <TableCell
                   align="left"
-                  style={{ fontSize: "14px", fontWeight: "bold",color:"#6D7A98" }}
+                  style={{ fontSize: "px2rem(14)", fontWeight: "bold",color:"#6D7A98" }}
                 >
                   Phone
                 </TableCell>
                 <TableCell
                   align="left"
-                  style={{ fontSize: "14px", fontWeight: "bold",color:"#6D7A98" }}
+                  style={{ fontSize: "px2rem(14)", fontWeight: "bold",color:"#6D7A98" }}
                 >
                   Email
                 </TableCell>
                 <TableCell
                   align="left"
-                  style={{ fontSize: "14px", fontWeight: "bold",color:"#6D7A98" }}
+                  style={{ fontSize: "px2rem(14)", fontWeight: "bold",color:"#6D7A98" }}
                 >
                   Date
                 </TableCell>
                 <TableCell
                   align="left"
-                  style={{ fontSize: "14px", fontWeight: "bold",color:"#6D7A98" }}
+                  style={{ fontSize: "px2rem(14)", fontWeight: "bold",color:"#6D7A98" }}
                 >
                   Key
                 </TableCell>
@@ -320,35 +321,35 @@ const Attendance = () => {
                     
                   >
                     <TableCell align="left" component="th" scope="row"
-                      style={{ fontSize: "14px", fontWeight: "400",color:"#0B2253" }}
+                      style={{ fontSize: "px2rem(14)", fontWeight: "400",color:"#0B2253" }}
 
                     >
                       {index + 1}
                     </TableCell>
                     <TableCell align="left" component="th" scope="row"
-                    style={{ fontSize: "14px", fontWeight: "400",color:"#0B2253" }}
+                    style={{ fontSize: "px2rem(14)", fontWeight: "400",color:"#0B2253" }}
 
                     >
                       {time.Name}
                     </TableCell>
                     <TableCell align="left" component="th" scope="row"
-                      style={{ fontSize: "14px", fontWeight: "400",color:"#0B2253" }}
+                      style={{ fontSize: "px2rem(14)", fontWeight: "400",color:"#0B2253" }}
 
                     >
                       {time.Phone}
                     </TableCell>
                     <TableCell align="left" component="th" scope="row"
-                    style={{ fontSize: "14px", fontWeight: "400",color:"#0B2253" }}
+                    style={{ fontSize: "px2rem(14)", fontWeight: "400",color:"#0B2253" }}
                     >
                       {time.Email}
                     </TableCell>
                     <TableCell align="left" component="th" scope="row"
-                      style={{ fontSize: "14px", fontWeight: "400",color:"#0B2253" }}
+                      style={{ fontSize: "px2rem(14)", fontWeight: "400",color:"#0B2253" }}
                     >
                       {formatTime(time.Date)}
                     </TableCell>
                     <TableCell align="left" component="th" scope="row"
-                      style={{ fontSize: "14px", fontWeight: "400",color:"#0B2253" }}
+                      style={{ fontSize: "px2rem(14)", fontWeight: "400",color:"#0B2253" }}
                     >
                       {time.Key}
                     </TableCell>
@@ -404,7 +405,7 @@ const Attendance = () => {
             Last
           </button>
         )}
-      </div>
+      </div> */}
     </div>
   );
 };

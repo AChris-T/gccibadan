@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 
 /* eslint-disable react/prop-types */
 //import React from 'react'
@@ -52,8 +53,8 @@ const Navbar = () => {
         <div className="flex gap-4 items-center">
         <div className="flex  flex-col justify-start items-start">
           <p2 className=" text-[#120F14] leading-5 text-[8px] md:text-[14px] font-medium">{authUser["Last Name"]} {authUser["First Name"]}</p2>
-          <p2 className=' text-[#42394A] mt-[-5px] md:mt-[0px] leading-4 text-[7.59px] md:text-[12px] font-normal'>Music team</p2>
-        </div>
+{/*           <p2 className=' text-[#42394A] mt-[-px2rem(5)] md:mt-[px2rem(0)] leading-4 text-[7.px2rem(59)] md:text-[px2rem(12)] font-normal'>Music team</p2>
+ */}        </div>
         <img src={profile} alt={profile} width={'25px'} height={'25px'}/>
         </div>
       </Button>
