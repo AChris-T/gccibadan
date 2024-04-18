@@ -1,6 +1,13 @@
+import { useEffect } from "react"
 import aboutchurch from "../../../assets/Images/aboutChurch.mp4"
 import papa from "../../../assets/Images/user.png"
 const Aboutpage = () => {
+  useEffect(()=>{
+    window.scrollTo({
+      top:0,
+      behavior:"smooth"
+    })
+  })
   return (
     <div className="flex flex-col gap-16 md:mx-20 mx-2 overflow-x-hidden mt-24">
         <h3 className="flex justify-center items-center mt-10 font-semibold text-[40px] text-[#222222]">OUR STORY</h3>

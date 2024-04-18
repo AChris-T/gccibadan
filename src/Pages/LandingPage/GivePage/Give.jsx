@@ -1,6 +1,13 @@
+import { useEffect } from 'react'
 import access from '../../../assets/Images/access.png'
 import copy from '../../../assets/Images/copy.png'
 const Give = () => {
+    useEffect(()=>{
+        window.scrollTo({
+          top:0,
+          behavior:"smooth"
+        })
+      })
   return (
     <div className='overflow-x-hidden'>
     <div className="flex flex-col gap-16 md:mx-20 mx-2  mt-24">
