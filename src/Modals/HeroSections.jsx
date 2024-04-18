@@ -24,21 +24,21 @@ const HeroSections = () => {
     </div> */ 
     <Slider {...settings}>
     <div className="relative">
-      <img src={img5} alt='hero' className="h-[380px] md:h-[550px] w-[100%] md:object-cover"/>
+      <img src={img5} alt='hero' className="h-[300px] md:h-[550px] w-[100%] md:object-cover"/>
       {/* <div className="absolute inset-0 bg-gray-800 opacity-35 w-[100%] "> </div> */}
     </div>
     <div>
-    <img src={img6} alt='hero' className="h-[380px] md:h-[550px] w-[100%] md:object-cover"/>
-    <div className="absolute inset-0 bg-gray-800 opacity-35 w-[100%] md:h-[550px] h-[350px]"> </div>
+    <img src={img6} alt='hero' className="h-[300px] md:h-[550px] w-[100%] md:object-cover"/>
+    <div className="absolute inset-0 bg-gray-800 opacity-35 w-[100%] md:h-[550px] h-[300px]"> </div>
     </div>
     <div>
-    <img src={img4} alt='hero' className="h-[380px] md:h-[550px] w-[100%] md:object-cover"/>
+    <img src={img4} alt='hero' className="h-[300px] md:h-[550px] w-[100%] md:object-cover"/>
     </div>
     <div>
-    <img src={img2} alt='hero' className="h-[380px] md:h-[550px] w-[100%] md:object-cover"/>
+    <img src={img2} alt='hero' className="h-[300px] md:h-[550px] w-[100%] md:object-cover"/>
     </div>
     <div>
-    <img src={img3} alt='hero' className="h-[380px] md:h-[550px] w-[100%] md:object-cover"/>
+    <img src={img3} alt='hero' className="h-[300px] md:h-[550px] w-[100%] md:object-cover"/>
     </div>
   </Slider> 
   )
