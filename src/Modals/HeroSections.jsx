@@ -29,7 +29,7 @@ const HeroSections = () => {
     </div>
     <div>
     <img src={img6} alt='hero' className="h-[300px] md:h-[550px] w-[100%] md:object-cover"/>
-    <div className="absolute inset-0 bg-gray-800 opacity-35 w-[100%] md:h-[550px] h-[300px]"> </div>
+    <div className="absolute inset-0 bg-gray-800 opacity-35 w-[100%] md:h-[550px] h-[350px]"> </div>
     </div>
     <div>
     <img src={img4} alt='hero' className="h-[300px] md:h-[550px] w-[100%] md:object-cover"/>
