@@ -80,7 +80,7 @@ const Sidebar = () => {
             Settings
           </NavLink>
           <NavLink
-            to="/login"
+            to="/"
             onClick={handleClearLocalStorage}
             className="flex items-center text-[#0094D3]  rounded gap-[18px] h-[48px] px-2 leading-6 text-base font-normal text-center hover:bg-[#D1F1FF] "
           >

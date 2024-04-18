@@ -255,15 +255,15 @@ const Attendance = () => {
       </div>
 
       
-      <div className="flex items-center justify-between px-5 mb-4">
-       {/*  <div>
-              <h3 className="md:text-[px2rem(20)] text-[px2rem(16)] text-[#0b2243] font-semibold md:font-medium leading-4">Attendance History</h3>
+ {/*      <div className="flex items-center justify-between px-5 mb-4">
+        <div>
+              <h3 className="md:text-[20px] text-[16px] text-[#0b2243] font-semibold md:font-medium leading-4">Attendance History</h3>
         </div>
         <div>
-          <p className="font-semibold text-[px2rem(9)] cursor-pointer md:text-[px2rem(14)] leading-6 text-[#1D4ED8]">View More</p>
-        </div> */}
+          <p className="font-semibold text-[9px] cursor-pointer md:text-[14px] leading-6 text-[#1D4ED8]">View More</p>
+        </div>
       </div>
-     {/*  {loadingUserAttendance ? (
+      {loadingUserAttendance ? (
         <Skeleton height={"2rem"} count={10} />
       ) : (
         <TableContainer  className="w-[98%] md:w-full ">
@@ -404,8 +404,9 @@ const Attendance = () => {
           >
             Last
           </button>
-        )}
-      </div> */}
+        )} 
+      </div>
+        */}
     </div>
   );
 };

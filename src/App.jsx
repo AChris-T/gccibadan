@@ -7,9 +7,14 @@ import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
 import Attendance from "./Pages/Attendance/Attendance";
 import Dashboard from "./Pages/ChurchDashboard/Dashboard";
 import Events from "./Pages/Events/Events";
+import LandingPage from "./Pages/LandingPage/HomePage/Home"
 import Home from "./Pages/Home/Home";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import About from "./Pages/LandingPage/AboutPage/Aboutpage";
+import HomeDetails from "./Pages/LandingPage/HomeDetails/HomeDetails";
+import Stream from "./Pages/LandingPage/StreamPage.jsx/Stream";
+import Give from "./Pages/LandingPage/GivePage/Give";
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState(null);
@@ -61,6 +66,13 @@ function App() {
   return (
     <>
       <Routes>
+        
+        <Route path="/" element={<LandingPage/>}>
+          <Route path ="/" element={<HomeDetails/>}/>
+          <Route path ="/home/about" element={<About/>}/>
+          <Route path ="/home/streamService" element={<Stream/>}/>
+          <Route path ="/home/give" element={<Give/>}/>
+        </Route>
         <Route path="/login" element={<Login onLogin={handleLogin} />} />
 
         <Route
@@ -90,7 +102,7 @@ function App() {
                 </h1>{" "}
                 <button
                   className="px-6 py-4 text-lg text-white bg-purple-600 border rounded-lg"
-                  onClick={() => navigate("/login")}
+                  onClick={() => navigate("/")}
                 >
                   Back to Home
                 </button>{" "}
