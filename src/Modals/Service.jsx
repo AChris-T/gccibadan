@@ -28,7 +28,7 @@ const Service = () => {
                     <Popper id={id} open={open} anchorEl={anchorEl}>
                     <Paper>
                       <Typography>
-                        <div className='md:w-[516px] h-[355px] flex flex-col gap-5 justify-center items-center'>
+                        <div className='md:w-[516px] px-10 md:px:0 h-[355px] flex flex-col gap-5 justify-center items-center'>
                         <h3 className='font-medium text-[20px]'>How will you like to attend service?</h3>
                         <NavLink to ="" className="bg-[#18181A] text-[#FEFEFE] font-semibold text-[16px] h-[56px] w-[132px] flex justify-center items-center">Onsite</NavLink>
                         <NavLink to ="" className="bg-[#E2E2E2] text-[#222222] border-black border-[1px]  font-semibold text-[16px] h-[56px] w-[132px] flex justify-center items-center">Online</NavLink>
