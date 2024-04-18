@@ -6,7 +6,7 @@ const About = () => {
     <div className="flex flex-col gap-10">
       <h3 className="w-full flex justify-center text-[#222222] font-semibold text-[32px] leading-10">ABOUT</h3>
       <div className="flex flex-col md:flex-row  md:gap-28 gap-4 items-center ">
-        <video autoPlay loop controls className="md:w-[493px] h-[478px] bg-[#9c9c9c] ">
+        <video autoPlay muted loop controls className="md:w-[493px] h-[478px] bg-[#9c9c9c] ">
             <source src={aboutchurch} type="video/mp4"/>
             <source src="movie.ogg" type="video/ogg"/>
             Your browser does not support the video tag.

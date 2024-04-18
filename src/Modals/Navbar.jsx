@@ -35,7 +35,7 @@ const Navbar = () => {
   const handleClearLocalStorage = () => {
     localStorage.clear();
     // Optionally, you can perform additional actions after clearing localStorage
-    navigate("/login");
+    navigate("/");
     toast.error('Have a nice day',{
       position: "top-right",
   });
@@ -93,7 +93,7 @@ const Navbar = () => {
           </div>
           <div className="flex flex-col gap-3 justify-start mb-3">      
           <NavLink
-            to="/login"
+            to="/"
             onClick={handleClearLocalStorage}
             className="flex items-center text-[#0094D3]  rounded gap-[18px] h-[48px] px-2 leading-6 text-base font-normal text-center hover:bg-[#D1F1FF] "
           >

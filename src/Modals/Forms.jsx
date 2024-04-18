@@ -1,9 +1,7 @@
 import Accordion from '@mui/material/Accordion';
-import AccordionActions from '@mui/material/AccordionActions';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import Button from '@mui/material/Button';
 
 
 const Forms = () => {
@@ -15,13 +13,20 @@ const Forms = () => {
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1-content"
           id="panel1-header"
-          style={{fontWeight:"600", fontSize:"20px"}}
+          style={{fontWeight:"600", fontSize:"20px",}}
         >
           TESTIMONY FORM
         </AccordionSummary>
-        <AccordionDetails>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-          malesuada lacus ex, sit amet blandit leo lobortis eget.
+        <AccordionDetails style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
+        <iframe 
+        title="Google Form"
+        src="https://bit.ly/gcccibadanquestions" 
+        width="640" 
+        height="800" 
+    
+      >
+        Loading…
+      </iframe>
         </AccordionDetails>
       </Accordion>
       <Accordion>
@@ -33,9 +38,16 @@ const Forms = () => {
         >
           PRAYER FORM
         </AccordionSummary>
-        <AccordionDetails>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-          malesuada lacus ex, sit amet blandit leo lobortis eget.
+        <AccordionDetails style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
+        <iframe 
+        title="Google Form"
+        src="https://bit.ly/gcccibadanquestions" 
+        width="640" 
+        height="800" 
+    
+      >
+        Loading…
+      </iframe>
         </AccordionDetails>
       </Accordion>
       <Accordion defaultExpanded>
@@ -47,14 +59,17 @@ const Forms = () => {
         >
           QUESTION FORM
         </AccordionSummary>
-        <AccordionDetails>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-          malesuada lacus ex, sit amet blandit leo lobortis eget.
+        <AccordionDetails style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
+        <iframe 
+        title="Google Form"
+        src="https://bit.ly/gcccibadanquestions" 
+        width="640" 
+        height="800" 
+    
+      >
+        Loading…
+      </iframe>
         </AccordionDetails>
-        <AccordionActions>
-          <Button>Cancel</Button>
-          <Button>Agree</Button>
-        </AccordionActions>
       </Accordion>
     </div>
     </div>

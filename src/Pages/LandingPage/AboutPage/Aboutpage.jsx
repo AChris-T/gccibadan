@@ -12,7 +12,7 @@ const Aboutpage = () => {
         Praesent eget risus pulvinar turpis malesuada 
         vestibulum ac et dolor. Praesent quis ornare augue.
         </p>
-        <video autoPlay loop controls muted className="w-[866px] h-[478px] bg-[#9c9c9c] md:ml-52">
+        <video autoPlay loop controls muted className="w-[866px] h-[478px] bg-[#9c9c9c] md:mx-[13%]">
             <source src={aboutchurch} type="video/mp4"/>
             <source src="movie.ogg" type="video/ogg"/>
             Your browser does not support the video tag.

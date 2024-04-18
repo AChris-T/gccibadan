@@ -15,7 +15,7 @@ const Sidebar = () => {
   const handleClearLocalStorage = () => {
     localStorage.removeItem("GCCC_ATTENDANCE");
     // Optionally, you can perform additional actions after clearing localStorage
-    navigate("/login");
+    navigate("/");
     toast.error("Have a nice day", {
       position: "top-right",
     });
