@@ -6,7 +6,7 @@ import About from "../AboutPage/About"
 
 const HomeDetails = () => {
   return (
-    <div className="flex flex-col gap-16 md:mx-20 mx-2 overflow-x-hidden mt-24">
+    <div className="flex flex-col gap-16 mt-24 overflow-x-hidden md:mx-20">
       <HeroSections/>
       <About/>
       <Service/>

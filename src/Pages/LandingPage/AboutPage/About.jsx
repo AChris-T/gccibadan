@@ -5,13 +5,13 @@ const About = () => {
   return (
     <div className="flex flex-col gap-10">
       <h3 className="w-full flex justify-center text-[#222222] font-semibold text-[32px] leading-10">ABOUT</h3>
-      <div className="flex flex-col md:flex-row  md:gap-28 gap-4 items-center ">
-        <video autoPlay muted loop controls className="md:w-[493px] h-[478px] bg-[#9c9c9c] ">
+      <div className="flex flex-col items-center gap-4 md:flex-row md:gap-28 ">
+        <video autoPlay muted loop  className="md:w-[493px] h-[478px] ">
             <source src={aboutchurch} type="video/mp4"/>
             <source src="movie.ogg" type="video/ogg"/>
             Your browser does not support the video tag.
         </video>
-        <div className="md:flex-1 flex-col justify-center  items-center" >
+        <div className="flex-col items-center justify-center md:flex-1" >
           <p className="flex text-center md:text-left font-normal text-[20px] leading-2 px-3 md:px-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis lobortis
            efficitur sem ac aliquet. Aenean venenatis consequat urna. Cras 
            lobortis lacinia lobortis. Aenean dignissim urna id leo dictum,
