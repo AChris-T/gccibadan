@@ -5,7 +5,7 @@ const About = () => {
   return (
     <div className="flex flex-col gap-10">
       <h3 className="w-full flex justify-center text-[#222222] font-semibold text-[32px] leading-10">ABOUT</h3>
-      <div className="flex flex-col items-center gap-4 md:flex-row md:gap-28 ">
+      <div className="flex flex-col items-center gap-4 lg:flex-row md:gap-28 ">
         <video autoPlay muted loop  className="md:w-[493px] ">
             <source src={aboutchurch} type="video/mp4"/>
             <source src="movie.ogg" type="video/ogg"/>

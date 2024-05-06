@@ -15,6 +15,8 @@ import About from "./Pages/LandingPage/AboutPage/Aboutpage";
 import HomeDetails from "./Pages/LandingPage/HomeDetails/HomeDetails";
 import Stream from "./Pages/LandingPage/StreamPage.jsx/Stream";
 import Give from "./Pages/LandingPage/GivePage/Give";
+import Navbar from "./Modals/Navbar";
+import HomeNavbar from "./Modals/HomeNavbar";
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState(null);
@@ -26,7 +28,7 @@ function App() {
     const storedUser = localStorage.getItem("GCCC_ATTENDANCE");
     if (storedUser) {
       setLoggedInUser(JSON.parse(storedUser));
-      navigate("/dashboard/attendance");
+      navigate("/");
     }
   }, []);
   const handleLogin = async (username, password) => {
@@ -48,7 +50,7 @@ function App() {
         toast.success("Login successfull", {
           position: "top-right",
         });
-        navigate("/dashboard/attendance");
+        navigate("/");
       } else {
         toast.error("Invalid Username or password ", {
           position: "top-right",
@@ -60,14 +62,19 @@ function App() {
       });
     }
   };
+  const handleLogout = () => {
+    setLoggedInUser(null);
+    localStorage.removeItem("GCCC_ATTENDANCE");
+    navigate("/login");
+  };
+
   const ProtectedRoute = ({ element, ...rest }) => {
     return loggedInUser ? element : <Navigate to="/login" />;
   };
   return (
     <>
-      <Routes>
-        
-        <Route path="/" element={<LandingPage/>}>
+        <Routes>
+        <Route path="/" element={<LandingPage loggedInUser={loggedInUser} onLogout={handleLogout}/>}>
           <Route path ="/" element={<HomeDetails/>}/>
           <Route path ="/home/about" element={<About/>}/>
           <Route path ="/home/streamService" element={<Stream/>}/>
