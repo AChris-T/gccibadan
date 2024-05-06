@@ -16,6 +16,8 @@ import logout from "../assets/Images/logout.png";
 import { Paper } from "@mui/material";
 import Drawer from "@mui/material/Drawer";
 import { useState } from "react";
+import { FaUserCheck } from "react-icons/fa";
+
 
 
 
@@ -69,7 +71,20 @@ const Navbar = () => {
         <div className="flex flex-col justify-between h-full mt-9  gap-7 px-6">
         <div className="flex gap-3 flex-col">
      
-        
+        <NavLink
+            to="/"
+            className="flex items-center text-[#0094D3]  rounded gap-[8px] h-[48px] px-2 text-[14px] font-medium hover:bg-[#D1F1FF]  "
+            style={({ isActive }) => {
+              return {
+                fontWeight: isActive ? "#0094D3" : "",
+                color: isActive ? "#0094D3" : "",
+              };
+            }}
+          >
+         <FaUserCheck className="text-[24px]" />
+{/*           <img src={check} alt="gccclogo" width={"px2rem(24)"} height={"px2rem(24)"} />
+ */}            Home
+          </NavLink>
           <NavLink
             to="/dashboard/attendance"
             className="flex items-center text-[#0094D3]  rounded gap-[8px] h-[48px] px-2 text-[14px] font-medium text-center bg-[#D1F1FF] "

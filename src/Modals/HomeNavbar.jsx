@@ -9,7 +9,7 @@ import IconButton from '@mui/material/IconButton';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 
-const HomeNavbar = ({loggedInUser, onLogout}) => {
+const HomeNavbar = ({loggedInUser}) => {
   const authUser = JSON.parse(localStorage.getItem("GCCC_ATTENDANCE"));
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
