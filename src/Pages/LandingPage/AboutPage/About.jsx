@@ -12,7 +12,7 @@ const About = () => {
       <h6 style={{fontFamily:"Lobster Two, sans-serif"}}  className="text-[#ff6347] text-center font-bold">What we do</h6>
       <h3 className="w-full flex justify-center text-[#171730] -mt-10 font-semibold text-[32px] leading-10 text-center">Welcome to Our Church</h3>
       <div className="w-full flex justify-center gap-4">
-      <div className="md:w-3/4 w-full flex md:flex-row flex-col gap-5">
+      <div className="lg:w-3/4 w-full flex md:flex-row flex-col gap-5">
         <div className="flex flex-col relative  gap-2">
           <div className=" h-[200px] ">
           <img src={newImage} alt="image" className="h-[200px] w-full object-cover rounded-md"/>
@@ -54,8 +54,8 @@ const About = () => {
       <div className="w-full flex justify-center gap-4 mt-14">
           <div className="md:w-11/12 w-full flex md:flex-row flex-col gap-5">
             <div className="flex md:flex-row flex-col justify-between items-center gap-10">
-                <div className="flex-1 w-[900px] ">
-                  <img src={ministry} alt="hands" className="h-[400px] w-full object-cover"/>
+                <div className="flex-1 w-[900px] md:w-[500px] lg:w-[900px] ">
+                  <img src={ministry} alt="hands" className="h-[400px] w-full  object-cover"/>
                </div>
                 <div className="flex-1 flex-col flex gap-2 md:mt-52 text-center md:text-start  h-full justify-center">
                     <h6 style={{fontFamily:"Lobster Two, sans-serif"}}  className="text-[#ff6347] font-bold">Join The Ministry</h6>
@@ -102,7 +102,7 @@ const About = () => {
               
                    </div>
                 </div>
-                <div className="flex-1 w-[900px] ">
+                <div className="flex-1 w-[900px] md:w-[500px] ">
                   <img src={bible} alt="hands" className="h-[400px] w-full object-cover"/>
                </div>
             </div>
