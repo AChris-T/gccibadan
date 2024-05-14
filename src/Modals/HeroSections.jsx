@@ -43,7 +43,7 @@ const HeroSections = () => {
   <div className="absolute inset-0 w-full md:gap-4 gap-2 flex flex-col text-[#fff] justify-center  items-center h-full"> 
   <h1 style={{fontFamily:"Lobster Two, sans-serif"}} className=" md:text-[55px] text-[20px] font-semibold">We&apos;re glad to have you here</h1>
   <p className="md:text-[25px] ">Service Together with Us</p>
-  <button className="bg-[#ff6347] md:p-4 p-2 text-[15px] rounded-sm">Plan Your Vist</button>
+  <button className="bg-[#ff6347] md:p-4 p-2 md:text-[15px] text-[13px]  rounded-sm">Plan Your Visit</button>
 </div>
 </div>
   )
