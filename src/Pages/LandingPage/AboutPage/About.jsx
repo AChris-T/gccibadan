@@ -15,7 +15,7 @@ const About = () => {
       <div className="md:w-3/4 w-full flex md:flex-row flex-col gap-5">
         <div className="flex flex-col relative  gap-2">
           <div className=" h-[200px] ">
-          <img src={newImage} alt="image" className="h-[200px] object-cover rounded-md"/>
+          <img src={newImage} alt="image" className="h-[200px] w-full object-cover rounded-md"/>
           </div>
         <div className="absolute text-white inset-0  bg-gray-700 opacity-35 w-full h-[200px] rounded-md">
         </div>
@@ -27,7 +27,7 @@ const About = () => {
         </div>
         <div className="flex flex-col relative gap-2">
           <div className="h-[200px]">
-          <img src={children} alt="image" className="h-[200px] object-cover rounded-md"/>
+          <img src={children} alt="image" className="h-[200px] w-full object-cover rounded-md"/>
           </div>
           <div className="absolute text-white inset-0  bg-gray-700 opacity-35 w-full h-[200px] rounded-md">
         </div>
@@ -39,7 +39,7 @@ const About = () => {
         </div>
         <div className="flex flex-col relative gap-2">
           <div className="h-[200px] ">
-          <img src={lifegroup} alt="image" className="h-[200px] w-[280px] object-cover rounded-md"/>
+          <img src={lifegroup} alt="image" className="h-[200px] w-full md:w-[280px] lg:w-full object-cover rounded-md"/>
           </div>
           <div className="absolute text-white inset-0  bg-gray-700 opacity-35 w-full h-[200px] rounded-md">
         </div>
