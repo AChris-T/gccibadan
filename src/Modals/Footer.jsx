@@ -10,7 +10,7 @@ import mixlr from "../assets/Images/mixlr.png"
 
 const Footer = () => {
   return (
-    <div className="bg-[#222222] w-full md:px-14 px-8 py-14 ">
+    <div className="bg-[#222222] w-full md:px-14 px-8 py-14">
     <div className="flex flex-wrap gap-10 md:gap-0 justify-between flex-row text-[#fff] pb-14  " >
       <div className="flex flex-col gap-3">
         <h3 className="font-bold text-[20px] leading-9">QUICK LINKS</h3>

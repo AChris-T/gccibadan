@@ -36,7 +36,7 @@ function App() {
       const response = await fetch(getDataUrl);
       const users = await response.json();
       const lowercaseUsername = username.toLowerCase();
-
+console.log(response)
       const user = users.find(
         (user) =>
           (user.Email.toLowerCase() == lowercaseUsername &&

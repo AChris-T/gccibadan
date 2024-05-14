@@ -6,8 +6,11 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 const Forms = () => {
   return (
-    <div>
-      <div>
+    <div className="-mt-10 px-4 mb-5">
+      <h6 style={{fontFamily:"Lobster Two, sans-serif"}}  className="text-[#ff6347] text-center font-bold">share with us</h6>
+      <h3 className="w-full flex mb-5 justify-center text-[#171730]  font-semibold text-[32px] leading-10 text-center ">How can We Help</h3>
+
+      <div className='md:px-[200px] flex gap-2 flex-col'>
       <Accordion>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
@@ -21,7 +24,7 @@ const Forms = () => {
         <iframe 
         title="Google Form"
         src="https://bit.ly/gcccibadanquestions" 
-        width="640" 
+        width="740" 
         height="800" 
     
       >
@@ -42,7 +45,7 @@ const Forms = () => {
         <iframe 
         title="Google Form"
         src="https://bit.ly/gcccibadanquestions" 
-        width="640" 
+        width="740" 
         height="800" 
     
       >
@@ -63,7 +66,7 @@ const Forms = () => {
         <iframe 
         title="Google Form"
         src="https://bit.ly/gcccibadanquestions" 
-        width="640" 
+        width="740" 
         height="800" 
     
       >

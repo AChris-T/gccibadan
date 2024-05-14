@@ -7,12 +7,22 @@ import profile from "../../src/assets/Images/user.png"
 import logo from "../assets/Images/logo.png"
 import IconButton from '@mui/material/IconButton';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import { useState } from 'react';
 
 
 const HomeNavbar = ({loggedInUser}) => {
   const authUser = JSON.parse(localStorage.getItem("GCCC_ATTENDANCE"));
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const [active,setactive] = useState(false);
   const open = Boolean(anchorEl);
+  window.addEventListener("scroll",function(){
+    if(this.window.scrollY > 100){
+      setactive(true)
+    }else{
+      setactive(false)
+    }
+
+  })
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -21,7 +31,7 @@ const HomeNavbar = ({loggedInUser}) => {
   };
 
   return (
-      <div className="flex max-w-[1440px] z-20 w-full fixed bg-white  h-24 justify-between gap-8  md:px-16 md:mr-16 items-center">
+      <div className={`${active ? "transition duration-700 bg-white fixed shadow-lg top-0 left-0 -translate-y-1 h-20" : ""} flex max-w-[1440px] z-20 w-full    h-24 justify-between gap-8 transition  md:px-16 md:mr-16 items-center`}>
         <NavLink to="/">
         <img src={logo} alt="logo" width={'201px'} height={'56px'}/>
         </NavLink>

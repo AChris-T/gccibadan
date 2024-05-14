@@ -9,7 +9,6 @@ import img6 from "../assets/Images/ig6.jpg"
 
 const HeroSections = () => {
   var settings = {
-    dots: true,
     infinite: true,
     autoplay: true,
     autoplaySpeed: 5000,
@@ -19,17 +18,17 @@ const HeroSections = () => {
 
   };
   return (
- /*    <div className="bg-gray-300">
-        ero
-    </div> */ 
-    <Slider {...settings}>
+ 
     <div className="relative">
+    <Slider {...settings}>
+    <div className="">
       <img src={img5} alt='hero' className="h-[300px] md:h-[550px] w-[100%] md:object-cover"/>
       {/* <div className="absolute inset-0 bg-gray-800 opacity-35 w-[100%] "> </div> */}
     </div>
     <div>
     <img src={img6} alt='hero' className="h-[300px] md:h-[550px] w-[100%] md:object-cover"/>
-    <div className="absolute inset-0 bg-gray-800 opacity-35 w-[100%] md:h-[550px] h-[300px]"> </div>
+    <div className="absolute inset-0 bg-gray-800 opacity-35 w-[100%] md:h-[550px] h-[300px]"> 
+    </div>
     </div>
     <div>
     <img src={img4} alt='hero' className="h-[300px] md:h-[550px] w-[100%] md:object-cover"/>
@@ -41,6 +40,12 @@ const HeroSections = () => {
     <img src={img3} alt='hero' className="h-[300px] md:h-[550px] w-[100%] md:object-cover"/>
     </div>
   </Slider> 
+  <div className="absolute inset-0 w-full md:gap-4 gap-2 flex flex-col text-[#fff] justify-center  items-center h-full"> 
+  <h1 style={{fontFamily:"Lobster Two, sans-serif"}} className=" md:text-[55px] text-[20px] font-semibold">We&apos;re glad to have you here</h1>
+  <p className="md:text-[25px] ">Service Together with Us</p>
+  <button className="bg-[#ff6347] md:p-4 p-2 text-[15px] rounded-sm">Plan Your Vist</button>
+</div>
+</div>
   )
 }
 

@@ -9,7 +9,7 @@ const Aboutpage = () => {
     })
   })
   return (
-    <div className="flex flex-col gap-16 mx-2 mt-24 overflow-x-hidden md:mx-20">
+    <div className="flex flex-col gap-16 mx-2 mt-24 overflow-x-hidden md:mx-[200px]">
         <h3 className="flex justify-center items-center mt-10 font-semibold text-[40px] text-[#222222]">OUR STORY</h3>
         <p className="flex text-center text-[20px] font-normal leading-8">GCCC Ibadan is Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tempor tempus condimentum. 
         Vivamus vulputate elit consequat tincidunt maximus. 
@@ -19,7 +19,7 @@ const Aboutpage = () => {
         Praesent eget risus pulvinar turpis malesuada 
         vestibulum ac et dolor. Praesent quis ornare augue.
         </p>
-        <video autoPlay loop  muted className="w-[866px] h-[478px] lg:mx-[13%]">
+        <video autoPlay loop  muted className="w-[866px] h-[478px] ">
             <source src={aboutchurch} type="video/mp4"/>
             <source src="movie.ogg" type="video/ogg"/>
             Your browser does not support the video tag.

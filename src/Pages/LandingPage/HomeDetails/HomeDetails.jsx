@@ -6,13 +6,15 @@ import About from "../AboutPage/About"
 
 const HomeDetails = () => {
   return (
-    <div className="flex flex-col gap-16 mt-24 overflow-x-hidden md:mx-20">
+  <div className="overflow-hidden  ">
       <HeroSections/>
+    <div className="flex flex-col mt-24 gap-16 overflow-x-hidden md:mx-20 mb-20">
       <About/>
       <Service/>
       <Forms/>
-      <Footer/>
     </div>
+      <Footer/>
+  </div>
   )
 }
 
