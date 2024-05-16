@@ -11,12 +11,12 @@ import Footer from "../../../Modals/Footer"
 
 
 const Aboutpage = () => {
-  /* useEffect(()=>{
+  useEffect(()=>{
     window.scrollTo({
       top:0,
       behavior:"smooth"
     })
-  }) */
+  })
   return (
     <div className="flex flex-col w-full gap-16 overflow-x-hidden">
 
