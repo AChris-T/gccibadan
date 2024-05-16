@@ -32,7 +32,7 @@ const Aboutpage = () => {
               </div>
               <div className="md:w-[458px]">
                 <p className="text-[#ff6347] mb-2 text-center md:text-start">Vision</p>
-              <h5 className=""> Vivamus vulputate elit consequat tincidunt maximus. 
+              <h5 className="text-center  md:text-start"> Vivamus vulputate elit consequat tincidunt maximus. 
                   Vivamus urna erat, egestas nec interdum ut, maximus sed nisi.
                   Donec ac vehicula purus. Fusce sit amet volutpat dolor,
                   aliquam euismod justo. Sed euismod vitae neque vitae interdum.
@@ -47,7 +47,8 @@ const Aboutpage = () => {
               </div>
               <div className="md:w-[500px]">
                 <p className="text-[#ff6347] mb-2 lg:px-5  text-center md:text-start">Mission</p>
-              <h5 className="lg:w-[500px] md:w-[357px] lg:px-5"> Vivamus vulputate elit consequat tincidunt maximus. 
+              <h5 className="lg:w-[500px] md:w-[357px] lg:px-5 text-center md:text-start"> 
+                Vivamus vulputate elit consequat tincidunt maximus. 
                   Vivamus urna erat, egestas nec interdum ut, maximus sed nisi.
                   Donec ac vehicula purus. Fusce sit amet volutpat dolor,
                   aliquam euismod justo. Sed euismod vitae neque vitae interdum.
