@@ -23,7 +23,7 @@ const Aboutpage = () => {
         <div className="md:h-[450px] bg-cover h-[300px]   text-[white] flex  justify-center flex-col items-center  " style={{backgroundImage:"url(https://dq5pwpg1q8ru0.cloudfront.net/2022/10/27/14/41/13/4aa71d56-c474-4b0a-abff-b0fb7c13337f/RisenWebsiteBanners.jpg)", width:"100%",backgroundRepeat:"no-repeat"}}>
         <h3 className="flex justify-center items-center  font-semibold md:text-[40px] text-[20px]  ">About Us</h3>
         <div className="md:w-[100px] w-[50px]  flex h-[2px] bg-white mt-3"></div>
-        <h6 className="mt-3 font-normal md:mt-6 md:font-medium ">Vision + Mission</h6>
+        <h6  className="mt-3 font-normal md:mt-6 md:font-medium ">Vision + Mission</h6>
       </div>
       <div className="flex flex-col justify-center items-center px-[30px] gap-10 md:gap-0">
           <div className="flex flex-col-reverse items-center justify-center gap-5 md:flex-row">
@@ -31,8 +31,8 @@ const Aboutpage = () => {
                 <img src={vision} alt="" className="rounded md:w-[500px] md:h-[300px]"/>
               </div>
               <div className="md:w-[458px]">
-                <p className="text-[#ff6347] mb-2 text-center md:text-start">Vision</p>
-              <h5 className="text-center  md:text-start"> Vivamus vulputate elit consequat tincidunt maximus. 
+                <p style={{fontFamily:"Lobster Two, sans-serif"}} className="text-[#ff6347] mb-2 text-center md:text-start">Vision</p>
+              <h5 className="text-center md:text-start"> Vivamus vulputate elit consequat tincidunt maximus. 
                   Vivamus urna erat, egestas nec interdum ut, maximus sed nisi.
                   Donec ac vehicula purus. Fusce sit amet volutpat dolor,
                   aliquam euismod justo. Sed euismod vitae neque vitae interdum.
@@ -46,7 +46,7 @@ const Aboutpage = () => {
                 <img src={mission} alt="" className="rounded w-[500px] md:w-[700px] lg:w-[500px] md:h-[300px]"/>
               </div>
               <div className="md:w-[500px]">
-                <p className="text-[#ff6347] mb-2 lg:px-5  text-center md:text-start">Mission</p>
+                <p style={{fontFamily:"Lobster Two, sans-serif"}} className="text-[#ff6347] mb-2 lg:px-5  text-center md:text-start">Mission</p>
               <h5 className="lg:w-[500px] md:w-[357px] lg:px-5 text-center md:text-start"> 
                 Vivamus vulputate elit consequat tincidunt maximus. 
                   Vivamus urna erat, egestas nec interdum ut, maximus sed nisi.
@@ -62,7 +62,7 @@ const Aboutpage = () => {
           <div className="md:h-[250px] h-[300px]   text-[white] flex  justify-center flex-col items-center  " style={{backgroundImage:"url(https://dq5pwpg1q8ru0.cloudfront.net/2022/06/07/10/09/15/61022735-2330-4dd9-9eae-44481f5702df/RisenWebsiteBanners%20copy%2014.jpg)", width:"100%",backgroundRepeat:"no-repeat"}}>
             <h3 className="flex justify-center items-center  font-semibold md:text-[40px] text-[20px]  ">Leadership</h3>
           </div>
-            <p className="text-[#ff6347] text-center mt-10 ">Our Leaders</p>
+            <p style={{fontFamily:"Lobster Two, sans-serif"}} className="text-[#ff6347] text-center mt-10 ">Our Leaders</p>
             <div className="flex flex-col items-center justify-center gap-16 mt-10 md:flex-row">
               <div className="flex flex-col">
                 <img src={pzak} alt="pzak" className="w-[250px] h-[250px] rounded-full "/>
