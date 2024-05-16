@@ -25,13 +25,13 @@ const Service = () => {
       <h3 className="w-full flex justify-center text-[#171730] -mt-7 font-semibold text-[32px]  leading-10 text-center">Location And Time</h3>
       <div className="flex justify-center flex-col px-2 md:px-0 md:flex-row items-center gap-7">
         <div className="flex flex-col relative  gap-2">
-          <div className=" h-[200px] ">
+          <div className=" h-[200px] w-[360px] md:w-[350px] lg:w-full">
           <img src={lifegroup} alt="image" className="h-[200px] md:object-cover rounded-md"/>
           </div>
         <div className="absolute text-white inset-0  bg-gray-700 opacity-35  h-[200px] rounded-md">
         </div>
         <div className="absolute  flex font-bold justify-center items-center w-full  h-[200px]">
-        <h3 className="text-[#fff] text-[40px] ">IN-PERSON</h3>
+        <h3 className="text-[#fff] md:text-[40px] text-[30px] ">IN-PERSON</h3>
         </div>
         <div className="flex  justify-center ">
             <NavLink to='/home/about'
@@ -41,13 +41,13 @@ const Service = () => {
         </div>    
         </div>
         <div className="flex flex-col  relative  gap-2">
-          <div className=" h-[200px]  md:w-[350px]">
-          <img src={online} alt="image" className="h-[200px] md:w-[350px] object-cover rounded-md"/>
+          <div className=" h-[200px]  md:w-[350px] w-[360px]">
+          <img src={online} alt="image" className="h-[200px] md:w-[350px] w-full object-cover rounded-md"/>
           </div>
         <div className="absolute text-white inset-0  bg-gray-700 opacity-35  h-[200px] rounded-md">
         </div>
         <div className="absolute  flex font-bold justify-center items-center w-full  h-[200px]">
-        <h3 className="text-[#fff] text-[40px] ">ONLINE</h3>
+        <h3 className="text-[#fff] md:text-[40px] text-[30px] ">ONLINE</h3>
         </div>
         <div className="flex  justify-center ">
             <NavLink to='/home/about'

@@ -20,7 +20,7 @@ const About = () => {
         <div className="absolute text-white inset-0  bg-gray-700 opacity-35 w-full h-[200px] rounded-md">
         </div>
         <div className="absolute  flex font-bold justify-center items-center w-full h-[200px]">
-        <h3 className="text-[#fff] text-[40px] ">NEW HERE</h3>
+        <h3 className="text-[#fff] md:text-[40px] text-[30px]">NEW HERE</h3>
         </div>
         <h3 className="font-bold md:px-0 px-4">A Place You Can Call Home</h3>
         <p className="text-[15px] font-light md:px-0 px-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
@@ -32,7 +32,7 @@ const About = () => {
           <div className="absolute text-white inset-0  bg-gray-700 opacity-35 w-full h-[200px] rounded-md">
         </div>
         <div className="absolute  flex font-bold justify-center items-center w-full h-[200px]">
-        <h3 className="text-[#fff] text-[40px] ">OUR KIDS</h3>
+        <h3 className="text-[#fff] md:text-[40px] text-[30px] ">OUR KIDS</h3>
         </div>        
         <h3 className="font-bold md:px-0 px-4">We Cherish Our Kids</h3>
         <p className="text-[15px] font-light md:px-0 px-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
@@ -44,7 +44,7 @@ const About = () => {
           <div className="absolute text-white inset-0  bg-gray-700 opacity-35 w-full h-[200px] rounded-md">
         </div>
         <div className="absolute  flex font-bold justify-center items-center w-full h-[200px]">
-        <h3 className="text-[#fff] text-[40px] ">FAMILY</h3>
+        <h3 className="text-[#fff] md:text-[40px] text-[30px] ">FAMILY</h3>
         </div> 
         <h3 className="font-bold md:px-0 px-4">Gospel Community for Church</h3>
         <p className="text-[15px] font-light md:px-0 px-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>       

@@ -8,7 +8,7 @@ const Forms = () => {
   return (
     <div className="-mt-10 px-4 mb-5">
       <h6 style={{fontFamily:"Lobster Two, sans-serif"}}  className="text-[#ff6347] text-center font-bold">share with us</h6>
-      <h3 className="w-full flex mb-5 justify-center text-[#171730]  font-semibold text-[32px] leading-10 text-center ">How can We Help</h3>
+      <h3 className="w-full flex mb-5 justify-center text-[#171730]  font-semibold text-[32px] leading-10 text-center ">How can we help</h3>
 
       <div className='md:px-[200px] flex gap-2 flex-col'>
       <Accordion>
@@ -53,7 +53,7 @@ const Forms = () => {
       </iframe>
         </AccordionDetails>
       </Accordion>
-      <Accordion defaultExpanded>
+      <Accordion >
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel3-content"

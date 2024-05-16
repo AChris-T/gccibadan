@@ -45,12 +45,10 @@ const Navbar = () => {
   return (
   <div className="flex justify-between md:h-[108px] h-[59px] border-b-[#C4D6DE] border-b-[2px] items-center px-4">
       <h1 className="hidden capitalize md:block text-[24px] ml-2 leading-8 font-bold text-[#1B566F]">
-      Hello,{authUser["First Name"]}
+           Hello,{authUser["First Name"]}
         </h1>
      
-        <button onClick={toggelDrawer(true)} className="md:hidden ml-2"><img src={menu} alt="menu"/></button> 
-    
-      
+        <button onClick={toggelDrawer(true)} className="md:hidden ml-2"><img src={menu} alt="menu"/></button>  
         <Button className="flex">
         <div className="flex gap-4 items-center">
         <div className="flex  flex-col justify-start items-start">
