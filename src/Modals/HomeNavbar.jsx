@@ -36,6 +36,16 @@ const HomeNavbar = ({loggedInUser}) => {
         <img src={logo} alt="logo" width={'201px'} height={'56px'}/>
         </NavLink>
         <div className="lg:flex hidden gap-6 text-lg font-normal text-[#7A797E]">
+            <NavLink to="/"
+               style={({ isActive }) => {
+              return {
+                fontWeight: isActive ? "bold" : "",
+                color: isActive ? "black" : "",
+              };
+            }}
+            >
+            Home
+            </NavLink>
             <NavLink to="/home/about"
                style={({ isActive }) => {
               return {
@@ -46,7 +56,7 @@ const HomeNavbar = ({loggedInUser}) => {
             >
             About
             </NavLink>
-            <NavLink to="/home/streamService"
+            <NavLink to="/home/sermon"
                 style={({ isActive }) => {
               return {
                 fontWeight: isActive ? "bold" : "",
@@ -54,7 +64,7 @@ const HomeNavbar = ({loggedInUser}) => {
               };
             }}
             >
-            Live Stream
+            Sermon
             </NavLink>
             <NavLink to="home/Testimony"
                 style={({ isActive }) => {
@@ -66,7 +76,7 @@ const HomeNavbar = ({loggedInUser}) => {
             >
             Testimony
             </NavLink>
-            <NavLink to="home/resources"
+           {/*  <NavLink to="home/resources"
               style={({ isActive }) => {
               return {
                 fontWeight: isActive ? "bold" : "",
@@ -74,8 +84,8 @@ const HomeNavbar = ({loggedInUser}) => {
               };
             }}
             >
-            Resources
-            </NavLink>
+            Sermon
+            </NavLink> */}
             <NavLink to="/home/give"
                 style={({ isActive }) => {
               return {
@@ -116,7 +126,7 @@ const HomeNavbar = ({loggedInUser}) => {
         {loggedInUser ? (
           
           <div className="flex items-center">
-        <div className="flex  flex-col justify-start items-start">
+        <div className="flex flex-col items-start justify-start">
           <p2 className=" text-[#120F14] leading-5 text-[8px] md:text-[14px] font-medium">{authUser["First Name"]}</p2>
 {/*           <p2 className=' text-[#42394A] mt-[-px2rem(5)] md:mt-[px2rem(0)] leading-4 text-[7.px2rem(59)] md:text-[px2rem(12)] font-normal'>Music team</p2>
  */}        </div>

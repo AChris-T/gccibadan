@@ -3,6 +3,7 @@ import Forms from "../../../Modals/Forms"
 import HeroSections from "../../../Modals/HeroSections"
 import Service from "../../../Modals/Service"
 import About from "../AboutPage/About"
+import Gallery from "../../../Modals/gallery"
 
 const HomeDetails = () => {
   return (
@@ -12,6 +13,7 @@ const HomeDetails = () => {
       <About/>
       <Service/>
       <Forms/>
+      <Gallery/>
     </div>
       <Footer/>
   </div>

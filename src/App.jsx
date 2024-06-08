@@ -17,6 +17,7 @@ import Stream from "./Pages/LandingPage/StreamPage.jsx/Stream";
 import Give from "./Pages/LandingPage/GivePage/Give";
 import Navbar from "./Modals/Navbar";
 import HomeNavbar from "./Modals/HomeNavbar";
+import Resources from "./Pages/Resources/Resources";
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState(null);
@@ -77,8 +78,9 @@ console.log(response)
         <Route path="/" element={<LandingPage loggedInUser={loggedInUser} onLogout={handleLogout}/>}>
           <Route path ="/" element={<HomeDetails/>}/>
           <Route path ="/home/about" element={<About/>}/>
-          <Route path ="/home/streamService" element={<Stream/>}/>
+          <Route path ="/home/sermon" element={<Stream/>}/>
           <Route path ="/home/give" element={<Give/>}/>
+          <Route path="/home/resources" element={<Resources/>}/>
         </Route>
         <Route path="/login" element={<Login onLogin={handleLogin} />} />
 

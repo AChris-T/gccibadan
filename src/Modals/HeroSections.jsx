@@ -41,10 +41,10 @@ const HeroSections = () => {
     </div>
   </Slider> 
   <div className="absolute inset-0 w-full md:gap-4 gap-2 flex flex-col text-[#fff] justify-center  items-center h-full"> 
-  <h1 style={{fontFamily:"Lobster Two, sans-serif"}} className=" md:text-[55px] text-[20px] font-semibold">We&apos;re glad to have you here</h1>
-  <p className="md:text-[25px] ">Service Together with Us</p>
-  <button className="bg-[#ff6347] md:p-4 p-2 md:text-[15px] text-[13px]  rounded-sm">Plan Your Visit</button>
-</div>
+  <h1 style={{fontFamily:"Lobster Two, sans-serif"}} className=" md:text-[55px] text-[20px] font-semibold"> Welcome to Our Church</h1>
+  <p className="md:text-[25px] ">The best place to belong </p>
+{/*   <button className="bg-[#ec3538] md:p-4 p-2 md:text-[px2rem(15)] text-[px2rem(13)]  rounded-sm">Plan Your Visit</button>
+ */}</div>
 </div>
   )
 }

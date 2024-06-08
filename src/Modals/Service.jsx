@@ -7,7 +7,7 @@ import { Paper, Typography } from '@mui/material';
 import { NavLink } from 'react-router-dom'; */
 import { NavLink } from 'react-router-dom'
 import lifegroup from '../assets/Images/ServDay.jpg'
-import online from '../assets/Images/online.jpg'
+import online from '../assets/Images/0nl.jpg'
 
 
 const Service = () => {
@@ -21,7 +21,7 @@ const Service = () => {
   const id = open ? 'simple-popper' : undefined; */
   return (
     <div className="flex flex-col gap-8 md:mb-28">
-    <h6 style={{fontFamily:"Lobster Two, sans-serif"}}  className="text-[#ff6347] text-center font-bold">Service Days</h6>
+    <h6 style={{fontFamily:"Lobster Two, sans-serif"}}  className="text-[#ec3538] text-center font-bold">Service Days</h6>
       <h3 className="w-full flex justify-center text-[#171730] -mt-7 font-semibold text-[32px]  leading-10 text-center">Location And Time</h3>
       <div className="flex justify-center flex-col px-2 md:px-0 md:flex-row items-center gap-7">
         <div className="flex flex-col relative  gap-2">
