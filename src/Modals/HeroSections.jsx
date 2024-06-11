@@ -19,7 +19,7 @@ const HeroSections = () => {
   };
   return (
  
-    <div className="relative">
+    <div className="relative ">
     <Slider {...settings}>
     <div className="">
       <img src={img5} alt='hero' className="h-[300px] md:h-[550px] w-[100%] md:object-cover"/>

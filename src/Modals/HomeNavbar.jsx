@@ -76,16 +76,6 @@ const HomeNavbar = ({loggedInUser}) => {
             >
             Testimony
             </NavLink>
-           {/*  <NavLink to="home/resources"
-              style={({ isActive }) => {
-              return {
-                fontWeight: isActive ? "bold" : "",
-                color: isActive ? "black" : "",
-              };
-            }}
-            >
-            Sermon
-            </NavLink> */}
             <NavLink to="/home/give"
                 style={({ isActive }) => {
               return {
@@ -158,6 +148,11 @@ const HomeNavbar = ({loggedInUser}) => {
           vertical: 'top',
           horizontal: 'left',
         }}
+        PaperProps={{
+          style: {
+            width: '20ch',
+          },
+        }}
       >
         <MenuItem onClick={handleClose}>
         <NavLink to="/home/about"
@@ -172,7 +167,7 @@ const HomeNavbar = ({loggedInUser}) => {
             </NavLink>
         </MenuItem>
         <MenuItem onClick={handleClose}>
-        <NavLink to="/home/streamService"
+        <NavLink to="/home/sermon"
                 style={({ isActive }) => {
               return {
                 fontWeight: isActive ? "bold" : "",
@@ -180,7 +175,7 @@ const HomeNavbar = ({loggedInUser}) => {
               };
             }}
             >
-            Live Stream
+            Sermon
             </NavLink>
         </MenuItem>
         <MenuItem onClick={handleClose}> <NavLink to="home/Testimony"
@@ -234,13 +229,150 @@ const HomeNavbar = ({loggedInUser}) => {
             Events
             </NavLink>
       </MenuItem>
+      <MenuItem onClick={handleClose}>
+      <NavLink to="/login"
+                style={({ isActive }) => {
+              return {
+                fontWeight: isActive ? "bold" : "",
+                color: isActive ? "black" : "",
+              };
+            }}
+            >
+            Login
+            </NavLink>
+      </MenuItem>
 
       </Menu>
       </div>
         </div>
         ):(
+          <div className="flex items-center  ">
+        <div className="flex flex-col items-start justify-start">
+          <p2 className=" text-[#120F14] leading-5 text-[8px] md:text-[14px] font-medium"></p2>
+{/*           <p2 className=' text-[#42394A] mt-[-px2rem(5)] md:mt-[px2rem(0)] leading-4 text-[7.px2rem(59)] md:text-[px2rem(12)] font-normal'>Music team</p2>
+ */}        </div>
+           <NavLink to='/login' className='bg-[#18181A] text-[#fefefe] px-9 py-4 hidden lg:flex rounded-sm text-base font-semibold '>Login</NavLink>
+        <img src={profile} alt={profile} width={'20px'} height={'20px'} className='lg:hidden md:flex' />
+        <div className='flex lg:hidden ml-[-10px]'>
+        <IconButton
+        aria-label="more"
+        id="long-button"
+        aria-controls={open ? 'long-menu' : undefined}
+        aria-expanded={open ? 'true' : undefined}
+        aria-haspopup="true"
+        onClick={handleClick}
 
-          <NavLink to='/login' className='bg-[#18181A] text-[#fefefe] px-9 py-4 rounded-sm text-base font-semibold '>Login</NavLink>
+      >
+        <ArrowDropDownIcon/>
+      </IconButton>
+      <Menu sx={{ width: 320 }}
+       style={{width:"300px",padding:"30px"}}
+        id="demo-positioned-menu"
+        aria-labelledby="demo-positioned-button"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        anchorOrigin={{
+          vertical: 'top',
+          horizontal: 'left',
+        }}
+        PaperProps={{
+          style: {
+            width: '20ch',
+          },
+        }}
+        transformOrigin={{
+          vertical: 'top',
+          horizontal: 'left',
+        }}
+      >
+      <MenuItem onClick={handleClose}>
+        <NavLink to="/"
+               style={({ isActive }) => {
+              return {
+                fontWeight: isActive ? "bold" : "",
+                color: isActive ? "black" : "",
+              };
+            }}
+            >
+            Home
+            </NavLink>
+        </MenuItem>
+        <MenuItem onClick={handleClose}>
+        <NavLink to="/home/about"
+               style={({ isActive }) => {
+              return {
+                fontWeight: isActive ? "bold" : "",
+                color: isActive ? "black" : "",
+              };
+            }}
+            >
+            About
+            </NavLink>
+        </MenuItem>
+        <MenuItem onClick={handleClose}>
+        <NavLink to="/home/sermon"
+                style={({ isActive }) => {
+              return {
+                fontWeight: isActive ? "bold" : "",
+                color: isActive ? "black" : "",
+              };
+            }}
+            >
+            Sermon
+            </NavLink>
+        </MenuItem>
+        <MenuItem onClick={handleClose}> <NavLink to="home/Testimony"
+                style={({ isActive }) => {
+              return {
+                fontWeight: isActive ? "bold" : "",
+                color: isActive ? "black" : "",
+              };
+            }}
+            >
+            Testimony
+            </NavLink>
+          </MenuItem>
+          <MenuItem onClick={handleClose}>
+          <NavLink to="/home/give"
+                style={({ isActive }) => {
+              return {
+                fontWeight: isActive ? "bold" : "",
+                color: isActive ? "black" : "",
+              };
+            }}
+            >
+            Give
+            </NavLink>
+          </MenuItem>
+      <MenuItem onClick={handleClose}>
+      <NavLink to="/home/events"
+                style={({ isActive }) => {
+              return {
+                fontWeight: isActive ? "bold" : "",
+                color: isActive ? "black" : "",
+              };
+            }}
+            >
+            Events
+            </NavLink>
+      </MenuItem>
+      <MenuItem onClick={handleClose}>
+      <NavLink to="/login"
+                style={({ isActive }) => {
+              return {
+                fontWeight: isActive ? "bold" : "",
+                color: isActive ? "black" : "",
+              };
+            }}
+            >
+            Login
+            </NavLink>
+      </MenuItem>
+
+      </Menu>
+      </div>
+        </div>
         )
         }
         </div>

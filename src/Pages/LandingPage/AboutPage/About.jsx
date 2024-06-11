@@ -64,7 +64,7 @@ const About = () => {
                   <img src={ministry} alt="hands" className="h-[400px] w-full  object-cover"/>
                </div>
                 <div className="flex flex-col justify-center flex-1 h-full gap-2 text-center md:mt-52 md:text-start">
-                    <h6 style={{fontFamily:"Lobster Two, sans-serif"}}  className="text-[#ff6347] font-bold">Join The Ministry</h6>
+                    <h6 style={{fontFamily:"Lobster Two, sans-serif"}}  className="text-[#ec3538] font-bold">Join The Ministry</h6>
                     <h2 className="w-full  text-[#171730]  font-semibold text-[32px] leading-10">Our Ministry</h2>
                     <div className="flex-col items-center justify-center md:flex-1" >
                       <p className="flex  text-center md:text-left font-normal text-[16px] leading-2 px-3 md:px-0 md:pr-6">It is a great honor to serve in God’s 
@@ -89,7 +89,7 @@ const About = () => {
           <div className="flex flex-col w-full md:w-11/12 md:flex-row md:gap-5">
             <div className="flex flex-col-reverse items-center justify-between gap-10 md:flex-row">
                 <div className="flex flex-col justify-center flex-1 h-full gap-2 text-center md:mt-52 md:text-start">
-                    <h6 style={{fontFamily:"Lobster Two, sans-serif"}}  className="text-[#ff6347] font-bold">Our Sermons</h6>
+                    <h6 style={{fontFamily:"Lobster Two, sans-serif"}}  className="text-[#ec3538] font-bold">Our Sermons</h6>
                     <h2 className="w-full  text-[#171730]  font-semibold text-[32px] leading-10">Weekly Sermons</h2>
                     <div className="flex-col items-center justify-center md:flex-1" >
                       <p className="flex  text-center md:text-left font-normal text-[16px] leading-2 px-3 md:px-0 md:pr-6">

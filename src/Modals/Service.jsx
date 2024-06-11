@@ -36,7 +36,7 @@ const Service = () => {
         <div className="flex  justify-center ">
             <NavLink to='/home/about'
               className="flex mt-4 rounded-sm justify-center  text-[14px] font-semibold   px-10 py-4 text-[#FEFEFE] bg-[#18181A]">
-              Plan My Visit
+              Locate Us
             </NavLink>
         </div>    
         </div>
