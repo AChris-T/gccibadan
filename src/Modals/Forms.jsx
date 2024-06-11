@@ -6,7 +6,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 const Forms = () => {
   return (
-    <div className="-mt-10 px-4 mb-5">
+    <div className="md:mt-[-100px] mt-[-30px] px-4 mb-5">
       <h6 style={{fontFamily:"Lobster Two, sans-serif"}}  className="text-[#ec3538] text-center font-bold">share with us</h6>
       <h3 className="w-full flex mb-5 justify-center text-[#171730]  font-semibold text-[32px] leading-10 text-center ">How can we help</h3>
 
