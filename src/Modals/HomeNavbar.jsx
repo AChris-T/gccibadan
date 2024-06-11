@@ -154,6 +154,18 @@ const HomeNavbar = ({loggedInUser}) => {
           },
         }}
       >
+       <MenuItem onClick={handleClose}>
+      <NavLink to="/"
+                style={({ isActive }) => {
+              return {
+                fontWeight: isActive ? "bold" : "",
+                color: isActive ? "black" : "",
+              };
+            }}
+            >
+            Home
+            </NavLink>
+      </MenuItem>
         <MenuItem onClick={handleClose}>
         <NavLink to="/home/about"
                style={({ isActive }) => {
@@ -229,18 +241,7 @@ const HomeNavbar = ({loggedInUser}) => {
             Events
             </NavLink>
       </MenuItem>
-      <MenuItem onClick={handleClose}>
-      <NavLink to="/login"
-                style={({ isActive }) => {
-              return {
-                fontWeight: isActive ? "bold" : "",
-                color: isActive ? "black" : "",
-              };
-            }}
-            >
-            Login
-            </NavLink>
-      </MenuItem>
+     
 
       </Menu>
       </div>
