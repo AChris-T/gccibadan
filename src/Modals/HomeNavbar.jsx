@@ -56,7 +56,7 @@ const HomeNavbar = ({loggedInUser}) => {
             >
             About
             </NavLink>
-            <NavLink to="/home/sermon"
+             <NavLink to="/home/events"
                 style={({ isActive }) => {
               return {
                 fontWeight: isActive ? "bold" : "",
@@ -64,8 +64,9 @@ const HomeNavbar = ({loggedInUser}) => {
               };
             }}
             >
-            Sermon
+            Events
             </NavLink>
+           {/*
             <NavLink to="home/Testimony"
                 style={({ isActive }) => {
               return {
@@ -75,7 +76,7 @@ const HomeNavbar = ({loggedInUser}) => {
             }}
             >
             Testimony
-            </NavLink>
+            </NavLink> */}
             <NavLink to="/home/give"
                 style={({ isActive }) => {
               return {
@@ -86,7 +87,7 @@ const HomeNavbar = ({loggedInUser}) => {
             >
             Give
             </NavLink>
-            <NavLink to="/home/events"
+          {/*   <NavLink to="/home/events"
                 style={({ isActive }) => {
               return {
                 fontWeight: isActive ? "bold" : "",
@@ -95,7 +96,7 @@ const HomeNavbar = ({loggedInUser}) => {
             }}
             >
             Events
-            </NavLink>
+            </NavLink> */}
             {loggedInUser ? (
 
             <NavLink to="/dashboard/attendance"
@@ -120,7 +121,9 @@ const HomeNavbar = ({loggedInUser}) => {
           <p2 className=" text-[#120F14] leading-5 text-[8px] md:text-[14px] font-medium">{authUser["First Name"]}</p2>
 {/*           <p2 className=' text-[#42394A] mt-[-px2rem(5)] md:mt-[px2rem(0)] leading-4 text-[7.px2rem(59)] md:text-[px2rem(12)] font-normal'>Music team</p2>
  */}        </div>
-        <img src={profile} alt={profile} width={'20px'} height={'20px'}/>
+            <div className='lg:hidden md:flex rounded-full border-[#4775ff] border-[2px] p-1 '>
+            <img src={profile} alt={profile} width={'20px'} height={'20px'}/>
+          </div>
         <div className='flex lg:hidden ml-[-10px]'>
         <IconButton
         aria-label="more"
@@ -178,7 +181,7 @@ const HomeNavbar = ({loggedInUser}) => {
             About
             </NavLink>
         </MenuItem>
-        <MenuItem onClick={handleClose}>
+      {/*   <MenuItem onClick={handleClose}>
         <NavLink to="/home/sermon"
                 style={({ isActive }) => {
               return {
@@ -199,8 +202,9 @@ const HomeNavbar = ({loggedInUser}) => {
             }}
             >
             Testimony
-            </NavLink>
+            </NavLink> 
           </MenuItem>
+            */}
           <MenuItem onClick={handleClose}>
           <NavLink to="/home/give"
                 style={({ isActive }) => {
@@ -253,7 +257,9 @@ const HomeNavbar = ({loggedInUser}) => {
 {/*           <p2 className=' text-[#42394A] mt-[-px2rem(5)] md:mt-[px2rem(0)] leading-4 text-[7.px2rem(59)] md:text-[px2rem(12)] font-normal'>Music team</p2>
  */}        </div>
            <NavLink to='/login' className='bg-[#18181A] text-[#fefefe] px-9 py-4 hidden lg:flex rounded-sm text-base font-semibold '>Login</NavLink>
-        <img src={profile} alt={profile} width={'20px'} height={'20px'} className='lg:hidden md:flex' />
+           <div className='lg:hidden md:flex rounded-full border-[#4775ff] border-[2px] p-1 '>
+              <img src={profile} alt={profile} width={'20px'} height={'20px'} />
+           </div>
         <div className='flex lg:hidden ml-[-10px]'>
         <IconButton
         aria-label="more"
@@ -311,7 +317,7 @@ const HomeNavbar = ({loggedInUser}) => {
             About
             </NavLink>
         </MenuItem>
-        <MenuItem onClick={handleClose}>
+       {/*  <MenuItem onClick={handleClose}>
         <NavLink to="/home/sermon"
                 style={({ isActive }) => {
               return {
@@ -333,7 +339,7 @@ const HomeNavbar = ({loggedInUser}) => {
             >
             Testimony
             </NavLink>
-          </MenuItem>
+          </MenuItem> */}
           <MenuItem onClick={handleClose}>
           <NavLink to="/home/give"
                 style={({ isActive }) => {

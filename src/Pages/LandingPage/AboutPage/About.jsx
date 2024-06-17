@@ -96,10 +96,10 @@ const About = () => {
                        There is a meeting not to be missed!The Lord has great things in store for us!
                       </p>
                       <div className="flex justify-center md:justify-start ">
-                      <NavLink to='/home/sermon'
+                      <a href="https://t.me/gcccIbadan" target="_blank"
                         className="flex mt-4 rounded-sm justify-center  text-[14px] font-semibold   px-10 py-4 text-[#FEFEFE] bg-[#18181A]">
                         Read More
-                      </NavLink>
+                      </a>
                       </div>
               
                    </div>

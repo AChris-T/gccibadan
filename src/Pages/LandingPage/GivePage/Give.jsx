@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
-import access from '../../../assets/Images/access.png'
-import copy from '../../../assets/Images/copy.png'
-const Give = () => {
+import giveImg from '../../../assets/Images/giveImage.jpg'
+/* import copy from '../../../assets/Images/copy.png'
+ */const Give = () => {
     useEffect(()=>{
         window.scrollTo({
           top:0,
@@ -10,9 +10,8 @@ const Give = () => {
       })
   return (
     <div className='overflow-x-hidden'>
-    <div className="flex flex-col gap-16 lg:mx-20 mx-2  mt-24">
-        <h3 className="flex  justify-center items-center mt-10 font-semibold text-[40px] text-[#222222]">GIVE</h3>
-        <div>
+    <div className="flex flex-col lg:mt-[-200px] md:mt-[-50px]   ">
+    {/*     <div>
             <h3 className="lg:w-[435px] h-[90px] bg-[#222222] text-[white] font-semibold text-[32px] pl-5 flex  items-center">Local Payments</h3>
             <div className="flex justify-between px-4 lg:flex-row flex-col items-center">
                 <img src={access} alt='access bank'/>
@@ -31,9 +30,10 @@ const Give = () => {
                 </div>
 
             </div>
+        </div> */}
+        <img src={giveImg} alt='give'/>
         </div>
-        </div>
-        <div className='flex flex-col'>
+      {/*   <div className='flex flex-col'>
             <h3 className=" lg:mx-20 md:w-[435px] lg:h-[90px] h-[92px] bg-[#222222] text-[white] font-semibold text-[32px] pl-5 flex flex-wrap mt-10 text-center  items-center ">Interantional Payments</h3>
             <div className='flex flex-col bg-[#F2F2F2] lg:px-20 mt-10 '>
             <div className=" flex mt-6 justify-between lg:flex-row flex-col items-center px-4">
@@ -92,7 +92,7 @@ const Give = () => {
 
             </div>
                 </div>
-        </div>
+        </div> */}
       
     </div>
   )

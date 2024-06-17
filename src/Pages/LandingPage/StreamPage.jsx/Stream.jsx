@@ -8,13 +8,13 @@ import Arrow from "../../../assets/Images/arrow.png"
 import Footer from "../../../Modals/Footer"
 
 const Stream = () => {
- /*  useEffect(()=>{
+   useEffect(()=>{
     window.scrollTo({
       top:0,
       behavior:"smooth"
     })
-  }) */
-  return (
+  })  
+   return (
    /*  <div className="flex flex-col gap-16 md:mx-20 mx-2 overflow-x-hidden mt-24">
         <h3 className="flex  justify-center items-center mt-10 font-semibold text-[40px] text-[#222222]">LOCATE US</h3>
         <div className="flex md:flex-row flex-col gap-10 md:gap-0 justify-between">
@@ -33,7 +33,7 @@ const Stream = () => {
 
         <div className="md:h-[450px] bg-cover h-[300px]   text-[white] flex  justify-center flex-col items-center  " style={{backgroundImage:"url(https://images.unsplash.com/photo-1541346183200-e8e117d945dd?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)", width:"100%",backgroundRepeat:"no-repeat"}}>
         <div className=" w-full h-full flex  justify-center flex-col items-center " style={{ background: "rgba(0,0,0,0.5)"}}>
-        <h3 className="flex justify-center items-center  font-semibold md:text-[40px] text-[20px] uppercase  ">Take part in our sermon</h3>
+        <h3 className="flex justify-center items-center  font-semibold md:text-[40px] text-[20px] uppercase  "> our Events</h3>
         <div className="md:w-[100px] w-[50px]  flex h-[2px] bg-white mt-3"></div>
         </div>
         </div>

@@ -31,7 +31,7 @@ const Aboutpage = () => {
                 <img src={vision} alt="" className="rounded md:w-[500px] md:h-[300px]"/>
               </div>
               <div className="md:w-[458px]">
-                <p style={{fontFamily:"Lobster Two, sans-serif"}} className="text-[#ff6347] mb-2 text-center md:text-start">Vision</p>
+                <p style={{fontFamily:"Lobster Two, sans-serif"}} className="text-[#ec3538] font-bold mb-2 text-center md:text-start">Vision</p>
               <h5 className="text-center md:text-start"> Vivamus vulputate elit consequat tincidunt maximus. 
                   Vivamus urna erat, egestas nec interdum ut, maximus sed nisi.
                   Donec ac vehicula purus. Fusce sit amet volutpat dolor,
@@ -46,7 +46,7 @@ const Aboutpage = () => {
                 <img src={mission} alt="" className="rounded w-[500px] md:w-[700px] lg:w-[500px] md:h-[300px]"/>
               </div>
               <div className="md:w-[500px]">
-                <p style={{fontFamily:"Lobster Two, sans-serif"}} className="text-[#ff6347] mb-2 lg:px-5  text-center md:text-start">Mission</p>
+                <p style={{fontFamily:"Lobster Two, sans-serif"}} className="text-[#ec3538] font-bold mb-2 lg:px-5  text-center md:text-start">Mission</p>
               <h5 className="lg:w-[500px] md:w-[357px] lg:px-5 text-center md:text-start"> 
                 Vivamus vulputate elit consequat tincidunt maximus. 
                   Vivamus urna erat, egestas nec interdum ut, maximus sed nisi.
@@ -58,11 +58,18 @@ const Aboutpage = () => {
               </div>
             </div>      
           </div>
+          <div className="flex flex-col justify-between gap-5 mt-10 mb-10 lg:mx-56">
+          <h6 style={{fontFamily:"Lobster Two, sans-serif"}}  className="text-[#ec3538] text-center  font-bold">Locate Us</h6>
+                  <iframe width="820" height="560" 
+                    id="gmap_canvas" 
+                    src="https://maps.google.com/maps?q=13%2C+Oluwole+Akintola+way+adacent+Raian+pharmacy%2C+Iyana+Bodija%2Cexpress%2C+Ibadan&t=k&z=13&ie=UTF8&iwloc=&output=embed">
+                    </iframe>       
+                </div>
           <div>  
           <div className="md:h-[250px] h-[300px]   text-[white] flex  justify-center flex-col items-center  " style={{backgroundImage:"url(https://dq5pwpg1q8ru0.cloudfront.net/2022/06/07/10/09/15/61022735-2330-4dd9-9eae-44481f5702df/RisenWebsiteBanners%20copy%2014.jpg)", width:"100%",backgroundRepeat:"no-repeat"}}>
             <h3 className="flex justify-center items-center  font-semibold md:text-[40px] text-[20px]  ">Leadership</h3>
           </div>
-            <p style={{fontFamily:"Lobster Two, sans-serif"}} className="text-[#ff6347] text-center mt-10 ">Our Leaders</p>
+            <p style={{fontFamily:"Lobster Two, sans-serif"}} className="text-[#ec3538] font-bold text-center mt-10 ">Our Leaders</p>
             <div className="flex flex-col items-center justify-center gap-16 mt-10 md:flex-row">
               <div className="flex flex-col">
                 <img src={pzak} alt="pzak" className="w-[250px] h-[250px] rounded-full "/>
@@ -80,6 +87,7 @@ const Aboutpage = () => {
                 <p className="text-center">Pastor,Gccc Ibadan</p>
               </div>
             </div>
+           
           </div>
        {/*  <p className="flex text-center text-[20px] font-normal leading-8">GCCC Ibadan is Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tempor tempus condimentum. 
         Vivamus vulputate elit consequat tincidunt maximus. 

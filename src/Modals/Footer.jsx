@@ -32,7 +32,7 @@ const Footer = () => {
         <NavLink to="" className='font-semibold text-[14px] leading-6'>TUESDAY AT 05:30PM</NavLink>
         <NavLink to="" className='font-semibold text-[14px] leading-6'>FRIDAY AT 05:30PM</NavLink>
       </div>
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-3 justify-start  ">
         <h3 className="font-bold text-[20px] leading-9">CONTACT US</h3>
         <NavLink to="" className='font-medium text-[14px] leading-6 flex flex-row justify-center items-start gap-5'>
           <img src={Home} alt="home" width={"21.33px"} height={'24px'}/>
