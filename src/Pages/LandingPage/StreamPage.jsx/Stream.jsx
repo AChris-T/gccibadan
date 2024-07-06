@@ -79,7 +79,7 @@ const Stream = () => {
           </div>
 
           <p style={{fontFamily:"Lobster Two, sans-serif"}} className="text-[#ec3538] font-bold  text-center md:text-start">Our Events</p>
-          <div className="bg-[#FFD2A4] md:w-[95%] lg:w-[60%] md:h-[424px] flex md:flex-row flex-col-reverse  justify-between">
+          <div className="bg-[#FFD2A4] md:w-[95%] lg:w-[60%] md:h-[446px] flex md:flex-row flex-col-reverse  justify-between">
               <div className="flex items-center flex-col h-full justify-center pl-10 gap-5  md:w-[50%] ">
                 <div className="flex  justify-between items-end w-full   ">
                   <div>
@@ -116,7 +116,7 @@ const Stream = () => {
                   <button className="bg-black text-white px-5 py-3 cursor-pointer rounded-md mt-3 md:mb-0 mb-10">Watch</button>
                 </div>
               </div>
-              <div className="md:w-[380px]">
+              <div className="md:w-[380px] h-[1005]">
                 <img src={igc} alt="mixler"/>
               </div>
           </div>
