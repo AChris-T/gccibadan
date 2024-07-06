@@ -46,7 +46,7 @@ const HomeNavbar = ({loggedInUser}) => {
             >
             Home
             </NavLink>
-            <NavLink to="/home/about"
+            <NavLink to="/about"
                style={({ isActive }) => {
               return {
                 fontWeight: isActive ? "bold" : "",
@@ -56,7 +56,7 @@ const HomeNavbar = ({loggedInUser}) => {
             >
             About
             </NavLink>
-             <NavLink to="/home/events"
+             <NavLink to="/events"
                 style={({ isActive }) => {
               return {
                 fontWeight: isActive ? "bold" : "",
@@ -77,7 +77,7 @@ const HomeNavbar = ({loggedInUser}) => {
             >
             Testimony
             </NavLink> */}
-            <NavLink to="/home/give"
+            <NavLink to="/give"
                 style={({ isActive }) => {
               return {
                 fontWeight: isActive ? "bold" : "",
@@ -170,7 +170,7 @@ const HomeNavbar = ({loggedInUser}) => {
             </NavLink>
       </MenuItem>
         <MenuItem onClick={handleClose}>
-        <NavLink to="/home/about"
+        <NavLink to="/about"
                style={({ isActive }) => {
               return {
                 fontWeight: isActive ? "bold" : "",
@@ -206,7 +206,7 @@ const HomeNavbar = ({loggedInUser}) => {
           </MenuItem>
             */}
           <MenuItem onClick={handleClose}>
-          <NavLink to="/home/give"
+          <NavLink to="/give"
                 style={({ isActive }) => {
               return {
                 fontWeight: isActive ? "bold" : "",
@@ -234,7 +234,7 @@ const HomeNavbar = ({loggedInUser}) => {
       }
       </MenuItem>
       <MenuItem onClick={handleClose}>
-      <NavLink to="/home/events"
+      <NavLink to="/events"
                 style={({ isActive }) => {
               return {
                 fontWeight: isActive ? "bold" : "",
@@ -306,7 +306,7 @@ const HomeNavbar = ({loggedInUser}) => {
             </NavLink>
         </MenuItem>
         <MenuItem onClick={handleClose}>
-        <NavLink to="/home/about"
+        <NavLink to="/about"
                style={({ isActive }) => {
               return {
                 fontWeight: isActive ? "bold" : "",
@@ -341,7 +341,7 @@ const HomeNavbar = ({loggedInUser}) => {
             </NavLink>
           </MenuItem> */}
           <MenuItem onClick={handleClose}>
-          <NavLink to="/home/give"
+          <NavLink to="/give"
                 style={({ isActive }) => {
               return {
                 fontWeight: isActive ? "bold" : "",
@@ -353,7 +353,7 @@ const HomeNavbar = ({loggedInUser}) => {
             </NavLink>
           </MenuItem>
       <MenuItem onClick={handleClose}>
-      <NavLink to="/home/events"
+      <NavLink to="/events"
                 style={({ isActive }) => {
               return {
                 fontWeight: isActive ? "bold" : "",

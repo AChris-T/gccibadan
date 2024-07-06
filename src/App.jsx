@@ -77,9 +77,9 @@ console.log(response)
         <Routes>
         <Route path="/" element={<LandingPage loggedInUser={loggedInUser} onLogout={handleLogout}/>}>
           <Route path ="/" element={<HomeDetails/>}/>
-          <Route path ="/home/about" element={<About/>}/>
-          <Route path ="/home/events" element={<Stream/>}/>
-          <Route path ="/home/give" element={<Give/>}/>
+          <Route path ="/about" element={<About/>}/>
+          <Route path ="/events" element={<Stream/>}/>
+          <Route path ="/give" element={<Give/>}/>
           <Route path="/home/resources" element={<Resources/>}/>
         </Route>
         <Route path="/login" element={<Login onLogin={handleLogin} />} />
