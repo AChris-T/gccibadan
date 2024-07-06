@@ -34,7 +34,7 @@ const Service = () => {
         <h3 className="text-[#fff] md:text-[40px] text-[30px] ">IN-PERSON</h3>
         </div>
         <div className="flex  justify-center ">
-            <NavLink to='/home/about'
+            <NavLink to='/about'
               className="flex mt-4 rounded-sm justify-center  text-[14px] font-semibold   px-10 py-4 text-[#FEFEFE] bg-[#18181A]">
               Locate Us
             </NavLink>
@@ -50,9 +50,9 @@ const Service = () => {
         <h3 className="text-[#fff] md:text-[40px] text-[30px] ">ONLINE</h3>
         </div>
         <div className="flex  justify-center ">
-            <NavLink to='/home/about'
+            <NavLink to='/Events'
               className="flex mt-4 rounded-sm justify-center  text-[14px] font-semibold   px-10 py-4 text-[#FEFEFE] bg-[#18181A]">
-              Watch online
+              Stream online
             </NavLink>
         </div>
         </div>

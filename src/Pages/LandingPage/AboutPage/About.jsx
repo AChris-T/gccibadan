@@ -74,7 +74,7 @@ const About = () => {
                       we are seen to inspire and provoke others unto good works
                       </p>
                       <div className="flex justify-center md:justify-start ">
-                      <NavLink to='/home/about'
+                      <NavLink to='/about'
                         className="flex mt-4 rounded-sm justify-center  text-[14px] font-semibold   px-10 py-4 text-[#FEFEFE] bg-[#18181A]">
                         Read More
                       </NavLink>
