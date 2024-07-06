@@ -20,7 +20,7 @@ const Aboutpage = () => {
   return (
     <div className="flex flex-col w-full gap-16 overflow-x-hidden">
 
-        <div className="md:h-[450px] bg-cover h-[300px]   text-[white] flex  justify-center flex-col items-center  " style={{backgroundImage:"url(https://dq5pwpg1q8ru0.cloudfront.net/2022/10/27/14/41/13/4aa71d56-c474-4b0a-abff-b0fb7c13337f/RisenWebsiteBanners.jpg)", width:"100%",backgroundRepeat:"no-repeat"}}>
+        <div className="Aboutpage md:h-[450px] bg-cover h-[300px]   text-[white] flex  justify-center flex-col items-center" >
         <h3 className="flex justify-center items-center  font-semibold md:text-[40px] text-[20px]  ">About Us</h3>
         <div className="md:w-[100px] w-[50px]  flex h-[2px] bg-white mt-3"></div>
         <h6  className="mt-3 font-normal md:mt-6 md:font-medium ">Vision + Mission</h6>
@@ -32,12 +32,11 @@ const Aboutpage = () => {
               </div>
               <div className="md:w-[458px]">
                 <p style={{fontFamily:"Lobster Two, sans-serif"}} className="text-[#ec3538] font-bold mb-2 text-center md:text-start">Vision</p>
-              <h5 className="text-center md:text-start"> Vivamus vulputate elit consequat tincidunt maximus. 
-                  Vivamus urna erat, egestas nec interdum ut, maximus sed nisi.
-                  Donec ac vehicula purus. Fusce sit amet volutpat dolor,
-                  aliquam euismod justo. Sed euismod vitae neque vitae interdum.
-                  Praesent eget risus pulvinar turpis malesuada 
-                  vestibulum ac et dolor. Praesent quis ornare augue.
+              <h5 className="text-center md:text-start"> 
+                Preparing a community for God to meet with His people
+                God has given us his Word; as we gather, he will meet with us. 
+                As we gather at our branches in Lagos and all over the world, we find
+                this Word to be true: God always shows up!
                 </h5>
               </div>
           </div>
@@ -48,12 +47,10 @@ const Aboutpage = () => {
               <div className="md:w-[500px]">
                 <p style={{fontFamily:"Lobster Two, sans-serif"}} className="text-[#ec3538] font-bold mb-2 lg:px-5  text-center md:text-start">Mission</p>
               <h5 className="lg:w-[500px] md:w-[357px] lg:px-5 text-center md:text-start"> 
-                Vivamus vulputate elit consequat tincidunt maximus. 
-                  Vivamus urna erat, egestas nec interdum ut, maximus sed nisi.
-                  Donec ac vehicula purus. Fusce sit amet volutpat dolor,
-                  aliquam euismod justo. Sed euismod vitae neque vitae interdum.
-                  Praesent eget risus pulvinar turpis malesuada 
-                  vestibulum ac et dolor. Praesent quis ornare augue.
+                  Darkness to Light, Death to Life
+                  Jesus said it best, ‘Go into the world, and preach the Gospel to every creature’.
+                  Delivering men from Hell and the Grave and transforming them into Soldiers for Christ is 
+                  the sole focus of every ministry expression at GCCCIBADAN.
                 </h5>
               </div>
             </div>      
@@ -66,7 +63,7 @@ const Aboutpage = () => {
                     </iframe>       
                 </div>
           <div>  
-          <div className="md:h-[250px] h-[300px]   text-[white] flex  justify-center flex-col items-center  " style={{backgroundImage:"url(https://dq5pwpg1q8ru0.cloudfront.net/2022/06/07/10/09/15/61022735-2330-4dd9-9eae-44481f5702df/RisenWebsiteBanners%20copy%2014.jpg)", width:"100%",backgroundRepeat:"no-repeat"}}>
+          <div className="md:h-[250px] h-[300px]   text-[white] flex  justify-center flex-col items-center  " style={{background:"gray", width:"100%",backgroundRepeat:"no-repeat"}}>
             <h3 className="flex justify-center items-center  font-semibold md:text-[40px] text-[20px]  ">Leadership</h3>
           </div>
             <p style={{fontFamily:"Lobster Two, sans-serif"}} className="text-[#ec3538] font-bold text-center mt-10 ">Our Leaders</p>
