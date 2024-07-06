@@ -122,7 +122,7 @@ const Stream = () => {
           </div>
         </div>
         <div className="flex justify-end px-10 items-center">
-          <a href=""> view all sermon</a>
+          <a href="https://t.me/gcccIbadan/" target="_blank"> view all sermon</a>
           <img src={Arrow} alt="mixler" width={'20px'}/>
         </div>
     <Footer/>
