@@ -31,8 +31,8 @@ const Service = () => {
         <div className="absolute text-white inset-0  bg-gray-700 opacity-35  h-[200px] rounded-md">
         </div>
         <div className="absolute  flex font-bold justify-center items-center w-full  h-[200px]">
-        <h3 className="text-[#fff] md:text-[40px] text-[30px] ">IN-PERSON</h3>
-        </div>
+{/*         <h3 className="text-[#fff] md:text-[40px] text-[30px] ">IN-PERSON</h3>
+ */}        </div>
         <div className="flex  justify-center ">
             <NavLink to='/about'
               className="flex mt-4 rounded-sm justify-center  text-[14px] font-semibold   px-10 py-4 text-[#FEFEFE] bg-[#18181A]">
@@ -47,8 +47,8 @@ const Service = () => {
         <div className="absolute text-white inset-0  bg-gray-700 opacity-35  h-[200px] rounded-md">
         </div>
         <div className="absolute  flex font-bold justify-center items-center w-full  h-[200px]">
-        <h3 className="text-[#fff] md:text-[40px] text-[30px] ">ONLINE</h3>
-        </div>
+{/*         <h3 className="text-[#fff] md:text-[40px] text-[30px] ">ONLINE</h3>
+ */}        </div>
         <div className="flex  justify-center ">
             <NavLink to='/Events'
               className="flex mt-4 rounded-sm justify-center  text-[14px] font-semibold   px-10 py-4 text-[#FEFEFE] bg-[#18181A]">
