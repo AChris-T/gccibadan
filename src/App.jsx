@@ -62,15 +62,10 @@ function App() {
       });
     }
   };
-  const handleLogout = () => {
-    setLoggedInUser(null);
-    localStorage.removeItem("GCCC_ATTENDANCE");
-    localStorage.clear();
-    navigate("/login");
-  };
+
 
   const ProtectedRoute = ({ element, ...rest }) => {
-    return loggedInUser ? element : <Navigate to="/login" />;
+    return loggedInUser ? element : <Navigate to="/" />;
   };
   return (
     <>
@@ -78,7 +73,7 @@ function App() {
         <Route
           path="/"
           element={
-            <LandingPage loggedInUser={loggedInUser} onLogout={handleLogout} />
+            <LandingPage loggedInUser={loggedInUser} />
           }
         >
           <Route path="/" element={<HomeDetails />} />

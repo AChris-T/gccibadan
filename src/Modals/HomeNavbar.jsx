@@ -8,8 +8,9 @@ import logo from "../assets/Images/logo.png";
 import IconButton from "@mui/material/IconButton";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
-const HomeNavbar = ({ loggedInUser }) => {
+const HomeNavbar = ({ loggedInUser}) => {
   const authUser = JSON.parse(localStorage.getItem("GCCC_ATTENDANCE"));
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [active, setactive] = useState(false);
@@ -27,6 +28,14 @@ const HomeNavbar = ({ loggedInUser }) => {
   const handleClose = () => {
     setAnchorEl(null);
   };
+  const handleClearLocalStorage = () => {
+    localStorage.removeItem("GCCC_ATTENDANCE");
+   // Optionally, you can perform additional actions after clearing localStorage
+   window.location.href = '/';
+   toast.error("Have a nice day", {
+     position: "top-right",
+   });
+ };
 
   return (
     <div
@@ -144,6 +153,43 @@ const HomeNavbar = ({ loggedInUser }) => {
                 <ArrowDropDownIcon />
               </IconButton>
               <Menu
+              className="mt-10"
+                id="demo-positioned-menu"
+                aria-labelledby="demo-positioned-button"
+                anchorEl={anchorEl}
+                open={open}
+                onClose={handleClose}
+                anchorOrigin={{
+                  vertical: "top",
+                  horizontal: "left",
+                }}
+                transformOrigin={{
+                  vertical: "top",
+                  horizontal: "left",
+                }}
+                PaperProps={{
+                  style: {
+                    width: "20ch",
+                  },
+                }}
+              >
+                <MenuItem onClick={handleClose}>
+                  <NavLink className=""
+                    to="/"
+                    onClick={handleClearLocalStorage}
+                    style={({ isActive }) => {
+                      return {
+                        fontWeight: isActive ? "bold" : "",
+                        color: isActive ? "black" : "",
+                      };
+                    }}
+                  >
+                    Logout
+                  </NavLink>
+                </MenuItem>
+                </Menu>
+              <Menu
+              className="lg:hidden"
                 id="demo-positioned-menu"
                 aria-labelledby="demo-positioned-button"
                 anchorEl={anchorEl}
@@ -226,8 +272,9 @@ const HomeNavbar = ({ loggedInUser }) => {
                     Give
                   </NavLink>
                 </MenuItem>
-                <MenuItem onClick={handleClose}>
                   {loggedInUser ? (
+                    <>
+                <MenuItem onClick={handleClose}>
                     <NavLink
                       to="/dashboard/attendance"
                       style={({ isActive }) => {
@@ -239,8 +286,17 @@ const HomeNavbar = ({ loggedInUser }) => {
                     >
                       Attendance
                     </NavLink>
-                  ) : null}
                 </MenuItem>
+                <MenuItem onClick={handleClose}>
+                    <NavLink
+                     onClick={handleClearLocalStorage}
+                      to=''
+                    >
+                      Logout
+                    </NavLink>
+                </MenuItem>
+                </>
+                  ) : null}
                 <MenuItem onClick={handleClose}>
                   <NavLink
                     to="/events"
@@ -259,11 +315,6 @@ const HomeNavbar = ({ loggedInUser }) => {
           </div>
         ) : (
           <div className="flex items-center  ">
-            <div className="flex flex-col items-start justify-start">
-              <p className=" text-[#120F14] leading-5 text-[8px] md:text-[14px] font-medium"></p>
-              {/*           <p className=' text-[#42394A] mt-[-px2rem(5)] md:mt-[px2rem(0)] leading-4 text-[7.px2rem(59)] md:text-[px2rem(12)] font-normal'>Music team</p>
-               */}{" "}
-            </div>
             <NavLink
               to="/login"
               className="bg-[#18181A] text-[#fefefe] px-9 py-4 hidden lg:flex rounded-sm text-base font-semibold "

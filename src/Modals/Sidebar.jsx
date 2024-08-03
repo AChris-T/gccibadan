@@ -2,20 +2,16 @@ import gccclogo from "../assets/Images/logo.png";
 import check from "../assets/Images/check.png";
 import settings from "../assets/Images/settings.png";
 import logout from "../assets/Images/logout.png";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { FaUserCheck } from "react-icons/fa";
-//import { BsCalendarDateFill } from "react-icons/bs";
-//import { MdEventAvailable } from "react-icons/md";
-//import SignUp from "../assets/Images/sign_out.png";
 import { toast } from "react-toastify";
 
 const Sidebar = () => {
-  const navigate = useNavigate();
 
   const handleClearLocalStorage = () => {
-    localStorage.removeItem("GCCC_ATTENDANCE");
+     localStorage.removeItem("GCCC_ATTENDANCE");
     // Optionally, you can perform additional actions after clearing localStorage
-    navigate("/");
+    window.location.href = '/';
     toast.error("Have a nice day", {
       position: "top-right",
     });
@@ -99,7 +95,7 @@ const Sidebar = () => {
             className="flex items-center text-[#0094D3]  rounded gap-[18px] h-[48px] px-2 leading-6 text-base font-normal text-center hover:bg-[#D1F1FF] "
           >
           <img src={logout} alt="gccclogo" width={"20px"} height={"20px"} />
-            logout        
+            Logout        
            </NavLink>
            
           {/*   <button
