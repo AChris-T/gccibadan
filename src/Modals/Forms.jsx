@@ -23,7 +23,7 @@ const Forms = () => {
         <AccordionDetails style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
         <iframe 
         title="Google Form"
-        src="https://bit.ly/gcccibadanquestions" 
+        src="https://docs.google.com/forms/d/e/1FAIpQLSeO-WyGS4qovmJl8qABZnvzyvlOIZZffrIVym8ebaZxQnCcLw/viewform?usp=sf_link" 
         width="740" 
         height="800" 
     
