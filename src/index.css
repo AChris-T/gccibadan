@@ -9,10 +9,11 @@
     font-family: "Poppins", sans-serif;
 }
 .Aboutpage{
-    background-image: url(./assets/Images/aboutImgs.jpg);
+    background-image:url(./assets/Images/aboutImgs.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 }
+
 .swiper {
     width: 100%;
     padding-top: 50px;

@@ -12,8 +12,8 @@ const About = () => {
       <h6 style={{fontFamily:"Lobster Two, sans-serif"}}  className="text-[#ec3538] text-center font-bold">What we do</h6>
       <h3 className="w-full flex justify-center text-[#171730] -mt-10 font-semibold text-[32px] leading-10 text-center px-2">We&apos;re glad to have you here</h3>
       <div className="flex justify-center w-full ">
-      <div className="flex flex-col text-center md:text-left w-full gap-5 justify-center  md:flex-row">
-        <div className=" flex gap-5 flex-col lg:flex-row md:flex-col">
+      <div className="flex flex-col justify-center w-full gap-5 text-center md:text-left md:flex-row">
+        <div className="flex flex-col gap-5 lg:flex-row md:flex-col">
         <div className="relative flex flex-col gap-2">
           <div className=" h-[200px] ">
           <img src={newImage} alt="image" className="h-[200px] md:w-[330px] w-full object-cover rounded-md"/>
@@ -21,9 +21,9 @@ const About = () => {
         <div className="absolute text-white inset-0  bg-gray-700 opacity-35 w-full h-[200px] rounded-md">
         </div>
         <div className="absolute  flex font-bold justify-center items-center w-full h-[200px]">
-        <h3 className="text-[#fff] md:text-[40px] text-[30px]">NEW HERE</h3>
+        <h3 className="text-[#fff] md:text-[40px] text-[30px]"></h3>
         </div>
-        <h3 className="px-4 font-bold md:px-0">A Place You Can Call Home</h3>
+        <h3 className="px-4 font-bold text-[20px] md:px-0">A Place You Can Call Home</h3>
         <p className="text-[15px] font-light md:px-0 px-4 md:w-[300px] lg:w-[254px]">Kingdom culture, In christ we have
          been made citizens of the kingdom  of our Father. Him alone is our allegiance We believe strongly in the culture of honour </p>       
         </div>
@@ -34,9 +34,9 @@ const About = () => {
           <div className="absolute text-white inset-0  bg-gray-700 opacity-35 w-full h-[200px] rounded-md">
         </div>
         <div className="absolute  flex font-bold justify-center items-center w-full h-[200px]">
-        <h3 className="text-[#fff] md:text-[40px] text-[30px] ">OUR KIDS</h3>
+        <h3 className="text-[#fff] md:text-[40px] text-[30px] "></h3>
         </div>        
-        <h3 className="px-4 font-bold md:px-0">We Cherish Our Kids</h3>
+        <h3 className="px-4 font-bold md:px-0 text-[20px]">We Cherish Our Kids</h3>
         <p className="text-[15px] font-light md:px-0 px-4 md:w-[300px] lg:w-[260px]">We are of an Excellent Spirit,through our work 
         and service we are able to play our part in the continued establishment of God’s kingdom on Earth</p>
         </div>
@@ -48,9 +48,9 @@ const About = () => {
           <div className="absolute text-white inset-0  bg-gray-700 opacity-35 w-full h-[200px] rounded-md">
         </div>
         <div className="absolute  flex font-bold justify-center items-center w-full h-[200px]">
-        <h3 className="text-[#fff] md:text-[40px] text-[30px] ">FAMILY</h3>
+        <h3 className="text-[#fff] md:text-[40px] text-[30px] "></h3>
         </div> 
-        <h3 className="px-4 font-bold md:px-0">Gospel Community for Church</h3>
+        <h3 className="px-4 font-bold md:px-0 text-[20px]">Gospel Community for Church</h3>
         <p className="text-[15px] font-light md:px-0 px-4 md:w-[300px] lg:w-[260px]">If you are thinking about Love, Family and Kingdom then it is Glory Centre Community Church you are thinking about.You can take our word for it.
          </p>
 

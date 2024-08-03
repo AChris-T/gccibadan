@@ -44,7 +44,7 @@ const Forms = () => {
         <AccordionDetails style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
         <iframe 
         title="Google Form"
-        src="https://bit.ly/gcccibadanquestions" 
+        src="https://docs.google.com/forms/d/e/1FAIpQLSdvaPPujgUqxBRCH0uw_0g9dXUEL-LksYLUysAns6PK-beWzQ/viewform" 
         width="740" 
         height="800" 
     
@@ -65,7 +65,7 @@ const Forms = () => {
         <AccordionDetails style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
         <iframe 
         title="Google Form"
-        src="https://bit.ly/gcccibadanquestions" 
+        src="https://docs.google.com/forms/d/e/1FAIpQLSdxYISVjD717jhbA9VkZqnRhBWsHYzJkBUyv1yK-nQv0xQeFA/viewform?pli=1" 
         width="740" 
         height="800" 
     
