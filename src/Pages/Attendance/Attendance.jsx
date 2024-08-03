@@ -95,7 +95,7 @@ const Attendance = () => {
   };
 
   const showAttendanceButton = () => {
-    return isMarked;
+    return !isMarked;
    
   };
 
@@ -183,7 +183,7 @@ const Attendance = () => {
       </div>
       )}
       </div>
-      <Modal open={open} className="flex justify-center " >
+      <Modal open={open} className="flex justify-center" onClose={handleClose} >
         <Box className="bg-white p-6 rounded-md shadow-md m-auto max-w-sm">
           <Typography variant="h6" component="h2">
             Confirm Navigation
