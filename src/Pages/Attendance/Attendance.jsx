@@ -17,6 +17,7 @@ import check from "../../assets/Images/check2.png"
 import moment from "moment";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+import { Box, Button, Modal, Typography } from "@mui/material";
 
 const Attendance = () => {
   const postDataUrl = import.meta.env.VITE_APP_POST_DATA;
@@ -26,6 +27,10 @@ const Attendance = () => {
   const [loading, setLoading] = useState(false);
   const [loadingUserAttendance, setLoadingUserAttendance] = useState(false);
   const [isMarked, setIsMarked] = useState(false);
+  const [open, setOpen] = useState(false);
+  const handleClose = () => setOpen(false);
+
+
 
   const entriesPerPage = 4; // Number of entries per page
   const maxPaginationButtons = 3;
@@ -75,6 +80,7 @@ const Attendance = () => {
       await res.json();
       toast.success("Your attendance has been recorded");
       setIsMarked(true);
+      setOpen(true);
       userAttendance();
       setLoading(false);
     } catch (error) {
@@ -83,6 +89,125 @@ const Attendance = () => {
     }
   };
 
+
+  const handleConfirm = () => {
+    window.location.href = '/'; // Replace with your actual home page route
+  };
+
+  const showAttendanceButton = () => {
+    return isMarked;
+   
+  };
+
+  const userAttendance = async () => {
+    setLoadingUserAttendance(true);
+
+    try {
+      let getAllAttend = await fetch(postDataUrl);
+      getAllAttend = await getAllAttend.json();
+      getAllAttend = getAllAttend.filter(
+        (user) =>
+          user.Email.toLowerCase() == authUser.Email.toLowerCase() ||
+          user.Phone == authUser.Phone
+      );
+      const alreadyMarked = getAllAttend.find((user) => user.Key == uniqueKey);
+      if (alreadyMarked) {
+        setIsMarked(true);
+      }
+      // if (getAllAttend.length >= 0) {
+      //   moveToEstablished();
+      // }
+      setUserTimes(getAllAttend);
+      setLoadingUserAttendance(false);
+    } catch (error) {
+      setUserTimes([]);
+      setLoadingUserAttendance(false);
+      setIsMarked(false);
+    }
+  };
+
+  useEffect(() => {
+    userAttendance();
+  }, []);
+
+  const totalPages = Math.ceil(userTimes.length / entriesPerPage);
+  const startPage = Math.max(
+    1,
+    currentPage - Math.floor(maxPaginationButtons / 2)
+  );
+  const endPage = Math.min(totalPages, startPage + maxPaginationButtons - 1);
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
+
+  
+  return (
+    <div className="w-full px-2 mt-[30px] h-[100vh]">
+    <div className="flex gap-6 flex-col mb-[70px]">
+      <div className="flex flex-col-reverse justify-between gap-4 mx-4 md:flex-row md:gap-0">
+  
+        <div>
+          <h3 className="font-semibold text-[24px] leading-8">Welcome to Church</h3>
+        </div>
+        <div className="flex items-center gap-2">
+          <p className="text-[14px] text-[#6e7173] leading-6 font-normal">{formattedDateTime } | </p>
+          <img src={star} alt="djs" width={'20px'} height={'20px'}/>
+
+        </div>
+        </div>
+        {loadingUserAttendance ? (
+            <Skeleton height={"2rem"} count={2} />
+          ) : (
+        <div className="flex flex-col items-center justify-between gap-4 mx-4 md:flex-row">
+        <div className="flex items-center gap-2">
+          <h3 className="font-light  text-[16px] leading-8">You can register your presence by clicking on the button <span className="md:hidden">below</span></h3>
+          <img src={arrow} alt="arrow" width={'24px'} height={'24px'} className="hidden md:flex"/>
+        </div>
+        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap justify-between gap-3">
+             {showAttendanceButton() && (
+               <button
+                  onClick={handleButtonClick}
+                  className=" px-6 py-4  rounded-[2px] bg-[#0094D3] leading-6 text-[16px] font-medium text-[white]"
+                  >
+                  {loading && <span>Loading...</span>}
+                  {!loading && <div className="flex items-center gap-2"><img src={check} alt="gccclogo" width={"24px"} height={"24px"} />
+                   Present</div>}
+                  </button>
+               )}
+               <UserAbsent />
+            </div>
+
+        </div>
+      </div>
+      )}
+      </div>
+      <Modal open={open} className="flex justify-center " >
+        <Box className="bg-white p-6 rounded-md shadow-md m-auto max-w-sm">
+          <Typography variant="h6" component="h2">
+            Confirm Navigation
+          </Typography>
+          <Typography className="my-4">
+            Thank your for marking your attendance, Do yo wish to go back to home page
+          </Typography>
+          <div className="flex justify-end gap-3 mt-5">
+            <Button variant="outlined" color="secondary"  className="mr-2" onClick={handleClose}>
+              Cancel
+            </Button>
+            <Button variant="contained" color="primary" onClick={handleConfirm} >
+              Yes
+            </Button>
+          </div>
+        </Box>
+      </Modal>
+      
+
+    </div>
+  );
+};
+
+export default Attendance;
   // move to established
   // const moveToEstablished = async () => {
   //   try {
@@ -137,125 +262,8 @@ const Attendance = () => {
   //   } catch (error) {
   //     toast.error("Error, Please try again");
   //   }
-  // };
-
-  const showAttendanceButton = () => {
-    return !isMarked;
-    //  (
-    //   (!isMarked &&
-    //     current.day === "Sunday" &&
-    //     current.time >= "07:30" &&
-    //     current.time <= "12:30") ||
-    //   (!isMarked &&
-    //     current.day === "Tuesday" &&
-    //     current.time >= "17:30" &&
-    //     current.time <= "20:30") ||
-    //   (!isMarked &&
-    //     current.day === "Friday" &&
-    //     current.time >= "17:30" &&
-    //     current.time <= "20:30")
-    // );
-  };
-
-  const userAttendance = async () => {
-    setLoadingUserAttendance(true);
-
-    try {
-      let getAllAttend = await fetch(postDataUrl);
-      getAllAttend = await getAllAttend.json();
-      getAllAttend = getAllAttend.filter(
-        (user) =>
-          user.Email.toLowerCase() == authUser.Email.toLowerCase() ||
-          user.Phone == authUser.Phone
-      );
-      const alreadyMarked = getAllAttend.find((user) => user.Key == uniqueKey);
-      if (alreadyMarked) {
-        setIsMarked(true);
-      }
-      // if (getAllAttend.length >= 0) {
-      //   moveToEstablished();
-      // }
-      setUserTimes(getAllAttend);
-      setLoadingUserAttendance(false);
-    } catch (error) {
-      setUserTimes([]);
-      setLoadingUserAttendance(false);
-      setIsMarked(false);
-    }
-  };
-
-  useEffect(() => {
-    userAttendance();
-  }, []);
-
-  const totalPages = Math.ceil(userTimes.length / entriesPerPage);
-  const startPage = Math.max(
-    1,
-    currentPage - Math.floor(maxPaginationButtons / 2)
-  );
-  const endPage = Math.min(totalPages, startPage + maxPaginationButtons - 1);
-
-  const handlePageChange = (page) => {
-    setCurrentPage(page);
-  };
-
-  
-  return (
-    <div className="w-full px-2 mt-[30px] h-[100vh]">
-    <div className="flex gap-6 flex-col mb-[70px]">
-      <div className="flex flex-col-reverse justify-between gap-4 mx-4 md:flex-row md:gap-0">
-        {/* <h1 className="mb-2 text-2xl font-bold text-blue-700">Beloved</h1>
-        <p className="">We welcome you to our church attendance website.</p>
-        <p className="">
-          At Glory Centre Community Church Ibadan, we believe in fellowship and
-          the importance of staying connected. Therefore, this platform is
-          designed with you in mind, making it easier than ever to keep track of
-          our church family.
-        </p>
-        <p className="">
-          As you record your attendance today, remember that your presence in
-          person or virtually is a valued and essential part of our church
-          community.
-        </p> */}
-        <div>
-          <h3 className="font-semibold text-[24px] leading-8">Welcome to Church</h3>
-        </div>
-        <div className="flex items-center gap-2">
-          <p className="text-[14px] text-[#6e7173] leading-6 font-normal">{formattedDateTime } | </p>
-          <img src={star} alt="djs" width={'20px'} height={'20px'}/>
-
-        </div>
-        </div>
-        {loadingUserAttendance ? (
-            <Skeleton height={"2rem"} count={2} />
-          ) : (
-        <div className="flex flex-col items-center justify-between gap-4 mx-4 md:flex-row">
-        <div className="flex items-center gap-2">
-          <h3 className="font-light  text-[16px] leading-8">You can register your presence by clicking on the button <span className="md:hidden">below</span></h3>
-          <img src={arrow} alt="arrow" width={'24px'} height={'24px'} className="hidden md:flex"/>
-        </div>
-        <div className="flex items-center gap-2">
-        <div className="flex flex-wrap justify-between gap-3">
-             {showAttendanceButton() && (
-               <button
-                  onClick={handleButtonClick}
-                  className=" px-6 py-4  rounded-[2px] bg-[#0094D3] leading-6 text-[16px] font-medium text-[white]"
-                  >
-                  {loading && <span>Loading...</span>}
-                  {!loading && <div className="flex items-center gap-2"><img src={check} alt="gccclogo" width={"24px"} height={"24px"} />
-                   Present</div>}
-                  </button>
-               )}
-               <UserAbsent />
-            </div>
-
-        </div>
-      </div>
-      )}
-      </div>
-
-      
- {/*      <div className="flex items-center justify-between px-5 mb-4">
+  // }
+   {/*      <div className="flex items-center justify-between px-5 mb-4">
         <div>
               <h3 className="md:text-[20px] text-[16px] text-[#0b2243] font-semibold md:font-medium leading-4">Attendance History</h3>
         </div>
@@ -407,8 +415,30 @@ const Attendance = () => {
         )} 
       </div>
         */}
-    </div>
-  );
-};
-
-export default Attendance;
+         //  (
+    //   (!isMarked &&
+    //     current.day === "Sunday" &&
+    //     current.time >= "07:30" &&
+    //     current.time <= "12:30") ||
+    //   (!isMarked &&
+    //     current.day === "Tuesday" &&
+    //     current.time >= "17:30" &&
+    //     current.time <= "20:30") ||
+    //   (!isMarked &&
+    //     current.day === "Friday" &&
+    //     current.time >= "17:30" &&
+    //     current.time <= "20:30")
+    // );
+          {/* <h1 className="mb-2 text-2xl font-bold text-blue-700">Beloved</h1>
+        <p className="">We welcome you to our church attendance website.</p>
+        <p className="">
+          At Glory Centre Community Church Ibadan, we believe in fellowship and
+          the importance of staying connected. Therefore, this platform is
+          designed with you in mind, making it easier than ever to keep track of
+          our church family.
+        </p>
+        <p className="">
+          As you record your attendance today, remember that your presence in
+          person or virtually is a valued and essential part of our church
+          community.
+        </p> */}
