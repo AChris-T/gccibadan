@@ -129,10 +129,10 @@ const HomeNavbar = ({ loggedInUser }) => {
               {/*           <p className=' text-[#42394A] mt-[-px2rem(5)] md:mt-[px2rem(0)] leading-4 text-[7.px2rem(59)] md:text-[px2rem(12)] font-normal'>Music team</p>
                */}{" "}
             </div>
-            <div className="lg:hidden md:flex rounded-full border-[#4775ff] border-[2px] p-1 ">
+            <div className="flex ml-2 rounded-full border-[#4775ff] border-[2px] p-1 ">
               <img src={profile} alt={profile} width={"20px"} height={"20px"} />
             </div>
-            <div className="flex lg:hidden ml-[-10px]">
+            <div className="flex  ml-[-10px]">
               <IconButton
                 aria-label="more"
                 id="long-button"
@@ -164,7 +164,7 @@ const HomeNavbar = ({ loggedInUser }) => {
                 }}
               >
                 <MenuItem onClick={handleClose}>
-                  <NavLink
+                  <NavLink className=""
                     to="/"
                     style={({ isActive }) => {
                       return {
