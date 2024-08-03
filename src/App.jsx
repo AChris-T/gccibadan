@@ -7,7 +7,7 @@ import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
 import Attendance from "./Pages/Attendance/Attendance";
 import Dashboard from "./Pages/ChurchDashboard/Dashboard";
 import Events from "./Pages/Events/Events";
-import LandingPage from "./Pages/LandingPage/HomePage/Home"
+import LandingPage from "./Pages/LandingPage/HomePage/Home";
 import Home from "./Pages/Home/Home";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -37,12 +37,11 @@ function App() {
       const response = await fetch(getDataUrl);
       const users = await response.json();
       const lowercaseUsername = username.toLowerCase();
-console.log(response)
       const user = users.find(
         (user) =>
           (user.Email.toLowerCase() == lowercaseUsername &&
-            user.Phone == password) ||
-          (user.Phone == username && user.Phone == password)
+            user["Phone Number"] == password) ||
+          (user["Phone Number"] == username && user["Phone Number"] == password)
       );
 
       if (user) {
@@ -66,6 +65,7 @@ console.log(response)
   const handleLogout = () => {
     setLoggedInUser(null);
     localStorage.removeItem("GCCC_ATTENDANCE");
+    localStorage.clear();
     navigate("/login");
   };
 
@@ -74,13 +74,18 @@ console.log(response)
   };
   return (
     <>
-        <Routes>
-        <Route path="/" element={<LandingPage loggedInUser={loggedInUser} onLogout={handleLogout}/>}>
-          <Route path ="/" element={<HomeDetails/>}/>
-          <Route path ="/about" element={<About/>}/>
-          <Route path ="/events" element={<Stream/>}/>
-          <Route path ="/give" element={<Give/>}/>
-          <Route path="/home/resources" element={<Resources/>}/>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <LandingPage loggedInUser={loggedInUser} onLogout={handleLogout} />
+          }
+        >
+          <Route path="/" element={<HomeDetails />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/events" element={<Stream />} />
+          <Route path="/give" element={<Give />} />
+          <Route path="/home/resources" element={<Resources />} />
         </Route>
         <Route path="/login" element={<Login onLogin={handleLogin} />} />
 
