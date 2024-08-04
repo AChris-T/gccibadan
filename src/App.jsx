@@ -18,6 +18,8 @@ import Give from "./Pages/LandingPage/GivePage/Give";
 import Navbar from "./Modals/Navbar";
 import HomeNavbar from "./Modals/HomeNavbar";
 import Resources from "./Pages/Resources/Resources";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState(null);
@@ -26,6 +28,7 @@ function App() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    AOS.init();
     const storedUser = localStorage.getItem("GCCC_ATTENDANCE");
     if (storedUser) {
       setLoggedInUser(JSON.parse(storedUser));
@@ -63,19 +66,13 @@ function App() {
     }
   };
 
-
   const ProtectedRoute = ({ element, ...rest }) => {
     return loggedInUser ? element : <Navigate to="/" />;
   };
   return (
     <>
       <Routes>
-        <Route
-          path="/"
-          element={
-            <LandingPage loggedInUser={loggedInUser} />
-          }
-        >
+        <Route path="/" element={<LandingPage loggedInUser={loggedInUser} />}>
           <Route path="/" element={<HomeDetails />} />
           <Route path="/about" element={<About />} />
           <Route path="/events" element={<Stream />} />
