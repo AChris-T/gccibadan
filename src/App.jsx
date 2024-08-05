@@ -12,6 +12,7 @@ import Home from "./Pages/Home/Home";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import About from "./Pages/LandingPage/AboutPage/Aboutpage";
+import Forms from "./Pages/LandingPage/Formspage/Formspage";
 import HomeDetails from "./Pages/LandingPage/HomeDetails/HomeDetails";
 import Stream from "./Pages/LandingPage/StreamPage.jsx/Stream";
 import Give from "./Pages/LandingPage/GivePage/Give";
@@ -75,6 +76,7 @@ function App() {
         <Route path="/" element={<LandingPage loggedInUser={loggedInUser} />}>
           <Route path="/" element={<HomeDetails />} />
           <Route path="/about" element={<About />} />
+          <Route path="/forms" element={<Forms />} />
           <Route path="/events" element={<Stream />} />
           <Route path="/give" element={<Give />} />
           <Route path="/home/resources" element={<Resources />} />

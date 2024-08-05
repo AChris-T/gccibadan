@@ -21,6 +21,12 @@ const Footer = () => {
             ABOUT
           </NavLink>
           <NavLink
+            to="/forms"
+            className=" text-[13px] leading-6 text-[#9f9f9f]"
+          >
+            FORMS
+          </NavLink>
+          <NavLink
             to="/dashboard/attendance"
             className=" text-[13px] leading-6 text-[#9f9f9f]"
           >
