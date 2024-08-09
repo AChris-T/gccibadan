@@ -32,7 +32,7 @@ const Footer = () => {
         <NavLink to="" className='font-semibold text-[14px] leading-6'>TUESDAY AT 05:30PM</NavLink>
         <NavLink to="" className='font-semibold text-[14px] leading-6'>FRIDAY AT 05:30PM</NavLink>
       </div>
-      <div className="flex flex-col gap-3 justify-start  ">
+      <div className="flex flex-col justify-start gap-3 ">
         <h3 className="font-bold text-[20px] leading-9">CONTACT US</h3>
         <NavLink to="" className='font-medium text-[14px] leading-6 flex flex-row justify-center items-start gap-5'>
           <img src={Home} alt="home" width={"21.33px"} height={'24px'}/>
@@ -46,34 +46,6 @@ const Footer = () => {
           <img src={call} alt="call" width={"21.33px"} height={'24px'}/>
           <p className="w-56 -mt-1">gcccibadan01@gmail.com</p>
         </NavLink>      
-
-        <div className="flex flex-col gap-3 justify-start  ">
-          <h3 className="font-bold text-[20px] leading-9">CONTACT US</h3>
-          <NavLink
-            to=""
-            className="font-medium text-[13px] text-[#9f9f9f] leading-6 flex flex-row justify-center items-start gap-5"
-          >
-            <img src={Home} alt="home" width={"21.33px"} height={"24px"} />
-            <p className="-mt-1 md:w-56">
-              13, Oluwole Akintola way adacent Raian pharmacy, Iyana
-              Bodija,express, Ibadan.
-            </p>
-          </NavLink>
-          <a
-            href="mailto:gcccibadan01@gmail.com"
-            className="font-medium mb-3 text-[13px] text-[#9f9f9f] leading-6 flex flex-row justify-center items-start gap-5"
-          >
-            <img src={mail} alt="mail" width={"21.33px"} height={"24px"} />
-            <span className="w-56 -mt-1">gcccibadan01@gmail.com</span>
-          </a>
-          {/* <NavLink
-            to=""
-            className="font-medium text-[13px] text-[#9f9f9f] leading-6 flex flex-row justify-center items-start gap-5"
-          >
-            <img src={call} alt="call" width={"21.33px"} height={"24px"} />
-            <p className="w-56 -mt-1">gcccibadan01@gmail.com</p>
-          </NavLink> */}
-        </div>
       </div>
       <div className="w-full px-20  h-[1px] rounded-sm border-[1px] border-[#fdfdfd]"></div>
       <div className="flex justify-between mt-4">
