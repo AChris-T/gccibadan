@@ -1,12 +1,12 @@
-import { NavLink } from "react-router-dom"
-import call from "../assets/Images/call.png"
-import Home from "../assets/Images/home.png"
-import mail from "../assets/Images/mail.png"
-import logo from "../assets/Images/logo2.png"
-import facebook from "../assets/Images/facebook.png"
-import inst from "../assets/Images/instag.png"
-import youtube from "../assets/Images/you.png"
-import mixlr from "../assets/Images/mixlr.png"
+import { NavLink } from "react-router-dom";
+import call from "../assets/Images/call.png";
+import Home from "../assets/Images/home.png";
+import mail from "../assets/Images/mail.png";
+import logo from "../assets/Images/logo2.png";
+import facebook from "../assets/Images/facebook.png";
+import inst from "../assets/Images/instag.png";
+import youtube from "../assets/Images/you.png";
+import mixlr from "../assets/Images/mixlr.png";
 
 const Footer = () => {
   return (
@@ -46,30 +46,78 @@ const Footer = () => {
           <img src={call} alt="call" width={"21.33px"} height={'24px'}/>
           <p className="w-56 -mt-1">gcccibadan01@gmail.com</p>
         </NavLink>      
-        </div>
-    </div>
-    <div className="w-full px-20  h-[1px] rounded-sm border-[1px] border-[#fdfdfd]"></div>
-    <div className="flex justify-between mt-4">
-      <img src={logo} alt="log" className="hidden md:flex"/>
-      <div className="flex gap-3">
-        <a href='' className="bg-[#fff]  rounded-full w-[32px]  h-[32px] flex justify-center items-center">
-          <img src={facebook} alt="" width={'9.06px'} height={'18px'}/>
-        </a>
-        <a href='' className="bg-[#fff]  rounded-full w-[32px]  h-[32px] flex justify-center items-center">
-          <img src={inst} alt="" width={'16px'} height={'16px'}/>
-        </a>
-        <a href="" className="w-[34.13px]  h-[30px] flex justify-center items-center">
-          <img src={youtube} alt="" width={'34.13px'} height={'30px'}/>
-        </a>
-        <a href="" className="  rounded-full w-[96px]  h-[28.83px] flex justify-center items-center">
-          <img src={mixlr} alt="" width={'96px'} height={'28.83px'}/>
-        </a>
-      </div>
-    </div>
-    <h3 className="mt-10 font-normal text-[12px] text-[#ffff] w-full flex justify-center items-center text-center">@2024 Glory centre community church, Ibadan. All rights reserved</h3>
-      
-    </div>
-  )
-}
 
-export default Footer
+        <div className="flex flex-col gap-3 justify-start  ">
+          <h3 className="font-bold text-[20px] leading-9">CONTACT US</h3>
+          <NavLink
+            to=""
+            className="font-medium text-[13px] text-[#9f9f9f] leading-6 flex flex-row justify-center items-start gap-5"
+          >
+            <img src={Home} alt="home" width={"21.33px"} height={"24px"} />
+            <p className="-mt-1 md:w-56">
+              13, Oluwole Akintola way adacent Raian pharmacy, Iyana
+              Bodija,express, Ibadan.
+            </p>
+          </NavLink>
+          <a
+            href="mailto:gcccibadan01@gmail.com"
+            className="font-medium mb-3 text-[13px] text-[#9f9f9f] leading-6 flex flex-row justify-center items-start gap-5"
+          >
+            <img src={mail} alt="mail" width={"21.33px"} height={"24px"} />
+            <span className="w-56 -mt-1">gcccibadan01@gmail.com</span>
+          </a>
+          {/* <NavLink
+            to=""
+            className="font-medium text-[13px] text-[#9f9f9f] leading-6 flex flex-row justify-center items-start gap-5"
+          >
+            <img src={call} alt="call" width={"21.33px"} height={"24px"} />
+            <p className="w-56 -mt-1">gcccibadan01@gmail.com</p>
+          </NavLink> */}
+        </div>
+      </div>
+      <div className="w-full px-20  h-[1px] rounded-sm border-[1px] border-[#fdfdfd]"></div>
+      <div className="flex justify-between mt-4">
+        <NavLink to="/" className="">
+          <img src={logo} alt="log" className="hidden md:flex" />
+        </NavLink>
+
+        <div className="flex gap-3">
+          <a
+            target="_blank"
+            href="https://web.facebook.com/GCCCIBADAN"
+            className="bg-[#fff]  rounded-full w-[32px]  h-[32px] flex justify-center items-center"
+          >
+            <img src={facebook} alt="" width={"9.06px"} height={"18px"} />
+          </a>
+          <a
+            target="_blank"
+            href="https://www.instagram.com/gcccibadan/"
+            className="bg-[#fff]  rounded-full w-[32px]  h-[32px] flex justify-center items-center"
+          >
+            <img src={inst} alt="" width={"16px"} height={"16px"} />
+          </a>
+          <a
+            target="_blank"
+            href="https://www.youtube.com/@gccc_ibadan"
+            className="w-[34.13px]  h-[30px] flex justify-center items-center"
+          >
+            <img src={youtube} alt="" width={"34.13px"} height={"30px"} />
+          </a>
+          <a
+            target="_blank"
+            href="https://gcccibadan.mixlr.com/events"
+            className="  rounded-full w-[96px]  h-[28.83px] flex justify-center items-center"
+          >
+            <img src={mixlr} alt="" width={"96px"} height={"28.83px"} />
+          </a>
+        </div>
+      </div>
+      <h3 className="mt-10 font-normal text-[12px] text-[#9a9a9a] w-full flex justify-center items-center text-center">
+        &copy; 2024 Glory centre community church, Ibadan. All rights reserved.
+      </h3>
+    </div>
+    </div>
+  );
+};
+
+export default Footer;
