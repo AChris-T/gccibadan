@@ -5,8 +5,8 @@ import { useEffect } from "react"
 import vision from "../../../assets/Images/vision.jpg"
 import mission from "../../../assets/Images/mission.jpg"
 import pzak from "../../../assets/Images/pzak.jpg"
-import pope from "../../../assets/Images/pope.jpg"
-import mama from "../../../assets/Images/mama.jpg"
+import pope from "../../../assets/Images/papa.jpg"
+import mama from "../../../assets/Images/pst.jpg"
 import Footer from "../../../Modals/Footer"
 import img5 from "../../../assets/Images/aboutImgs.jpg"
 
@@ -84,12 +84,12 @@ const Aboutpage = () => {
                 <p className="text-center">Lead Pastor,Gccc</p>
               </div>
               <div className="flex flex-col">
-                <img src={pope} alt="pzak" className="w-[250px] h-[250px] rounded-full "/>
+                <img src={pope} alt="pzak" className="w-[250px]  h-[250px] rounded-full "/>
                 <h5 className="font-semibold text-center">Pastor Opeyemi Peter</h5>
                 <p className="text-center">Lead Pastor,Gccc Ibadan</p>
               </div>
               <div className="flex flex-col">
-                <img src={mama} alt="pzak" className="w-[250px] h-[250px] rounded-full "/>
+                <img src={mama} alt="pzak" className="w-[250px] h-[250px] object-cover rounded-full "/>
                  <h5 className="font-semibold text-center">Pastor Opeyemi Faith</h5>
                 <p className="text-center">Pastor,Gccc Ibadan</p>
               </div>

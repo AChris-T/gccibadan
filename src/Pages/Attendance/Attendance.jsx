@@ -185,18 +185,14 @@ const Attendance = () => {
       </div>
       <Modal open={open} className="flex justify-center" onClose={handleClose} >
         <Box className="bg-white p-6 rounded-md shadow-md m-auto max-w-sm">
-          <Typography variant="h6" component="h2">
-            Confirm Navigation
-          </Typography>
+          
           <Typography className="my-4">
-            Thank your for marking your attendance, Do yo wish to go back to home page
-          </Typography>
+          Thank you for confirming your attendance          
+           </Typography>
           <div className="flex justify-end gap-3 mt-5">
-            <Button variant="outlined" color="secondary"  className="mr-2" onClick={handleClose}>
-              Cancel
-            </Button>
+           
             <Button variant="contained" color="primary" onClick={handleConfirm} >
-              Yes
+              okay
             </Button>
           </div>
         </Box>

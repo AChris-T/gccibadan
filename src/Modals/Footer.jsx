@@ -36,7 +36,7 @@ const Footer = () => {
         <h3 className="font-bold text-[20px] leading-9">CONTACT US</h3>
         <NavLink to="" className='font-medium text-[14px] leading-6 flex flex-row justify-center items-start gap-5'>
           <img src={Home} alt="home" width={"21.33px"} height={'24px'}/>
-          <p className="-mt-1 md:w-56">13, Oluwole Akintola way adacent Raian pharmacy, Iyana Bodija,express, Ibadan.</p>
+          <p className="-mt-1 md:w-56">13, Oluwole Akintola way adjacent Raian pharmacy, Iyana Bodija,express, Ibadan.</p>
         </NavLink>
         <NavLink to="" className='font-medium mb-3 text-[14px] leading-6 flex flex-row justify-center items-start gap-5'>
           <img src={mail} alt="mail" width={"21.33px"} height={'24px'}/>
