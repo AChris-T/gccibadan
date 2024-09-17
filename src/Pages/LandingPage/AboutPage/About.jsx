@@ -165,7 +165,7 @@ const About = () => {
               </h2>
               <div className="flex-col items-center justify-center md:flex-1">
                 <p className="flex  text-center md:text-left font-normal text-[16px] leading-2 px-3 md:px-0 md:pr-6">
-                  There is a meeting not to be missed!The Lord has great things
+                  There is a meeting not to be missed! The Lord has great things
                   in store for us!
                 </p>
                 <div className="flex justify-center md:justify-start ">
