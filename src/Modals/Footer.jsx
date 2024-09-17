@@ -14,17 +14,17 @@ const Footer = () => {
     <div className="flex flex-wrap gap-10 md:gap-0 justify-between flex-row text-[#fff] pb-14  " >
       <div className="flex flex-col gap-3">
         <h3 className="font-bold text-[20px] leading-9">QUICK LINKS</h3>
-        <NavLink to="" className='font-semibold text-[14px] leading-6'>ABOUT GCCC IBADAN</NavLink>
-        <NavLink to="" className='font-semibold text-[14px] leading-6'>VISON & MISSON</NavLink>
-        <NavLink to="" className='font-semibold text-[14px] leading-6'>JOIN OUR DAILY PRAYERS</NavLink>
-        <NavLink to="" className='font-semibold text-[14px] leading-6'>TESTIMONY FORM</NavLink>
-        <NavLink to="" className='font-semibold text-[14px] leading-6'>CAREER OPPORTUNITES</NavLink>
+        <NavLink to="/about" className='font-semibold text-[14px] leading-6'>ABOUT GCCC IBADAN</NavLink>
+        <NavLink to="/about" className='font-semibold text-[14px] leading-6'>VISON & MISSON</NavLink>
+        <a href='https://meet.google.com/grr-ybkh-jsp' className='font-semibold text-[14px] leading-6'>JOIN OUR DAILY PRAYERS</a>
+        <NavLink to="/" className='font-semibold text-[14px] leading-6'>TESTIMONY FORM</NavLink>
+        <NavLink to="/about" className='font-semibold text-[14px] leading-6'>CAREER OPPORTUNITES</NavLink>
       </div>
       <div className="flex flex-col gap-3">
         <h3 className="font-bold text-[20px] leading-9">MEDIA</h3>
-        <NavLink to="" className='font-semibold text-[14px] leading-6'>LIVESTREAM</NavLink>
-        <NavLink to="" className='font-semibold text-[14px] leading-6'>SERMONS</NavLink>
-        <NavLink to="" className='font-semibold text-[14px] leading-6'>JOIN OUR TELEGRAM GROUP</NavLink>
+        <NavLink to="/events" className='font-semibold text-[14px] leading-6'>LIVESTREAM</NavLink>
+        <NavLink to="/events" className='font-semibold text-[14px] leading-6'>SERMONS</NavLink>
+        <NavLink to="/events" className='font-semibold text-[14px] leading-6'>JOIN OUR TELEGRAM GROUP</NavLink>
       </div>
       <div className="flex flex-col gap-3">
         <h3 className="font-bold text-[20px] leading-9">SERVICE DETAILS</h3>
