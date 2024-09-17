@@ -66,7 +66,7 @@ const About = () => {
                 We Cherish Our Kids
               </h3>
               <p className="text-[15px] font-light md:px-0 px-4 md:w-[300px] lg:w-[260px]">
-                We are of an Excellent Spirit,through our work and service we
+                We are of an Excellent Spirit, through our work and service we
                 are able to play our part in the continued establishment of
                 God’s kingdom on Earth
               </p>
