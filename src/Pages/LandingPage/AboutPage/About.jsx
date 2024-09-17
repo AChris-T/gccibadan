@@ -42,7 +42,7 @@ const About = () => {
               </h3>
               <p className="text-[15px] font-light md:px-0 px-4 md:w-[300px] lg:w-[254px]">
                 Kingdom culture, In christ we have been made citizens of the
-                kingdom of our Father. Him alone is our allegiance We believe
+                kingdom of our Father. Him alone is our allegiance.We believe
                 strongly in the culture of honour{" "}
               </p>
             </div>
@@ -129,8 +129,7 @@ const About = () => {
               </h2>
               <div className="flex-col items-center justify-center md:flex-1">
                 <p className="flex  text-center md:text-left font-normal text-[16px] leading-2 px-3 md:px-0 md:pr-6">
-                  It is a great honor to serve in God’s house and kingdom,
-                  through our work and service we are able to play our part in
+                  It is a great honor to serve in God’s house and kingdom, through our work and service we are able to play our part in
                   the continued establishment of God’s kingdom on Earth we are
                   seen to inspire and provoke others unto good works
                 </p>
