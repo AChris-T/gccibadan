@@ -18,6 +18,8 @@ import moment from "moment";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { Box, Button, Modal, Typography } from "@mui/material";
+import { FaFingerprint } from "react-icons/fa";
+
 
 const Attendance = () => {
   const postDataUrl = import.meta.env.VITE_APP_POST_DATA;
@@ -29,7 +31,7 @@ const Attendance = () => {
   const [isMarked, setIsMarked] = useState(false);
   const [open, setOpen] = useState(false);
   const handleClose = () => setOpen(false);
-
+  const [isReading, setIsReading] = useState(false);
 
 
   const entriesPerPage = 4; // Number of entries per page
@@ -60,6 +62,10 @@ const Attendance = () => {
   // Function to handle button click
   const handleButtonClick = async () => {
     setLoading(true);
+    setIsReading(true);
+    setTimeout(() => {
+      setIsReading(false);
+    }, 4000);
 
     try {
       const formData = new FormData();
@@ -159,22 +165,80 @@ const Attendance = () => {
         {loadingUserAttendance ? (
             <Skeleton height={"2rem"} count={2} />
           ) : (
-        <div className="flex flex-col items-center justify-between gap-4 mx-4 md:flex-row">
+        <div className="flex flex-col items-center justify-between gap-4 mx-4 ">
         <div className="flex items-center gap-2">
-          <h3 className="font-light  text-[16px] leading-8">You can register your presence by clicking on the button <span className="md:hidden">below</span></h3>
-          <img src={arrow} alt="arrow" width={'24px'} height={'24px'} className="hidden md:flex"/>
+          <h3 className="font-light text-center text-[16px] leading-8">You can register your presence by clicking on the button below </h3>
+          <img src={arrow} alt="arrow" width={'24px'} height={'24px'} className="hidden "/>
         </div>
         <div className="flex items-center gap-2">
-        <div className="flex flex-wrap justify-between gap-3">
+        <div className="flex flex-col justify-between gap-3">
              {showAttendanceButton() && (
-               <button
+              <>
+              <div style={{ textAlign: "center", marginTop: "50px" }}>
+      <div
+        style={{
+          position: "relative",
+          display: "inline-block",
+          cursor: "pointer",
+        }}
+        onClick={handleButtonClick}
+        >
+        {/* Outer animated ring */}
+        {isReading && (
+          <div
+            style={{
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              width: "120px",
+              height: "120px",
+              border: "3px solid rgba(0, 123, 255, 0.5)",
+              borderRadius: "50%",
+              animation: "spin 1s linear infinite",
+              zIndex: 0,
+            }}
+          />
+        )}
+
+        {/* Fingerprint icon */}
+        <FaFingerprint
+          size={100}
+          style={{
+            position: "relative",
+            color: isReading ? "#007bff" : "#333",
+            zIndex: 1,
+            transition: "color 0.3s",
+          }}
+        />
+      </div>
+
+      {/* Reading message */}
+      {isReading && <p style={{ marginTop: "10px" }}>Reading...</p>}
+
+      <style>
+        {`
+          @keyframes spin {
+            0% {
+              transform: translate(-50%, -50%) rotate(0deg);
+            }
+            100% {
+              transform: translate(-50%, -50%) rotate(360deg);
+            }
+          }
+        `}
+      </style>
+    </div>
+                
+             {/*   <button
                   onClick={handleButtonClick}
                   className=" px-6 py-4  rounded-[2px] bg-[#0094D3] leading-6 text-[16px] font-medium text-[white]"
                   >
                   {loading && <span>Loading...</span>}
                   {!loading && <div className="flex items-center gap-2"><img src={check} alt="gccclogo" width={"24px"} height={"24px"} />
                    Present</div>}
-                  </button>
+                  </button> */}
+              </>
                )}
                <UserAbsent />
             </div>
@@ -184,7 +248,7 @@ const Attendance = () => {
       )}
       </div>
       <Modal open={open} className="flex justify-center" onClose={handleClose} >
-        <Box className="bg-white p-6 rounded-md shadow-md m-auto max-w-sm">
+        <Box className="max-w-sm p-6 m-auto bg-white rounded-md shadow-md">
           
           <Typography className="my-4">
           Thank you for confirming your attendance          
@@ -197,7 +261,7 @@ const Attendance = () => {
           </div>
         </Box>
       </Modal>
-      
+     
 
     </div>
   );
