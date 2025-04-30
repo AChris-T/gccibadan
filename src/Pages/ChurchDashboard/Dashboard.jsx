@@ -36,7 +36,7 @@ const Dashboard = () => {
   }, [location.pathname]);
 
   return (
-    <div className="max-w-[1440px]   bg-[#24244e] mx-auto shadow-card">
+    <div className="max-w-[1440px   bg-[#24244e] mx-auto shadow-card">
       <div className="flex flex-col ">
         <div className="flex flex-col h-[100dvh] justify-between w-full">
           <div>

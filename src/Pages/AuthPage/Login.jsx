@@ -1,17 +1,17 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react";
-import "react-toastify/dist/ReactToastify.css";
-import { toast } from "react-toastify";
-import logo from '../../assets/Images/image.png'
+import { useState } from 'react';
+import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
+import logo from '../../assets/Images/image.png';
 import { ClipLoader } from 'react-spinners';
 
 const Login = ({ onLogin }) => {
-  const [username, setusername] = useState("");
+  const [username, setusername] = useState('');
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
-    if (!username.trim().length )
-      return toast.error("Invalid Email/Phone Number");
+    if (!username.trim().length)
+      return toast.error('Invalid Email/Phone Number');
     setLoading(true);
     e.preventDefault();
     await onLogin(username);
@@ -20,19 +20,23 @@ const Login = ({ onLogin }) => {
 
   return (
     <div>
-      <div className=" max-w-[1300px] bg-[#24244e] mx-auto  overflow-x-hidden">
+      <div className=" max-w-[1440px] bg-[#24244e] mx-auto  overflow-x-hidden">
         <div className="flex items-center justify-center w-full px-2 align-middle ">
           <div className="flex justify-center items-center w-full h-[100vh] ">
             <div className="  flex flex-col items-center w-full px-4 py-[30px] railway">
-              {" "}
+              {' '}
               {/*  bg-white translate-y-[50%] md:translate-y-[15%] md:w-[436px] w-full    flex  flex-col px-4  md:px-[20px] py-[30px] */}
-              <img src={logo} alt=''/>
+              <img src={logo} alt="" />
               <h3 className="text-[32px] mt-2 leading-10 mb-2 railway font-semibold flex justify-center  text-white w-[390px] text-center">
-              Sign In To Keep Track Of Your Attendance.
+                Sign In To Keep Track Of Your Attendance.
               </h3>
-              <p className="font-medium text-center text-white railway">Grow deeper in your commitment to God’s house.</p>
+              <p className="font-medium text-center text-white railway">
+                Grow deeper in your commitment to God’s house.
+              </p>
               <form className="flex w-full  md:w-[50%] mt-10 flex-col  gap-3 md:px-[30px] ">
-                <label className="text-white">Email Address Or Phone Number</label>
+                <label className="text-white">
+                  Email Address Or Phone Number
+                </label>
                 <input
                   type="text"
                   value={username}
@@ -41,7 +45,7 @@ const Login = ({ onLogin }) => {
                   onChange={(e) => setusername(e.target.value)}
                   className="px-4 w-full  focus:outline-none py-[13px] rounded-lg border-[1.8px] bg-white"
                 />
-               {/*  <div className="flex justify-between mt-2">
+                {/*  <div className="flex justify-between mt-2">
                   <div className="flex items-center gap-1">
                     <input type="checkbox" className="" />
                     <span className="text-[12px]">Remenber Me</span>
@@ -52,13 +56,14 @@ const Login = ({ onLogin }) => {
                 </div> */}
                 <div className="flex justify-center w-full">
                   <button
-                  type="submit"
+                    type="submit"
                     onClick={handleSubmit}
                     disabled={loading}
                     className="mt-2 rounded-lg railway  text-[#fff] text-[20px] border-none hover:bg-blue-400 bg-[#4C8EFF] w-full py-3 flex justify-center font-normal"
                   >
-                    {loading && <ClipLoader size={20} className="mt-1" color="#fff" />
-                  }
+                    {loading && (
+                      <ClipLoader size={20} className="mt-1" color="#fff" />
+                    )}
                     {!loading && <span>Sign in</span>}
                   </button>
                 </div>
@@ -69,7 +74,7 @@ const Login = ({ onLogin }) => {
                     target="_blank"
                     className="text-[12px]  text-blue-500 ml-1 cursor-pointer underline"
                   >
-                   Register
+                    Register
                   </a>
                 </p>
               </form>
