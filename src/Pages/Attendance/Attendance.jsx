@@ -105,7 +105,7 @@ const Attendance = () => {
       );
       const alreadyMarked = getAllAttend.find((user) => user.Key == uniqueKey);
       if (alreadyMarked) {
-        setIsMarked(false); //note this
+        setIsMarked(true); //note this
       }
       // if (getAllAttend.length >= 0) {
       //   moveToEstablished();
