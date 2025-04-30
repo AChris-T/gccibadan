@@ -35,7 +35,7 @@ const Login = ({ onLogin }) => {
               <p className="font-medium text-center text-white railway">
                 Grow deeper in your commitment to God’s house.
               </p>
-              <form className="flex w-[400px]  mt-10 flex-col  gap-3 md:px-[30px] ">
+              <form className="flex md:w-[400px] w-[90%]  mt-10 flex-col  gap-3 md:px-[30px] ">
                 <label className="text-white">
                   Email Address Or Phone Number
                 </label>
