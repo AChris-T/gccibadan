@@ -1,113 +1,92 @@
 /* eslint-disable no-unused-vars */
-import React, { useState, useEffect } from "react";
-import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
-import Navbar from "../../Modals/Navbar";
-import Sidebar from "../../Modals/Sidebar";
-import Box from "@mui/material/Box";
-import BottomNavigation from "@mui/material/BottomNavigation";
-import BottomNavigationAction from "@mui/material/BottomNavigationAction";
-import RestoreIcon from "@mui/icons-material/Restore";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
-import { FaUserCheck } from "react-icons/fa";
-import { BsCalendarDateFill } from "react-icons/bs";
-import { MdEventAvailable } from "react-icons/md";
+import React, { useState, useEffect } from 'react';
+import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
+import Navbar from '../../Modals/Navbar';
+import Sidebar from '../../Modals/Sidebar';
+import Box from '@mui/material/Box';
+import BottomNavigation from '@mui/material/BottomNavigation';
+import BottomNavigationAction from '@mui/material/BottomNavigationAction';
+import RestoreIcon from '@mui/icons-material/Restore';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import { FaUserCheck } from 'react-icons/fa';
+import { BsCalendarDateFill } from 'react-icons/bs';
+import { MdEventAvailable } from 'react-icons/md';
 
 const Dashboard = () => {
-  const [titleApp, setTitleApp] = useState("Home");
+  const [titleApp, setTitleApp] = useState('Home');
   const location = useLocation();
   const [value, setValue] = React.useState(0);
 
   useEffect(() => {
     switch (location.pathname) {
-      case "/dashboard":
-        setTitleApp("Home");
+      case '/dashboard':
+        setTitleApp('Home');
         break;
-      case "/dashboard/attendance":
-        setTitleApp("Attendance");
+      case '/dashboard/attendance':
+        setTitleApp('Attendance');
         break;
-      case "/dashboard/events":
-        setTitleApp("Events");
+      case '/dashboard/events':
+        setTitleApp('Events');
         break;
       default:
-        setTitleApp("Home");
+        setTitleApp('Home');
         break;
     }
   }, [location.pathname]);
 
   return (
-    <div className="max-w-[1440px] mx-auto shadow-card">
-      <div className="flex flex-col justify-between  md:grid md:grid-cols-5 xl:grid-cols-6  ">
-        <div className=" hidden pb-5   md:block h-[100vh]  sticky  top-0 ">
-          <div className=" ">
-            <Sidebar />
-          </div>
-        </div>
-        <div className="navbar-content  md:col-span-4 xl:col-span-5">
-          <div className="navbar  border z-20 sticky top-0">
-            <div className="navbar  border z-20 sticky top-0 bg-white">
-              <Navbar title={titleApp} />
-            </div>
-            <div className="">
+    <div className="max-w-[1440px]   bg-[#24244e] mx-auto shadow-card">
+      <div className="flex flex-col ">
+        <div className="flex flex-col h-[100dvh] justify-between w-full">
+          <div>
+            <Navbar title={titleApp} />
+            <div className="md:h-[90dvh] overflow-y-scroll new mt-[-20px] md:mt-[-100px]">
               <Outlet />
-              <div className="hidden justify-end sticky bg-slate-600">
-                <Box
-                  sx={{
-                    position: "fixed",
-                    bottom: 0,
-                    left: 0,
-                    right: 0,
-                    height: "50px",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "space-between",
-                    width: "100%",
-                    paddingTop: "2px",
-                    paddingRight: "10px",
-                  }}
-                >
-                  <NavLink
-                    to="/dashboard/home"
-                    className=" px-8 flex text-center items-center gap-1 text-sm flex-col"
-                    style={({ isActive }) => {
-                      return {
-                        fontWeight: isActive ? "bold" : "",
-                        color: isActive ? "blue" : "",
-                      };
-                    }}
-                  >
-                    <FaUserCheck />
-                    Home
-                  </NavLink>
-                  <NavLink
-                    to="/dashboard/attendance"
-                    className=" px-8 flex text-center items-center gap-1 text-sm flex-col"
-                    style={({ isActive }) => {
-                      return {
-                        fontWeight: isActive ? "bold" : "",
-                        color: isActive ? "blue" : "",
-                      };
-                    }}
-                  >
-                    <BsCalendarDateFill />
-                    Attendance
-                  </NavLink>
-                  <NavLink
-                    to="/dashboard/events"
-                    className="px-8 flex text-center items-center gap-1 text-sm flex-col"
-                    style={({ isActive }) => {
-                      return {
-                        fontWeight: isActive ? "bold" : "",
-                        color: isActive ? "blue" : "",
-                      };
-                    }}
-                  >
-                    <MdEventAvailable />
-                    Events
-                  </NavLink>
-                </Box>
-              </div>
             </div>
+          </div>
+          <div className="max-w-[1440px] w-full flex justify-between lg:px-[142px] pt-3 pb-4 bottom-0 fixed bg-[#2E2E44] ">
+            <NavLink
+              to="/"
+              className="flex flex-col items-center   rounded gap-[8px] h-[48px] px-2 text-[12px] font-medium  "
+              style={({ isActive }) => {
+                return {
+                  fontWeight: isActive ? '500' : '500',
+                  color: isActive ? '#fff' : '#151529',
+                };
+              }}
+            >
+              <FaUserCheck className="text-[24px]" />
+              Home
+            </NavLink>
+            <NavLink
+              to="attendance"
+              className="flex flex-col items-center   rounded gap-[8px] h-[48px] px-2 text-[12px] font-medium  "
+              style={({ isActive }) => {
+                return {
+                  fontWeight: isActive ? '500' : '500',
+                  color: isActive ? '#fff' : '#151529',
+                };
+              }}
+            >
+              <FaUserCheck className="text-[24px]" />
+              {/*           <img src={check} alt="gccclogo" width={"px2rem(24)"} height={"px2rem(24)"} />
+               */}{' '}
+              Attendance{' '}
+            </NavLink>
+            <NavLink
+              to="/profile"
+              className="flex flex-col items-center   rounded gap-[8px] h-[48px] px-2 text-[12px] font-medium  "
+              style={({ isActive }) => {
+                return {
+                  fontWeight: isActive ? '500' : '500',
+                  color: isActive ? '#fff' : '#151529',
+                };
+              }}
+            >
+              <FaUserCheck className="text-[24px]" />
+              Profile
+            </NavLink>
           </div>
         </div>
       </div>

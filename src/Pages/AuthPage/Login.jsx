@@ -2,72 +2,67 @@
 import { useState } from "react";
 import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";
+import logo from '../../assets/Images/image.png'
+import { ClipLoader } from 'react-spinners';
 
 const Login = ({ onLogin }) => {
   const [username, setusername] = useState("");
-  const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
-    if (!username.trim().length && !password.trim().length)
-      return toast.error("Please enter your username and password");
+    if (!username.trim().length )
+      return toast.error("Invalid Email/Phone Number");
     setLoading(true);
     e.preventDefault();
-    await onLogin(username, password);
+    await onLogin(username);
     setLoading(false);
   };
 
   return (
     <div>
-      <div className=" max-w-[1300px] container  bg-[#FAFAF9] mx-auto shadow-card overflow-x-hidden">
+      <div className=" max-w-[1300px] bg-[#24244e] mx-auto  overflow-x-hidden">
         <div className="flex items-center justify-center w-full px-2 align-middle ">
-          <div className="outer"></div>
           <div className="flex justify-center items-center w-full h-[100vh] ">
-            <div className="bg-white md:w-[400px] opacity-50 rounded-lg hover:opacity-90 w-[100%] px-4  md:px-[10px] py-[30px]">
+            <div className="  flex flex-col items-center w-full px-4 py-[30px] railway">
               {" "}
               {/*  bg-white translate-y-[50%] md:translate-y-[15%] md:w-[436px] w-full    flex  flex-col px-4  md:px-[20px] py-[30px] */}
-              <h3 className="text-[30px] flex justify-center w-full text-blue-500 font-bold">
-                Login
+              <img src={logo} alt=''/>
+              <h3 className="text-[32px] mt-2 leading-10 mb-2 railway font-semibold flex justify-center  text-white w-[390px] text-center">
+              Sign In To Keep Track Of Your Attendance.
               </h3>
-              <form className="flex flex-col  gap-3 md:px-[30px] mt-4">
-                <label>Username:</label>
+              <p className="font-medium text-center text-white railway">Grow deeper in your commitment to God’s house.</p>
+              <form className="flex w-full  md:w-[50%] mt-10 flex-col  gap-3 md:px-[30px] ">
+                <label className="text-white">Email Address Or Phone Number</label>
                 <input
                   type="text"
                   value={username}
                   placeholder="Email/Phone Number"
                   required
                   onChange={(e) => setusername(e.target.value)}
-                  className="px-4 placeholder-blue-300 focus:outline-none py-[13px] rounded-lg border-[1.8px] border-blue-400"
+                  className="px-4 w-full  focus:outline-none py-[13px] rounded-lg border-[1.8px] bg-white"
                 />
-                <label>Password:</label>
-                <input
-                  type="password"
-                  id="password"
-                  placeholder="Phone number"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  className="px-4 focus:border-blue-500  focus:outline-none placeholder-blue-300 py-[13px] rounded-lg border-[1.8px] border-blue-400"
-                />
-                <div className="flex justify-between mt-2">
+               {/*  <div className="flex justify-between mt-2">
                   <div className="flex items-center gap-1">
                     <input type="checkbox" className="" />
                     <span className="text-[12px]">Remenber Me</span>
                   </div>
                   {/* <div>
                 <span  className="text-[12px] text-blue-500 underline cursor-pointer">Forget password?</span>
-               </div> */}
-                </div>
+               </div> 
+                </div> */}
                 <div className="flex justify-center w-full">
                   <button
+                  type="submit"
                     onClick={handleSubmit}
                     disabled={loading}
-                    className="mt-2 rounded-lg border-[1.8px] text-[#fff] text-[20px] hover:bg-blue-400 bg-blue-500 w-full py-3 flex justify-center font-normal"
+                    className="mt-2 rounded-lg railway  text-[#fff] text-[20px] border-none hover:bg-blue-400 bg-[#4C8EFF] w-full py-3 flex justify-center font-normal"
                   >
-                    {loading && <span>Authenticating...</span>}
+                    {loading && <ClipLoader size={20} className="mt-1" color="#fff" />
+                  }
                     {!loading && <span>Sign in</span>}
                   </button>
                 </div>
-                <p className="flex w-full text-[14px]  justify-center  items-center">
+                <p className="flex w-full text-white railway text-[14px]  justify-center  items-center">
                   Dont have an account?
                   <a
                     href="https://docs.google.com/forms/d/e/1FAIpQLScZ48ojbVzUIjByfLBxO7aSG9GUiyNFKXwD7XiJqTFVNtjdrw/viewform?usp=sf_link"

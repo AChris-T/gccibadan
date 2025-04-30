@@ -1,63 +1,52 @@
 /* eslint-disable no-unused-vars */
-import dayjs from "dayjs";
+import dayjs from 'dayjs';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
-import { useEffect, useState } from "react";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-//import Paper from "@mui/material/Paper";
-import { toast } from "react-toastify";
-import UserAbsent from "../UserAbsent/UserAbsent";
-import star from "../../assets/Images/star.png"
-import arrow from "../../assets/Images/arrow.png"
-import check from "../../assets/Images/check2.png"
-import moment from "moment";
-import Skeleton from "react-loading-skeleton";
-import "react-loading-skeleton/dist/skeleton.css";
-import { Box, Button, Modal, Typography } from "@mui/material";
-import { FaFingerprint } from "react-icons/fa";
-
+import { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
+import UserAbsent from '../UserAbsent/UserAbsent';
+import arrow from '../../assets/Images/arrow.png';
+import 'react-loading-skeleton/dist/skeleton.css';
+import { Box, Button, Modal, Typography } from '@mui/material';
+import { FaFingerprint } from 'react-icons/fa';
+import Lottie from 'lottie-react';
+import animationData from '../../assets/Animation.json';
+import { motion } from 'framer-motion';
+import { FaHandPointer } from 'react-icons/fa';
+import HandIcon from '../../assets/HandIcon';
 
 const Attendance = () => {
   const postDataUrl = import.meta.env.VITE_APP_POST_DATA;
-  const authUser = JSON.parse(localStorage.getItem("GCCC_ATTENDANCE"));
+  const authUser = JSON.parse(localStorage.getItem('GCCC_ATTENDANCE'));
   const [userTimes, setUserTimes] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1); // Current page of pagination
+  /*  const [currentPage, setCurrentPage] = useState(1); // Current page of pagination */
   const [loading, setLoading] = useState(false);
   const [loadingUserAttendance, setLoadingUserAttendance] = useState(false);
   const [isMarked, setIsMarked] = useState(false);
   const [open, setOpen] = useState(false);
   const handleClose = () => setOpen(false);
   const [isReading, setIsReading] = useState(false);
+  const formattedTime = dayjs().format('hh:mm A ');
 
-
-  const entriesPerPage = 4; // Number of entries per page
+  /*  const entriesPerPage = 4; // Number of entries per page
   const maxPaginationButtons = 3;
-  
+ */
   dayjs.extend(customParseFormat);
 
   const current = {
-    time: dayjs().format("HH:mm A"),
-    day: dayjs().format("dddd"),
-    date: dayjs().format("DD"),
-    month: dayjs().format("MMM"),
-    year: dayjs().format("YYYY"),
+    time: dayjs().format('HH:mm A'),
+    day: dayjs().format('dddd'),
+    date: dayjs().format('DD'),
+    month: dayjs().format('MMM'),
+    year: dayjs().format('YYYY'),
   };
-  const formattedDateTime = dayjs().format('dddd [,] MMMM DD YYYY');
-
-
-
   const uniqueKey = `${current.day}-${current.date}-${current.month}-${current.year}`;
 
-  const formatTime = (time) => {
+  /* const formatTime = (time) => {
     if (time) {
-      let display = moment(time).utc(time).format("DD MMM YYYY hh:mma");
+      let display = moment(time).utc(time).format('DD MMM YYYY hh:mma');
       return display;
     }
-  };
+  }; */
 
   // Function to handle button click
   const handleButtonClick = async () => {
@@ -70,31 +59,30 @@ const Attendance = () => {
     try {
       const formData = new FormData();
       formData.append(
-        "Name",
-        `${authUser["First Name"]} ${authUser["Last Name"]}`
+        'Name',
+        `${authUser['First Name']} ${authUser['Last Name']}`
       );
-      formData.append("Phone", authUser.Phone);
-      formData.append("Email", authUser.Email);
-      formData.append("Service", current.day);
-      formData.append("Date", new Date());
-      formData.append("Time", current.time);
-      formData.append("Key", uniqueKey);
+      formData.append('Phone', authUser.Phone);
+      formData.append('Email', authUser.Email);
+      formData.append('Service', current.day);
+      formData.append('Date', new Date());
+      formData.append('Time', current.time);
+      formData.append('Key', uniqueKey);
       const res = await fetch(postDataUrl, {
-        method: "POST",
+        method: 'POST',
         body: formData,
       });
       await res.json();
-      toast.success("Your attendance has been recorded");
+      toast.success('Your attendance has been recorded');
       setIsMarked(true);
       setOpen(true);
       userAttendance();
       setLoading(false);
     } catch (error) {
-      toast.error("Error, Please try again");
+      toast.error('Error, Please try again');
       setLoading(false);
     }
   };
-
 
   const handleConfirm = () => {
     window.location.href = '/'; // Replace with your actual home page route
@@ -102,7 +90,6 @@ const Attendance = () => {
 
   const showAttendanceButton = () => {
     return !isMarked;
-   
   };
 
   const userAttendance = async () => {
@@ -118,7 +105,7 @@ const Attendance = () => {
       );
       const alreadyMarked = getAllAttend.find((user) => user.Key == uniqueKey);
       if (alreadyMarked) {
-        setIsMarked(true);
+        setIsMarked(false); //note this
       }
       // if (getAllAttend.length >= 0) {
       //   moveToEstablished();
@@ -136,194 +123,152 @@ const Attendance = () => {
     userAttendance();
   }, []);
 
-  const totalPages = Math.ceil(userTimes.length / entriesPerPage);
+  /* const totalPages = Math.ceil(userTimes.length / entriesPerPage);
   const startPage = Math.max(
     1,
     currentPage - Math.floor(maxPaginationButtons / 2)
-  );
-  const endPage = Math.min(totalPages, startPage + maxPaginationButtons - 1);
+  ); */
 
-  const handlePageChange = (page) => {
-    setCurrentPage(page);
-  };
-
-  
   return (
-    <div className="w-full px-2 mt-[30px] h-[100vh]">
-    <div className="flex gap-6 flex-col mb-[70px]">
-      <div className="flex flex-col-reverse justify-between gap-4 mx-4 md:flex-row md:gap-0">
-  
-        <div>
-          <h3 className="font-semibold text-[24px] leading-8">Welcome to Church</h3>
-        </div>
-        <div className="flex items-center gap-2">
-          <p className="text-[14px] text-[#6e7173] leading-6 font-normal">{formattedDateTime } | </p>
-          <img src={star} alt="djs" width={'20px'} height={'20px'}/>
-
-        </div>
+    <div className="w-full px-2 mt-[70px] ">
+      <div className="flex gap-3 flex-col items-center mb-[70px]">
+        <div className="flex flex-col items-center justify-between gap-5 mx-4 ">
+          <h1 className=" capitalize md:block text-[14px] ml-2 leading-8 font-normal text-white">
+            Hello 👋,{authUser['First Name']}
+          </h1>
+          <div className="flex items-center justify-center w-full gap-1 ">
+            <p className="text-[32px] text-center text-white leading-10 font-semibold">
+              Welcome To {current.day} Service!{' '}
+            </p>
+          </div>
         </div>
         {loadingUserAttendance ? (
-            <Skeleton height={"2rem"} count={2} />
-          ) : (
-        <div className="flex flex-col items-center justify-between gap-4 mx-4 ">
-        <div className="flex items-center gap-2">
-          <h3 className="font-light text-center text-[16px] leading-8">You can register your presence by clicking on the button below </h3>
-          <img src={arrow} alt="arrow" width={'24px'} height={'24px'} className="hidden "/>
-        </div>
-        <div className="flex items-center gap-2">
-        <div className="flex flex-col justify-between gap-3">
-             {showAttendanceButton() && (
-              <>
-              <div style={{ textAlign: "center", marginTop: "50px" }}>
-      <div
-        style={{
-          position: "relative",
-          display: "inline-block",
-          cursor: "pointer",
-        }}
-        onClick={handleButtonClick}
-        >
-        {/* Outer animated ring */}
-        {isReading && (
-          <div
-            style={{
-              position: "absolute",
-              top: "50%",
-              left: "50%",
-              transform: "translate(-50%, -50%)",
-              width: "120px",
-              height: "120px",
-              border: "3px solid rgba(0, 123, 255, 0.5)",
-              borderRadius: "50%",
-              animation: "spin 1s linear infinite",
-              zIndex: 0,
-            }}
+          <Lottie
+            animationData={animationData}
+            loop={true}
+            style={{ width: 150, height: 150 }}
           />
-        )}
+        ) : (
+          <div className="flex flex-col items-center justify-between gap-4 mx-4 ">
+            <div className="flex flex-col items-center gap-1">
+              {showAttendanceButton() && (
+                <div className="p-3 bg-[#2E2E44] rounded-full bg- ">
+                  <div className="bg-[#3A4D70] rounded-full">
+                    <motion.div
+                      onClick={handleButtonClick}
+                      className="rounded-full bg-[#4C8EFF] p-9 cursor-pointer relative"
+                      initial={{ scale: 0.8 }}
+                      animate={{ scale: [1, 1.1, 1] }}
+                      transition={{
+                        repeat: Infinity,
+                        repeatType: 'loop',
+                        duration: 1.5,
+                        type: 'spring',
+                      }}
+                    >
+                      {/* Outer pulsating circles */}
+                      <span className="absolute inset-0 rounded-full  border-4 border-[#2c3a61] opacity-40 animate-ping"></span>
+                      <span className="absolute inset-1 rounded-full border-4 border-[#2c3a61] opacity-30 animate-ping delay-300"></span>
 
-        {/* Fingerprint icon */}
-        <FaFingerprint
-          size={100}
-          style={{
-            position: "relative",
-            color: isReading ? "#007bff" : "#333",
-            zIndex: 1,
-            transition: "color 0.3s",
-          }}
-        />
-      </div>
-
-      {/* Reading message */}
-      {isReading && <p style={{ marginTop: "10px" }}>Reading...</p>}
-
-      <style>
-        {`
-          @keyframes spin {
-            0% {
-              transform: translate(-50%, -50%) rotate(0deg);
-            }
-            100% {
-              transform: translate(-50%, -50%) rotate(360deg);
-            }
-          }
-        `}
-      </style>
-    </div>
-                
-             {/*   <button
-                  onClick={handleButtonClick}
-                  className=" px-6 py-4  rounded-[2px] bg-[#0094D3] leading-6 text-[16px] font-medium text-[white]"
-                  >
-                  {loading && <span>Loading...</span>}
-                  {!loading && <div className="flex items-center gap-2"><img src={check} alt="gccclogo" width={"24px"} height={"24px"} />
-                   Present</div>}
-                  </button> */}
-              </>
-               )}
-               <UserAbsent />
+                      {/* Icon */}
+                      <HandIcon />
+                    </motion.div>
+                  </div>
+                </div>
+              )}
+              {isReading && (
+                <p style={{ marginTop: '10px' }} className="text-white">
+                  Reading...
+                </p>
+              )}
+              <h3 className="mt-[37px] text-white">
+                Tap the button to log your attendance
+              </h3>
+              <p className="text-sm font-semibold text-white">Clock In Time</p>
+              <p className="text-white">{formattedTime}</p>
             </div>
-
-        </div>
+            <div className="flex items-center gap-2">
+              <div className="flex flex-col justify-between gap-3">
+                <UserAbsent />
+              </div>
+            </div>
+          </div>
+        )}
       </div>
-      )}
-      </div>
-      <Modal open={open} className="flex justify-center" onClose={handleClose} >
+      <Modal open={open} className="flex justify-center" onClose={handleClose}>
         <Box className="max-w-sm p-6 m-auto bg-white rounded-md shadow-md">
-          
           <Typography className="my-4">
-          Thank you for confirming your attendance          
-           </Typography>
+            Thank you for confirming your attendance
+          </Typography>
           <div className="flex justify-end gap-3 mt-5">
-           
-            <Button variant="contained" color="primary" onClick={handleConfirm} >
+            <Button variant="contained" color="primary" onClick={handleConfirm}>
               okay
             </Button>
           </div>
         </Box>
       </Modal>
-     
-
     </div>
   );
 };
 
 export default Attendance;
-  // move to established
-  // const moveToEstablished = async () => {
-  //   try {
-  //     const formData = new FormData();
+// move to established
+// const moveToEstablished = async () => {
+//   try {
+//     const formData = new FormData();
 
-  //     formData.append("Timestamp", new Date());
-  //     formData.append("Email", authUser.Email);
-  //     formData.append("First Name", authUser["First Name"]);
-  //     formData.append("Last Name", authUser["Last Name"]);
-  //     formData.append("Phone", authUser.Phone);
-  //     formData.append("Gender", authUser.Gender);
-  //     formData.append(
-  //       "How did you learn about GCCC ?",
-  //       authUser["How did you learn about GCCC ?"]
-  //     );
-  //     formData.append(
-  //       "Name of Friend/Family",
-  //       authUser["Name of Friend/Family"]
-  //     );
-  //     formData.append(
-  //       "Do you reside in Ibadan?",
-  //       authUser["Do you reside in Ibadan?"]
-  //     );
-  //     formData.append(
-  //       "Would you be interested in becoming a consistent member of GCCC?",
-  //       authUser[
-  //         "Would you be interested in becoming a consistent member of GCCC?"
-  //       ]
-  //     );
-  //     formData.append(
-  //       "Address in Ibadan (Kindly provide a detailed description of your home address)",
-  //       authUser[
-  //         "Address in Ibadan (Kindly provide a detailed description of your home address)"
-  //       ]
-  //     );
-  //     formData.append("Date of Birth", authUser["Date of Birth"]);
-  //     formData.append("What do you do?", authUser["What do you do?"]);
-  //     formData.append(
-  //       "What did you enjoy about the service today?",
-  //       authUser["What did you enjoy about the service today?"]
-  //     );
-  //     formData.append(
-  //       "Kindy share your prayer point with us (if any)",
-  //       authUser["Kindy share your prayer point with us (if any)"]
-  //     );
-  //     formData.append("Status", authUser.Status);
+//     formData.append("Timestamp", new Date());
+//     formData.append("Email", authUser.Email);
+//     formData.append("First Name", authUser["First Name"]);
+//     formData.append("Last Name", authUser["Last Name"]);
+//     formData.append("Phone", authUser.Phone);
+//     formData.append("Gender", authUser.Gender);
+//     formData.append(
+//       "How did you learn about GCCC ?",
+//       authUser["How did you learn about GCCC ?"]
+//     );
+//     formData.append(
+//       "Name of Friend/Family",
+//       authUser["Name of Friend/Family"]
+//     );
+//     formData.append(
+//       "Do you reside in Ibadan?",
+//       authUser["Do you reside in Ibadan?"]
+//     );
+//     formData.append(
+//       "Would you be interested in becoming a consistent member of GCCC?",
+//       authUser[
+//         "Would you be interested in becoming a consistent member of GCCC?"
+//       ]
+//     );
+//     formData.append(
+//       "Address in Ibadan (Kindly provide a detailed description of your home address)",
+//       authUser[
+//         "Address in Ibadan (Kindly provide a detailed description of your home address)"
+//       ]
+//     );
+//     formData.append("Date of Birth", authUser["Date of Birth"]);
+//     formData.append("What do you do?", authUser["What do you do?"]);
+//     formData.append(
+//       "What did you enjoy about the service today?",
+//       authUser["What did you enjoy about the service today?"]
+//     );
+//     formData.append(
+//       "Kindy share your prayer point with us (if any)",
+//       authUser["Kindy share your prayer point with us (if any)"]
+//     );
+//     formData.append("Status", authUser.Status);
 
-  //     await fetch(postDataUrl, {
-  //       method: "POST",
-  //       body: formData,
-  //     });
-  //   } catch (error) {
-  //     toast.error("Error, Please try again");
-  //   }
-  // }
-   {/*      <div className="flex items-center justify-between px-5 mb-4">
+//     await fetch(postDataUrl, {
+//       method: "POST",
+//       body: formData,
+//     });
+//   } catch (error) {
+//     toast.error("Error, Please try again");
+//   }
+// }
+{
+  /*      <div className="flex items-center justify-between px-5 mb-4">
         <div>
               <h3 className="md:text-[20px] text-[16px] text-[#0b2243] font-semibold md:font-medium leading-4">Attendance History</h3>
         </div>
@@ -474,22 +419,24 @@ export default Attendance;
           </button>
         )} 
       </div>
-        */}
-         //  (
-    //   (!isMarked &&
-    //     current.day === "Sunday" &&
-    //     current.time >= "07:30" &&
-    //     current.time <= "12:30") ||
-    //   (!isMarked &&
-    //     current.day === "Tuesday" &&
-    //     current.time >= "17:30" &&
-    //     current.time <= "20:30") ||
-    //   (!isMarked &&
-    //     current.day === "Friday" &&
-    //     current.time >= "17:30" &&
-    //     current.time <= "20:30")
-    // );
-          {/* <h1 className="mb-2 text-2xl font-bold text-blue-700">Beloved</h1>
+        */
+}
+//  (
+//   (!isMarked &&
+//     current.day === "Sunday" &&
+//     current.time >= "07:30" &&
+//     current.time <= "12:30") ||
+//   (!isMarked &&
+//     current.day === "Tuesday" &&
+//     current.time >= "17:30" &&
+//     current.time <= "20:30") ||
+//   (!isMarked &&
+//     current.day === "Friday" &&
+//     current.time >= "17:30" &&
+//     current.time <= "20:30")
+// );
+{
+  /* <h1 className="mb-2 text-2xl font-bold text-blue-700">Beloved</h1>
         <p className="">We welcome you to our church attendance website.</p>
         <p className="">
           At Glory Centre Community Church Ibadan, we believe in fellowship and
@@ -501,4 +448,5 @@ export default Attendance;
           As you record your attendance today, remember that your presence in
           person or virtually is a valued and essential part of our church
           community.
-        </p> */}
+        </p> */
+}

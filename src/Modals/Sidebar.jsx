@@ -19,13 +19,13 @@ const Sidebar = () => {
   return (
     <div className="flex flex-col h-[100vh] bg-[#F9FDFFB2]">
       <div>
-        <div className="flex items-center justify-between  px-2 py-6">
+        <div className="flex items-center justify-between px-2 py-6">
           <img src={gccclogo} alt="gccclogo" width={"230px"} height={"65px"} />
         </div>
         </div>
 
-        <div className="flex flex-col justify-between h-full mt-12  gap-7 px-6">
-        <div className="gap-2 flex flex-col">
+        <div className="flex flex-col justify-between h-full px-6 mt-12 gap-7">
+        <div className="flex flex-col gap-2">
           {/* <NavLink
             to="/dashboard/home"
             className="flex items-center gap-1 px-8 text-sm text-center "
@@ -81,7 +81,7 @@ const Sidebar = () => {
             <MdEventAvailable />
             Events
           </NavLink> */}
-          <div className="flex flex-col gap-3 justify-start mb-3">
+          <div className="flex flex-col justify-start gap-3 mb-3">
           <NavLink
             to="/dashboard/attendance"
             className="flex items-center text-[#0094D3]  rounded gap-[18px] h-[48px] px-2 text-base leading-6 font-normal text-center hover:bg-[#D1F1FF] "

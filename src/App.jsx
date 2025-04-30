@@ -22,6 +22,7 @@ import Resources from "./Pages/Resources/Resources";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+
 function App() {
   const [loggedInUser, setLoggedInUser] = useState(null);
   const getDataUrl = import.meta.env.VITE_APP_GET_DATA;
@@ -43,10 +44,15 @@ function App() {
       const lowercaseUsername = username.toLowerCase();
       const user = users.find(
         (user) =>
+          (user.Email.toLowerCase() == lowercaseUsername )
+            ||
+          (user["Phone Number"] == username )
+      )
+      /*   (user) =>
           (user.Email.toLowerCase() == lowercaseUsername &&
             user["Phone Number"] == password) ||
           (user["Phone Number"] == username && user["Phone Number"] == password)
-      );
+      ); */
 
       if (user) {
         setLoggedInUser(user);
@@ -56,7 +62,7 @@ function App() {
         });
         navigate("/");
       } else {
-        toast.error("Invalid Username or password ", {
+        toast.error("Invalid Email/Phone Number ", {
           position: "top-right",
         });
       }

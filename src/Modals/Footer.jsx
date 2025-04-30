@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import call from "../assets/Images/call.png";
 import Home from "../assets/Images/home.png";
 import mail from "../assets/Images/mail.png";
-import logo from "../assets/Images/logo2.png";
+import logo from "../assets/Images/log.png";
 import facebook from "../assets/Images/facebook.png";
 import inst from "../assets/Images/instag.png";
 import youtube from "../assets/Images/you.png";
