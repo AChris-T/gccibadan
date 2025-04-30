@@ -36,7 +36,7 @@ const Dashboard = () => {
   }, [location.pathname]);
 
   return (
-    <div className="max-w-[1440px   bg-[#24244e] mx-auto shadow-card">
+    <div className="max-w-[1940px]  bg-[#24244e] mx-auto shadow-card">
       <div className="flex flex-col ">
         <div className="flex flex-col h-[100dvh] justify-between w-full">
           <div>
@@ -45,7 +45,7 @@ const Dashboard = () => {
               <Outlet />
             </div>
           </div>
-          <div className="max-w-[1440px] w-full flex justify-between lg:px-[142px] pt-3 pb-4 bottom-0 fixed bg-[#2E2E44] ">
+          <div className="max-w-[1940px]  w-full flex justify-between lg:px-[142px] pt-3 pb-4 bottom-0 fixed bg-[#2E2E44] ">
             <NavLink
               to="/"
               className="flex flex-col items-center   rounded gap-[8px] h-[48px] px-2 text-[12px] font-medium  "

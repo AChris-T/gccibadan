@@ -20,7 +20,7 @@ const Login = ({ onLogin }) => {
 
   return (
     <div>
-      <div className=" max-w-[1440px] bg-[#24244e] mx-auto  overflow-x-hidden">
+      <div className=" max-w-[1940px] bg-[#24244e] mx-auto  overflow-x-hidden">
         <div className="flex items-center justify-center w-full px-2 align-middle ">
           <div className="flex justify-center items-center w-full h-[100vh] ">
             <div className="  flex flex-col items-center w-full px-4 py-[30px] railway">
