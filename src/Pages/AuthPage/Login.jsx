@@ -4,6 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { toast } from 'react-toastify';
 import logo from '../../assets/Images/image.png';
 import { ClipLoader } from 'react-spinners';
+import { NavLink } from 'react-router-dom';
 
 const Login = ({ onLogin }) => {
   const [username, setusername] = useState('');
@@ -25,8 +26,9 @@ const Login = ({ onLogin }) => {
           <div className="flex justify-center items-center w-full h-[100vh] ">
             <div className="  flex flex-col items-center w-full px-4 py-[30px] railway">
               {' '}
-              {/*  bg-white translate-y-[50%] md:translate-y-[15%] md:w-[436px] w-full    flex  flex-col px-4  md:px-[20px] py-[30px] */}
-              <img src={logo} alt="" />
+              <NavLink to="/">
+                <img src={logo} alt="" />
+              </NavLink>
               <h3 className="text-[32px] mt-2 leading-10 mb-2 railway font-semibold flex justify-center  text-white w-[390px] text-center">
                 Sign In To Keep Track Of Your Attendance.
               </h3>
