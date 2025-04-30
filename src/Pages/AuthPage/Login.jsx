@@ -23,8 +23,8 @@ const Login = ({ onLogin }) => {
     <div>
       <div className=" max-w-[1940px] bg-[#24244e] mx-auto  overflow-x-hidden">
         <div className="flex items-center justify-center w-full px-2 align-middle ">
-          <div className="flex justify-center items-center w-full h-[100vh] ">
-            <div className="  flex flex-col items-center w-full px-4 py-[30px] railway">
+          <div className="flex w-full  justify-center items-center  h-[100vh] ">
+            <div className="w-full  flex flex-col items-center  px-4 py-[30px] railway">
               {' '}
               <NavLink to="/">
                 <img src={logo} alt="" />
@@ -35,7 +35,7 @@ const Login = ({ onLogin }) => {
               <p className="font-medium text-center text-white railway">
                 Grow deeper in your commitment to God’s house.
               </p>
-              <form className="flex w-full  md:w-[50%] mt-10 flex-col  gap-3 md:px-[30px] ">
+              <form className="flex w-[400px]  mt-10 flex-col  gap-3 md:px-[30px] ">
                 <label className="text-white">
                   Email Address Or Phone Number
                 </label>
