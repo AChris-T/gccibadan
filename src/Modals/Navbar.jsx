@@ -2,56 +2,40 @@
 
 /* eslint-disable react/prop-types */
 //import React from 'react'
-import profile from "../../src/assets/Images/user.png";
+import profile from '../../src/assets/Images/user.png';
 
-import { Popover, Text, Button } from "@mantine/core";
-import { NavLink, useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
+import { Popover, Text, Button } from '@mantine/core';
+import { NavLink, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 //import Sidebar from "./Sidebar";
-import gccclogo from "../assets/Images/log.png";
-import check from "../assets/Images/check.png";
-import settings from "../assets/Images/settings.png";
-import logout from "../assets/Images/logout.png";
-import { Paper } from "@mui/material";
-import Drawer from "@mui/material/Drawer";
-import { useState } from "react";
-import { FaUserCheck } from "react-icons/fa";
-import dayjs from "dayjs";
-import logo from '../assets/Images/image.png'
-
+import gccclogo from '../assets/Images/log.png';
+import check from '../assets/Images/check.png';
+import settings from '../assets/Images/settings.png';
+import logout from '../assets/Images/logout.png';
+import { Paper } from '@mui/material';
+import Drawer from '@mui/material/Drawer';
+import { useState } from 'react';
+import { FaUserCheck } from 'react-icons/fa';
+import dayjs from 'dayjs';
+import logo from '../assets/Images/image.png';
 
 const Navbar = () => {
-  const navigate = useNavigate();
-  const authUser = JSON.parse(localStorage.getItem("GCCC_ATTENDANCE"));
   const formattedDateTime = dayjs().format('dddd  [,] MMMM DD YYYY');
   const formattedTime = dayjs().format('hh:mm A ');
-  
-
-  const [open, setOpen] = useState(false);
-
-  const toggelDrawer = (newOpen) => () => {
-    setOpen(newOpen);
-  };
-
-  const handleClearLocalStorage = () => {
-    localStorage.clear();
-    // Optionally, you can perform additional actions after clearing localStorage
-    navigate("/");
-    toast.error("Have a nice day", {
-      position: "top-right",
-    });
-  };
   return (
-    <div className="flex  justify-between bg-[#24244e] md:h-[108px] h-[59px]   md:items-center p-4">
-      {/* <h1 className="hidden capitalize md:block text-[24px] ml-2 leading-8 font-bold text-[#1B566F]">
-        Hello,{authUser["First Name"]}
-        
-      </h1> */}
+    <div className="flex  justify-between  md:h-[108px] h-[59px]   md:items-center p-4">
       <img src={gccclogo} alt="menu" className="w-[200px] hidden md:flex" />
       <img src={logo} alt="menu" className="flex md:hidden" />
-      <p className="text-[14px] flex items-center gap-2 text-white leading-6 font-normal">{formattedTime } |{' '} <p className="text-[#86888A]">{formattedDateTime}</p> </p>
+      <p className="text-[14px] flex items-center gap-2 text-white leading-6 font-normal">
+        {formattedTime} | <p className="text-[#86888A]">{formattedDateTime}</p>{' '}
+      </p>
+    </div>
+  );
+};
 
-     {/*  <Button className="flex">
+export default Navbar;
+{
+  /*  <Button className="flex">
         <div className="flex items-center gap-4">
           <div className="flex flex-col items-start justify-start">
             <p className=" text-[#120F14] leading-5 text-[8px] md:text-[14px] font-medium">
@@ -61,8 +45,10 @@ const Navbar = () => {
           </div>
           <img src={profile} alt={profile} width={"25px"} height={"25px"} />
         </div>
-      </Button> */}
-      {/* <Drawer
+      </Button> */
+}
+{
+  /* <Drawer
         open={open}
         sx={{ paddingyTop: "200px" }}
         onClose={toggelDrawer(false)}
@@ -139,9 +125,5 @@ const Navbar = () => {
             </button> 
           </div>
         </div>
-      </Drawer> */}
-    </div>
-  );
-};
-
-export default Navbar;
+      </Drawer> */
+}

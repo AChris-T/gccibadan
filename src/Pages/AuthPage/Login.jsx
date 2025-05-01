@@ -23,20 +23,20 @@ const Login = ({ onLogin }) => {
     <div>
       <div className=" max-w-[1940px]  bg-[#24244e] mx-auto  overflow-x-hidden">
         <div className="flex items-center justify-center w-full px-2 align-middle ">
-          <div className="flex w-full px-10  justify-center items-center  h-[100vh] ">
-            <div className="w-full  flex flex-col items-center  px-4 py-[30px] railway">
+          <div className="flex w-full  justify-center items-center  h-[100vh] ">
+            <div className="w-full  flex flex-col items-center  py-[30px] railway">
               {' '}
-              <NavLink to="/">
+              <NavLink to="/" className="mb-3">
                 <img src={logo} alt="" />
               </NavLink>
-              <h3 className="text-[32px] mt-2 leading-10 mb-2 railway font-semibold flex justify-center  text-white w-[390px] text-center">
-                Sign In To Keep Track Of Your Attendance.
+              <h3 className="text-[32px] px-3 mt-2 leading-10 mb-2 railway font-semibold flex justify-center  text-white w-[390px] text-center">
+                Sign In
               </h3>
-              <p className="font-medium text-center text-white railway">
+              <p className="px-3 font-medium text-center text-white railway">
                 Grow deeper in your commitment to God’s house.
               </p>
-              <form className="flex md:w-[400px] w-full  mt-10 flex-col  gap-3 md:px-[30px] ">
-                <label className="text-white">
+              <form className="flex md:w-[450px] w-full  mt-10 flex-col  gap-3 md:px-[30px] ">
+                <label className="text-sm text-white mb:text-base">
                   Email Address Or Phone Number
                 </label>
                 <input

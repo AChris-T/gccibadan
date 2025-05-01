@@ -1,24 +1,34 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
-import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
+import {
+  Link,
+  NavLink,
+  Outlet,
+  useLocation,
+  useNavigate,
+} from 'react-router-dom';
 import Navbar from '../../Modals/Navbar';
-import Sidebar from '../../Modals/Sidebar';
-import Box from '@mui/material/Box';
-import BottomNavigation from '@mui/material/BottomNavigation';
-import BottomNavigationAction from '@mui/material/BottomNavigationAction';
-import RestoreIcon from '@mui/icons-material/Restore';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { FaUserCheck } from 'react-icons/fa';
-import { BsCalendarDateFill } from 'react-icons/bs';
-import { MdEventAvailable } from 'react-icons/md';
+import { toast } from 'react-toastify';
+import { IoMdLogOut } from 'react-icons/io';
 
-const Dashboard = () => {
+const Dashboard = ({ isMarked }) => {
   const [titleApp, setTitleApp] = useState('Home');
   const location = useLocation();
   const [value, setValue] = React.useState(0);
+  const navigate = useNavigate();
 
-  useEffect(() => {
+  const handleClearLocalStorage = () => {
+    localStorage.removeItem('GCCC_ATTENDANCE');
+    window.location.reload();
+    navigate('/login');
+    toast.success('Have a nice day', {
+      position: 'top-right',
+    });
+  };
+
+  /*   useEffect(() => {
     switch (location.pathname) {
       case '/dashboard':
         setTitleApp('Home');
@@ -33,10 +43,14 @@ const Dashboard = () => {
         setTitleApp('Home');
         break;
     }
-  }, [location.pathname]);
+  }, [location.pathname]); */
 
   return (
-    <div className="max-w-[1940px]  bg-[#24244e] mx-auto shadow-card">
+    <div
+      className={`max-w-[1940px] ${
+        isMarked ? `bg-[#4C8EFF]` : 'bg-[#24244e]'
+      } mx-auto shadow-card`}
+    >
       <div className="flex flex-col ">
         <div className="flex flex-col h-[100dvh] justify-between w-full">
           <div>
@@ -75,7 +89,8 @@ const Dashboard = () => {
               Attendance{' '}
             </NavLink>
             <NavLink
-              to="/profile"
+              to="/login"
+              onClick={handleClearLocalStorage}
               className="flex flex-col items-center   rounded gap-[8px] h-[48px] px-2 text-[12px] font-medium  "
               style={({ isActive }) => {
                 return {
@@ -84,8 +99,8 @@ const Dashboard = () => {
                 };
               }}
             >
-              <FaUserCheck className="text-[24px]" />
-              Profile
+              <IoMdLogOut className="text-[24px]" />
+              Logout
             </NavLink>
           </div>
         </div>
