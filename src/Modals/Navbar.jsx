@@ -19,7 +19,7 @@ import { FaUserCheck } from 'react-icons/fa';
 import dayjs from 'dayjs';
 import logo from '../assets/Images/image.png';
 
-const Navbar = () => {
+const Navbar = ({ isMarked }) => {
   const formattedDateTime = dayjs().format('dddd  [,] MMMM DD YYYY');
   const formattedTime = dayjs().format('hh:mm A ');
   return (
@@ -27,7 +27,10 @@ const Navbar = () => {
       <img src={gccclogo} alt="menu" className="w-[200px] hidden md:flex" />
       <img src={logo} alt="menu" className="flex md:hidden" />
       <p className="text-[14px] flex items-center gap-2 text-white leading-6 font-normal">
-        {formattedTime} | <p className="text-[#86888A]">{formattedDateTime}</p>{' '}
+        {formattedTime} |{' '}
+        <p className={`${isMarked ? 'text-white' : 'text-[#86888A]'}`}>
+          {formattedDateTime}
+        </p>{' '}
       </p>
     </div>
   );
