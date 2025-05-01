@@ -59,7 +59,11 @@ const Dashboard = ({ isMarked }) => {
               <Outlet />
             </div>
           </div>
-          <div className="max-w-[1940px]  w-full flex justify-between lg:px-[142px] pt-3 pb-4 bottom-0 fixed bg-[#2E2E44] ">
+          <div
+            className={`max-w-[1940px] ${
+              isMarked ? `bg-[#4C8EFF]` : 'bg-[#2E2E44]'
+            } w-full flex justify-between lg:px-[142px] pt-3 pb-4 bottom-0 fixed  `}
+          >
             <NavLink
               to="/"
               className="flex flex-col items-center   rounded gap-[8px] h-[48px] px-2 text-[12px] font-medium  "
