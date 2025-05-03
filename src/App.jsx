@@ -36,7 +36,7 @@ function App() {
       navigate('/');
     }
   }, []);
-  
+
   const handleLogin = async (username, password) => {
     try {
       const response = await fetch(getDataUrl);
@@ -92,7 +92,13 @@ function App() {
           path="/"
           element={
             <ProtectedRoute
-              element={<Dashboard user={loggedInUser} isMarked={isMarked} />}
+              element={
+                <Dashboard
+                  user={loggedInUser}
+                  isMarked={isMarked}
+                  setIsMarked={setIsMarked}
+                />
+              }
             />
           }
         >

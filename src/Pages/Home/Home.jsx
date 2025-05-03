@@ -50,7 +50,7 @@ const Home = ({ isMarked, setIsMarked }) => {
         'Name',
         `${authUser['First Name']} ${authUser['Last Name']}`
       );
-      formData.append('Phone', authUser.Phone);
+      formData.append('Phone', authUser.PhoneNumber);
       formData.append('Email', authUser.Email);
       formData.append('Service', current.day);
       formData.append('Date', new Date());
@@ -94,8 +94,8 @@ const Home = ({ isMarked, setIsMarked }) => {
       );
       const alreadyMarked = getAllAttend.find((user) => user.Key == uniqueKey);
       if (alreadyMarked) {
-        setMarked(true);
-        setIsMarked(true) //note this
+        setMarked(false);
+        setIsMarked(false); //note this
       }
       setUserTimes(getAllAttend);
       setLoadingUserAttendance(false);

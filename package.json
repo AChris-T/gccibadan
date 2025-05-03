@@ -22,6 +22,7 @@
     "axios": "^1.6.7",
     "dayjs": "^1.11.10",
     "framer-motion": "^12.9.2",
+    "googleapis": "^148.0.0",
     "gsap": "^3.12.5",
     "lightgallery": "^2.7.2",
     "lottie-react": "^2.4.1",
