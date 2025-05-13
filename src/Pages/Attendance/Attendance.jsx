@@ -6,7 +6,7 @@ export default function Attendance() {
   const [users, setUsers] = useState([]);
   const [filteredUsers, setFilteredUsers] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [selectedService, setSelectedService] = useState('All');
+  //const [selectedService, setSelectedService] = useState('All');
   const [itemsPerPage, setItemsPerPage] = useState(4);
   const [selectedMonth, setSelectedMonth] = useState(
     new Date().toLocaleString('default', { month: 'long' })
@@ -119,7 +119,7 @@ export default function Attendance() {
           {/* Responsive Scrollable Table */}
           <div className="mt-8 w-full overflow-x-auto lg:h-full h-[400px]">
             <div className="rounded-lg ">
-              <table className="w-full min-w-[1000px] max-w-[1240px] text-sm text-left rounded-lg border-[1px] border-[#444466]">
+              <table className="w-full min-w-[1000px] max-w-[1600px] text-sm text-left rounded-lg border-[1px] border-[#444466]">
                 <thead className="text-white  h-[48px] bg-[#1E1E2F]">
                   <tr className="">
                     <th className="px-4 pl-[30px] py-2">Date</th>

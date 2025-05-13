@@ -40,7 +40,7 @@ const Dashboard = ({ isMarked, setIsMarked }) => {
         <div className="flex flex-col h-[100dvh] justify-between w-full">
           <div>
             <Navbar title={titleApp} isMarked={isMarked} />
-            <div className="md:h-[90dvh] overflow-y-scroll new mt-[-20px] md:mt-[-100px]">
+            <div className="md:h-full overflow-y-scroll new mt-[-20px] md:mt-[-100px]">
               <Outlet />
             </div>
           </div>

@@ -17,15 +17,15 @@ import Drawer from '@mui/material/Drawer';
 import { useState } from 'react';
 import { FaUserCheck } from 'react-icons/fa';
 import dayjs from 'dayjs';
-import logo from '../assets/Images/image.png';
+import logo from '../assets/Images/gcc.png';
 
 const Navbar = ({ isMarked }) => {
   const formattedDateTime = dayjs().format('dddd  [,] MMMM DD YYYY');
   const formattedTime = dayjs().format('hh:mm A ');
   return (
     <div className="flex   w-full bg-[#24244e] z-50 relative  justify-between  md:h-[108px] h-[59px]   md:items-center p-4">
-      <img src={gccclogo} alt="menu" className="w-[200px] hidden md:flex" />
-      <img src={logo} alt="menu" className="flex md:hidden" />
+      <img src={gccclogo} alt="menu" className="w-[200px] hidden object-cover md:flex" />
+      <img src={logo} alt="menu" className="flex object-cover md:hidden" />
       <p className="text-[14px] flex items-center gap-2 text-white leading-6 font-normal">
         {formattedTime} |{' '}
         <p className={`${isMarked ? 'text-white' : 'text-[#86888A]'}`}>
